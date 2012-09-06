@@ -1,5 +1,6 @@
-= TWENTY ELEVEN =
+= Alastair Humphreys - Adventurer, Author & Motivational Speaker =
 
-* by the WordPress team, http://wordpress.org/
+* Designed by John Summerton, http://www.jsummerton.co.uk/
+* Developed by James 'Eddy' Edwards
 
-== ABOUT TWENTY ELEVEN ==
+== About this theme ==
