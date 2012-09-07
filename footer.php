@@ -98,25 +98,34 @@ echo "negative";
 					<?php foreach($blogCategories as $category) : ?>
 						<a href="<?php get_category_link($category -> term_id); ?>"><?php $category->name ?></a>
 					<?php endforeach; ?>
+					<?php
+						$args = array(
+							'orderby' => 'name',
+							'order' => 'ASC',
+							//'child_of'	=>	'blog',
+						);
+						$categories = get_categories($args);
+						
+						foreach($categories as $category) { 
+							echo '<a href="' . get_category_link( $category->term_id ) . '" title="' . sprintf( __( "View all posts in %s" ), $category->name ) . '" ' . '>' . $category->name.'</a>';
+							//echo '<p>Description:'. $category->description . '</p>';
+							//echo '<p>Post Count: '. $category->count . '</p>';
+						} 
+					?>
 				</span>
 
-				<?php
-					$args = array(
-						'orderby' => 'name',
-						'order' => 'ASC'
-					);
-					$categories = get_categories($args);
-					
-					foreach($categories as $category) { 
-						echo '<p>Category: <a href="' . get_category_link( $category->term_id ) . '" title="' . sprintf( __( "View all posts in %s" ), $category->name ) . '" ' . '>' . $category->name.'</a> </p> ';
-						echo '<p>Description:'. $category->description . '</p>';
-						echo '<p>Post Count: '. $category->count . '</p>';
-					} 
-				?>
+				<p>
+				</p>
 			</div>
 			<div class="span3 social">
 				<h4>Twitter</h4>
 				<?=$tweetout;?>
+
+				<!-- Follow -->
+				<a href="https://twitter.com/Al_Humphreys" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false">Follow @Al_Humphreys</a>
+
+				<!-- Like -->
+				<div class="fb-like" data-href="http://www.alastairhumphreys.com/" data-send="false" data-layout="button_count" data-width="120" data-show-faces="false"></div>
 			</div>
 		</div>
 	</div>

@@ -186,13 +186,15 @@ nav ul li a:hover {background:#3a3a3a; color:#fff; text-decoration:none;}
 .footer p,
 .footer li,
 .footer quote,
-.footer span {color:#666; font:12px/22px arial, sans-serif;}
+.footer span {color:#777; font:12px/22px arial, sans-serif;}
 .footer a {color:#2f2f2f;}
 .footer quote {display:block; margin:10px 0;}
+.footer .blog-topics a {margin-right:15px;}
 .footer li strong {margin-right:5px;}
 .footer .searchform {display:block; margin-bottom:20px;}
 .footer .searchform .field {width:200px;}
 .footer .social span {display:block; margin-bottom:15px;}
+.footer .social .twitter-follow-button {float:left; margin-right:10px;}
 
 /* Credits */
 .credits {background:#232323; color:#ccc;}

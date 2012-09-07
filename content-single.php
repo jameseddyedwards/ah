@@ -28,11 +28,11 @@
 					$tag_list = get_the_tag_list('', __(', ','alastairhumphreys'));
 					if ('' != $tag_list) {
 						/* $utility_text = __( 'This entry was posted in %1$s and tagged %2$s by <a href="%6$s">%5$s</a>. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'alastairhumphreys' ); */
-						$utility_text = __('<span class="meta">This entry was posted in %1$s and tagged %2$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.</span>', 'alastairhumphreys' );
+						$utility_text = __('<span class="meta">This entry was posted in %1$s and tagged %2$s. Want to read later? <a href="%3$s" title="Permalink to %4$s" rel="bookmark">Bookmark it</a>.</span>', 'alastairhumphreys' );
 					} elseif ('' != $categories_list) {
-						$utility_text = __('<span class="meta">This entry was posted in %1$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.</span>', 'alastairhumphreys' );
+						$utility_text = __('<span class="meta">This entry was posted in %1$s. Want to read later? <a href="%3$s" title="Permalink to %4$s" rel="bookmark">Bookmark it</a>.</span>', 'alastairhumphreys' );
 					} else {
-						$utility_text = __('<span class="meta">This entry was posted by <a href="%6$s">%5$s</a>. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.</span>', 'alastairhumphreys' );
+						$utility_text = __('<span class="meta">This entry was posted by <a href="%6$s">%5$s</a>. Want to read later? <a href="%3$s" title="Permalink to %4$s" rel="bookmark">Bookmark it</a>.</span>', 'alastairhumphreys' );
 					}
 
 					printf(
