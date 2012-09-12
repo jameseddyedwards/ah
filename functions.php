@@ -25,7 +25,7 @@
  * <code>
  * add_action( 'after_setup_theme', 'my_child_theme_setup' );
  * function my_child_theme_setup() {
- *     // We are providing our own filter for excerpt_length (or using the unfiltered value)
+ *     // We arLeave a Replye providing our own filter for excerpt_length (or using the unfiltered value)
  *     remove_filter( 'excerpt_length', 'alastairhumphreys_excerpt_length' );
  *     ...
  * }
@@ -38,10 +38,14 @@
  * @since Twenty Eleven 1.0
  */
 
+/* Include Meta Box */
+//include 'inc/meta-box.php';
+//include 'inc/meta-box-template.php';
+
 /**
  * Set the content width based on the theme's design and stylesheet.
  */
-if ( ! isset( $content_width ) )
+if (!isset($content_width))
 	$content_width = 584;
 
 /**
@@ -107,15 +111,15 @@ function alastairhumphreys_setup() {
 	add_custom_background();
 
 	// This theme uses Featured Images (also known as post thumbnails) for per-post/per-page Custom Header images
-	add_theme_support( 'post-thumbnails' );
+	add_theme_support('post-thumbnails');
 
 	// The next four constants set how Twenty Eleven supports custom headers.
 
 	// The default header text color
-	define( 'HEADER_TEXTCOLOR', '000' );
+	define('HEADER_TEXTCOLOR', '000');
 
 	// By leaving empty, we allow for random image rotation.
-	define( 'HEADER_IMAGE', '' );
+	define('HEADER_IMAGE', '');
 
 	// The height and width of your custom header.
 	// Add a filter to alastairhumphreys_header_image_width and alastairhumphreys_header_image_height to change these values.
@@ -507,51 +511,52 @@ function alastairhumphreys_comment( $comment, $args, $depth ) {
 		case 'trackback' :
 	?>
 	<li class="post pingback">
-		<p><?php _e( 'Pingback:', 'alastairhumphreys' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( 'Edit', 'alastairhumphreys' ), '<span class="edit-link">', '</span>' ); ?></p>
+		<p>
+			<?php _e( 'Pingback:', 'alastairhumphreys' ); ?>
+			<?php comment_author_link(); ?>
+			<?php edit_comment_link( __( 'Edit', 'alastairhumphreys' ), '<span class="edit-link">', '</span>' ); ?>
+		</p>
 	<?php
 			break;
 		default :
 	?>
 	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
-		<article id="comment-<?php comment_ID(); ?>" class="comment">
-			<footer class="comment-meta">
-				<div class="comment-author vcard">
-					<?php
-						$avatar_size = 68;
-						if ( '0' != $comment->comment_parent )
-							$avatar_size = 39;
+		
+		<div class="comment-author vcard">
+			<?php
+				$avatar_size = 68;
+				echo get_avatar($comment, $avatar_size);
+			?>
+			<div class="author-meta">
+				<?php
+					/* translators: 1: comment author, 2: date and time */
+					printf(__('<span class="author">%1$s</span> <span class="posted">Posted %2$s</span>', get_comment_author_link()),
+						sprintf('%s', get_comment_author_link()),
+						sprintf('<a class="date" href="%1$s"><time pubdate datetime="%2$s">%3$s</time></a>',
+							esc_url(get_comment_link($comment->comment_ID)),
+							get_comment_time('c'),
+							sprintf(__('%1$s<br />at %2$s', 'alastairhumphreys'), get_comment_date(), get_comment_time())
+						)
+					);
+				?>
+			</div>
 
-						echo get_avatar( $comment, $avatar_size );
+		</div>
 
-						/* translators: 1: comment author, 2: date and time */
-						printf( __( '%1$s on %2$s <span class="says">said:</span>', 'alastairhumphreys' ),
-							sprintf( '<span class="fn">%s</span>', get_comment_author_link() ),
-							sprintf( '<a href="%1$s"><time pubdate datetime="%2$s">%3$s</time></a>',
-								esc_url( get_comment_link( $comment->comment_ID ) ),
-								get_comment_time( 'c' ),
-								/* translators: 1: date, 2: time */
-								sprintf( __( '%1$s at %2$s', 'alastairhumphreys' ), get_comment_date(), get_comment_time() )
-							)
-						);
-					?>
-
-					<?php edit_comment_link( __( 'Edit', 'alastairhumphreys' ), '<span class="edit-link">', '</span>' ); ?>
-				</div><!-- .comment-author .vcard -->
-
-				<?php if ( $comment->comment_approved == '0' ) : ?>
-					<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'alastairhumphreys' ); ?></em>
-					<br />
-				<?php endif; ?>
-
-			</footer>
-
-			<div class="comment-content"><?php comment_text(); ?></div>
-
-			<div class="reply">
-				<?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply <span>&darr;</span>', 'alastairhumphreys' ), 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
-			</div><!-- .reply -->
-		</article><!-- #comment-## -->
-
+		<div class="comment-content">
+			<?php if ( $comment->comment_approved == '0' ) : ?>
+				<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'alastairhumphreys' ); ?></em>
+			<?php endif; ?>
+			<?php comment_text(); ?>
+			<?php edit_comment_link( __( 'Edit', 'alastairhumphreys' ), '<span class="edit-link">', '</span>' ); ?>
+			<?php comment_reply_link(array_merge($args,array(
+				'reply_text' => __( 'Reply', 'alastairhumphreys' ),
+				'depth' => $depth,
+				'max_depth' => $args['max_depth']
+			))); ?>
+		</div>
+		<div class="clear"></div>
+	</li>
 	<?php
 			break;
 	endswitch;

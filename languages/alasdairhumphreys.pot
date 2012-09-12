@@ -214,7 +214,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: content-gallery.php:87
-msgid "Leave a Reply"
+msgid "Comments"
 msgstr ""
 
 #: comments.php:17

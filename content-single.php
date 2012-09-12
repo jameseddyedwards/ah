@@ -28,11 +28,11 @@
 					$tag_list = get_the_tag_list('', __(', ','alastairhumphreys'));
 					if ('' != $tag_list) {
 						/* $utility_text = __( 'This entry was posted in %1$s and tagged %2$s by <a href="%6$s">%5$s</a>. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'alastairhumphreys' ); */
-						$utility_text = __('<span class="meta">This entry was posted in %1$s and tagged %2$s. Want to read later? <a href="%3$s" title="Permalink to %4$s" rel="bookmark">Bookmark it</a>.</span>', 'alastairhumphreys' );
+						$utility_text = __('<span class="meta">Posted in %1$s and tagged %2$s. Want to read later? <a href="%3$s" title="Permalink to %4$s" rel="bookmark">Bookmark it</a>.</span>', 'alastairhumphreys' );
 					} elseif ('' != $categories_list) {
-						$utility_text = __('<span class="meta">This entry was posted in %1$s. Want to read later? <a href="%3$s" title="Permalink to %4$s" rel="bookmark">Bookmark it</a>.</span>', 'alastairhumphreys' );
+						$utility_text = __('<span class="meta">Posted in %1$s. Want to read later? <a href="%3$s" title="Permalink to %4$s" rel="bookmark">Bookmark it</a>.</span>', 'alastairhumphreys' );
 					} else {
-						$utility_text = __('<span class="meta">This entry was posted by <a href="%6$s">%5$s</a>. Want to read later? <a href="%3$s" title="Permalink to %4$s" rel="bookmark">Bookmark it</a>.</span>', 'alastairhumphreys' );
+						$utility_text = __('<span class="meta">Posted by <a href="%6$s">%5$s</a>. Want to read later? <a href="%3$s" title="Permalink to %4$s" rel="bookmark">Bookmark it</a>.</span>', 'alastairhumphreys' );
 					}
 
 					printf(
@@ -49,16 +49,16 @@
 
 			<div class="entry-content">
 				<?php the_content(); ?>
-				<?php wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:', 'alastairhumphreys' ) . '</span>', 'after' => '</div>' ) ); ?>
+				<?php wp_link_pages(array('before' => '<div class="page-link"><span>' . __( 'Pages:', 'alastairhumphreys' ) . '</span>', 'after' => '</div>')); ?>
 			</div>
 
 			<footer class="entry-meta">
-				<?php edit_post_link( __( 'Edit', 'alastairhumphreys' ), '<span class="edit-link">', '</span>' ); ?>
+				<?php edit_post_link( __('Edit', 'alastairhumphreys'), '<span class="edit-link">', '</span>'); ?>
 
-				<?php if ( get_the_author_meta( 'description' ) && is_multi_author() ) : // If a user has filled out their description and this is a multi-author blog, show a bio on their entries ?>
+				<?php if (get_the_author_meta('description') && is_multi_author() ) : // If a user has filled out their description and this is a multi-author blog, show a bio on their entries ?>
 					<div id="author-info">
 						<div id="author-avatar">
-							<?php echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'alastairhumphreys_author_bio_avatar_size', 68 ) ); ?>
+							<?php echo get_avatar(get_the_author_meta('user_email'), apply_filters('alastairhumphreys_author_bio_avatar_size', 68)); ?>
 						</div>
 						<div id="author-description">
 							<h2><?php printf( esc_attr__( 'About %s', 'alastairhumphreys' ), get_the_author() ); ?></h2>

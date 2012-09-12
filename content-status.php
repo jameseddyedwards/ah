@@ -40,7 +40,7 @@
 			<?php alastairhumphreys_posted_on(); ?>
 			<?php if ( comments_open() ) : ?>
 			<span class="sep"> | </span>
-			<span class="comments-link"><?php comments_popup_link( '<span class="leave-reply">' . __( 'Leave a reply', 'alastairhumphreys' ) . '</span>', __( '<b>1</b> Reply', 'alastairhumphreys' ), __( '<b>%</b> Replies', 'alastairhumphreys' ) ); ?></span>
+			<span class="comments-link"><?php comments_popup_link( '<span class="leave-reply">' . __( 'Comments', 'alastairhumphreys' ) . '</span>', __( '<b>1</b> Reply', 'alastairhumphreys' ), __( '<b>%</b> Replies', 'alastairhumphreys' ) ); ?></span>
 			<?php endif; ?>
 			<?php edit_post_link( __( 'Edit', 'alastairhumphreys' ), '<span class="edit-link">', '</span>' ); ?>
 		</footer><!-- #entry-meta -->

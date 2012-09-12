@@ -10,13 +10,13 @@
 get_header();
 
 ?>
-
-<ul class="gallery">
-	<li><img src="<?php bloginfo('template_url'); ?>/images/gallery/adventures/01.jpg" alt="" height="" width="" /></li>
-</ul>
+<?php if (function_exists('z_taxonomy_image_url')) { ?>
+	<div class="gallery">
+		<img src="<?php echo z_taxonomy_image_url(); ?>" alt="" />
+	</div>
+<?php } ?>
 
 <?php if (have_posts()) : ?>
-
 	<!--
 	<?php
 		global $post;
@@ -51,7 +51,34 @@ get_header();
 	-->
 	<div class="post-thumbs clearfix">
 		<?php while (have_posts()) : the_post(); ?>
-
+		<hr>
+	<?php
+		//echo 'eddy' . rwmb_meta( 'mainimage' );
+		$meta = get_post_meta( get_the_ID(), 'mainimage', true );
+		//echo $meta; // If you want to show
+		$key = "mainimage";
+		$args = "type=image";
+		/*
+		array(
+		    'name'        => 'logo-150x80.png',
+		    'path'        => '/var/www/wp-content/uploads/logo-150x80.png',
+		    'url'         => 'http://example.com/wp-content/uploads/logo-150x80.png',
+		    'width'       => 150,
+		    'height'      => 80,
+		    'full_url'    => 'http://example.com/wp-content/uploads/logo.png',
+		    'title'       => 'Logo',
+		    'caption'     => 'Logo caption',
+		    'description' => 'Used in the header',
+		    'alt'         => 'Logo ALT text',
+		)
+		*/
+		//echo rwmb_meta( $key, $args = array(), $post_id = null );
+		$images = rwmb_meta('mainimage', 'type=image');
+		foreach ($images as $image) {
+		    echo "<a href='{$image['full_url']}' title='{$image['title']}' rel='thickbox'><img src='{$image['url']}' width='{$image['width']}' height='{$image['height']}' alt='{$image['alt']}' /></a>";
+		}
+	?>
+	<hr>
 			<?php
 				$thumnail_attr_01 = array(
 					'class'	=> "small",

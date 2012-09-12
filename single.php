@@ -9,30 +9,25 @@
 
 get_header(); ?>
 
-<?php while ( have_posts() ) : the_post(); ?>
+<?php while (have_posts()) : the_post(); ?>
 
-	<?php 
-		$thumbnail = wp_get_attachment_image_src(get_post_thumbnail_id($post -> ID), 'your_thumb_handle' );
-	?>
-	<div class="gallery">
-		<img src="<?php echo $thumbnail['0']; ?>" alt="<?php the_title(); ?>" />
-	</div>
+	<div class="background" style="background:url('<?php the_field('post_background'); ?>') no-repeat center top; padding-top:700px;">
 
-	<div class="container white content">
+		<div class="container white content">
 
-		<?php get_template_part('content', 'single'); ?>
+			<?php get_template_part('content', 'single'); ?>
 
-		<div class="row">
-			<div class="span2">&nbsp;</div>
-			<div class="span10">
-				<hr />
-				<?php comments_template('', true); ?>
+			<div class="row">
+				<div class="span2">&nbsp;</div>
+				<div class="span10">
+					<hr />
+					<?php comments_template('', true); ?>
+				</div>
 			</div>
+
 		</div>
-
 	</div>
-
-
+	<?php //get_template_part('content', 'posts-filter'); ?>
 
 <?php endwhile; ?>
 
