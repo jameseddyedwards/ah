@@ -27,8 +27,8 @@ get_header(); ?>
 
 		</div>
 	</div>
-	<?php //get_template_part('content', 'posts-filter'); ?>
-
 <?php endwhile; ?>
+
+<?php get_template_part('content', 'recent-posts'); ?>
 
 <?php get_footer(); ?>

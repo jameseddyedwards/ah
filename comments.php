@@ -61,11 +61,6 @@
 	<?php endif; ?>
 </div>
 <div class="comment-form">
-	<?php
-	$fields = array(
-		'title_reply' => "Post A Comment",
-	);
-
-	comment_form($fields); ?>
+	<?php get_template_part('content', 'comments-form'); ?>
 </div>
 

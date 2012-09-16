@@ -267,8 +267,9 @@ nav ul .current-menu-item a {background:#3a3a3a; color:#fff; text-decoration:non
 
 .tab-row {display:none;}
 .tab-row.active {display:block;}
-.tab-row .post-thumb {overflow:hidden; position:relative;}
+.tab-row .post-thumb {display:block; min-height:46px; overflow:hidden; position:relative;}
 .tab-row .post-thumb span {background:url("images/background/dark.png"); bottom:0px; color:#fff; font:18px din-light, sans-serif; left:0px; padding:10px 13px 6px; position:absolute; width:100%;}
+.tab-row .post-thumb:hover span {background:#000;}
 .tab-row .excerpt {color:#191919; display:block; font-size:15px; font-style:italic; line-height:22px; margin-top:15px;}
 
 /* Categories */
