@@ -7,7 +7,9 @@
  * @since Twenty Eleven 1.0
  */
 
-get_header(); ?>
+get_header();
+
+?>
 
 <?php while (have_posts()) : the_post(); ?>
 
@@ -15,15 +17,14 @@ get_header(); ?>
 
 		<div class="container white content">
 
+			<!-- Post -->
 			<?php get_template_part('content', 'single'); ?>
 
-			<div class="row">
-				<div class="span2">&nbsp;</div>
-				<div class="span10">
-					<hr />
-					<?php comments_template('', true); ?>
-				</div>
-			</div>
+			<!-- Comments -->
+			<?php comments_template('', true); ?>
+
+			<!-- Comments Form -->
+			<?php get_template_part('content', 'comments-form'); ?>
 
 		</div>
 	</div>
