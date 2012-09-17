@@ -166,7 +166,7 @@ abbr {font-size:90%; text-transform:uppercase; border-bottom:1px dotted #ddd; cu
 .list-nav li:first-child a {margin-left:0; padding-left:0;}
 
 ul.bullet {list-style:disc;}
-ul.bullet li {list-style-position:inside;}
+ul.bullet li {margin-left:20px;}
 
 nav .menu ul,
 nav .menu ul li,
@@ -230,7 +230,7 @@ nav ul .current-menu-item a {background:#3a3a3a; color:#fff; text-decoration:non
 .footer li,
 .footer quote,
 .footer span {color:#777; font:12px/22px arial, sans-serif;}
-.footer a {color:#2f2f2f;}
+.footer a {color:#2f2f2f; display:inline;}
 .footer quote {display:block; margin:10px 0;}
 .footer .blog-topics a {margin-right:15px;}
 .footer li strong {margin-right:5px;}
