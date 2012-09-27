@@ -54,10 +54,10 @@ get_header(); ?>
 				<li id="best" class="active">Best bits</li>
 				<li id="recent">Recent posts</li>
 			</ul>
-			<a class="view-all" href="<?php get_author_posts_url(); ?>">view all</a>
+			<a class="view-all" href="<?php get_author_posts_url('','admin'); ?>">view all</a>
 		</div>
 	</div>
-
+	
 	<?php $bestArgs = array(
 		'numberposts'     => 3,
 		'category'        => 23,

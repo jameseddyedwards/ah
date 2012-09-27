@@ -102,13 +102,13 @@ function alastairhumphreys_setup() {
 	add_theme_support( 'automatic-feed-links' );
 
 	// This theme uses wp_nav_menu() in one location.
-	register_nav_menu( 'primary', __( 'Primary Menu', 'alastairhumphreys' ) );
+	register_nav_menu('primary', __( 'Primary Menu', 'alastairhumphreys'));
 
 	// Add support for a variety of post formats
-	add_theme_support( 'post-formats', array( 'aside', 'link', 'gallery', 'status', 'quote', 'image' ) );
+	//add_theme_support('post-formats', array('video'));
 
 	// Add support for custom backgrounds
-	add_custom_background();
+	//add_custom_background();
 
 	// This theme uses Featured Images (also known as post thumbnails) for per-post/per-page Custom Header images
 	add_theme_support('post-thumbnails');
@@ -368,7 +368,19 @@ add_filter( 'wp_page_menu_args', 'alastairhumphreys_page_menu_args' );
 /**
  * Removes automatic html tags in post text
  */
-remove_filter('the_content', 'wpautop');
+//remove_filter('the_content', 'wpautop');
+//remove_filter('the_excerpt', 'wpautop');
+remove_filter('term_description', 'wpautop');
+
+$filters = array('pre_term_description', 'pre_link_description', 'pre_link_notes', 'pre_user_description');
+foreach ( $filters as $filter ) {
+    remove_filter($filter, 'wp_filter_kses');
+}
+
+$filters = array('term_description', 'pre_link_description', 'pre_link_notes', 'pre_user_description');
+foreach ( $filters as $filter ) {
+    remove_filter($filter, 'wp_filter_kses');
+}
 
 /**
  * Register our sidebars and widgetized areas. Also register the default Epherma widget.
