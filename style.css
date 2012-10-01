@@ -82,6 +82,7 @@ p {color:#1a1a1a; font-size:16px; line-height:23px; margin:0 0 10px;}
 p small {font-size:9px; color:#cccccc;}
 .lead {margin-bottom:20px; font-size:20px; font-weight:200; line-height:30px;}
 
+iframe {}
 
 /* Buttons */
 button,
@@ -140,6 +141,10 @@ button:active,
 	border: 1px solid #666666;
 	border-bottom: 1px solid #333333;
 }
+
+.box-button {background:#3a3a3a url('images/button/arrow-right-invert.gif') no-repeat right center; color:#fff; display:inline-block; font:24px/24px din-light, helvetica, arial; margin:30px 0; padding:9px 36px 4px 20px; text-transform:uppercase;}
+.box-button:hover {color:#efefef; text-decoration:none;}
+
 
 /* Lists */
 ul ul,
@@ -352,11 +357,14 @@ article .meta {display:block; font-style:italic; margin-bottom:30px;}
 .book-list .info h2 a {color:#333; font:37px/46px din-light, helvetica, arial; text-transform:uppercase;}
 .book-list .info h2 a:hover {text-decoration:none;}
 .book-list .info .summary {color:#4a4a4a; display:block; font-style:italic; margin-bottom:30px;}
-.book-list .info .more-info {background:#3a3a3a url('images/button/arrow-right-invert.gif') no-repeat 478px center; color:#fff; display:inline-block; font:24px/24px din-light, helvetica, arial; margin-top:30px; padding:9px 36px 4px 20px; text-transform:uppercase;}
-.book-list .info .more-info:hover {color:#efefef; text-decoration:none;}
 
 
 /* Blog */
+.category-blog .entry-content {height:600px; overflow:hidden; position:relative;}
+
+.continue-reading {border-top:1px dotted #ccc; display:block; margin-top:40px;}
+.continue-reading span {background:url('images/button/continue-reading.png') no-repeat; display:block; height:64px; margin:-20px auto 0; text-indent:-9999px; width:136px;}
+
 .category-filter {margin-top:20px;}
 .category-filter h3 {font-size:14px;}
 .category-filter .post-categories li {display:inline-block; float:left; margin-right:10px;}
@@ -364,3 +372,24 @@ article .meta {display:block; font-style:italic; margin-bottom:30px;}
 .category-filter .post-categories li a:hover {border:1px solid #333; color:#000; text-decoration:none;}
 
 .category-filter-thumbs {margin-top:40px;}
+
+
+/* Page - Speaking */
+.page h2 {color:#333333; font:27px/36px din-light, helvetica, arial; margin-bottom:30px; text-transform:uppercase;}
+.page iframe {margin:30px 0;}
+
+/* More */
+.category-more .gallery {width:1230px;}
+.category-more iframe {display:block; margin:0;}
+.category-more .container {margin-top:0;}
+
+
+
+
+
+
+
+
+
+
+

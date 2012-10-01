@@ -61,7 +61,9 @@
 						<div class="entry-content">
 							<?php the_content(); ?>
 						</div>
-						<a class="continue-reading" href="<?php the_permalink(); ?>">Continue Reading</a>
+						<a href="<?php the_permalink(); ?>" class="continue-reading">
+							<span>continue reading</span>
+						</a>
 					</article>
 				</div>
 			</div>

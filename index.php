@@ -58,10 +58,17 @@ get_header(); ?>
 		</div>
 	</div>
 	
-	<?php $bestArgs = array(
-		'numberposts'     => 3,
-		'category'        => 23,
-	); ?>
+	<?php
+		$category_best = get_cat_ID('Best bits');
+		$category_blog = get_cat_ID('Blog');
+		$category_adventures = get_cat_ID('Adventures');
+		$category_books = get_cat_ID('Books');
+
+		$bestArgs = array(
+			'numberposts'	=> 3,
+			'cat'			=> $category_best
+		);
+	?>
 	<?php $bestbits = get_posts($bestArgs); ?>
 	<div class="row tab-row best active">
 		<?php foreach($bestbits as $post) :	setup_postdata($post); ?>
@@ -76,7 +83,8 @@ get_header(); ?>
 	</div>
 
 	<?php $recentArgs = array(
-		'numberposts'     => 3,
+		'numberposts'		=> 3,
+		'cat'				=> $category_blog . ',' . $category_adventures
 	); ?>
 	<?php $recentPosts = get_posts($recentArgs); ?>
 	<div class="row tab-row recent">

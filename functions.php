@@ -39,7 +39,7 @@
  */
 
 /* Include Meta Box */
-//include 'inc/meta-box.php';
+include 'inc/shortcodes.php';
 //include 'inc/meta-box-template.php';
 
 /**
@@ -328,7 +328,7 @@ add_filter( 'excerpt_length', 'alastairhumphreys_excerpt_length' );
  * Returns a "Continue Reading" link for excerpts
  */
 function alastairhumphreys_continue_reading_link() {
-	return ' <a href="'. esc_url( get_permalink() ) . '">' . __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'alastairhumphreys' ) . '</a>';
+	return ' <a href="'. esc_url( get_permalink() ) . '">' . __( '...', 'alastairhumphreys' ) . '</a>';
 }
 
 /**
@@ -338,9 +338,9 @@ function alastairhumphreys_continue_reading_link() {
  * function tied to the excerpt_more filter hook.
  */
 function alastairhumphreys_auto_excerpt_more( $more ) {
-	return ' &hellip;' . alastairhumphreys_continue_reading_link();
+	return '' . alastairhumphreys_continue_reading_link();
 }
-add_filter( 'excerpt_more', 'alastairhumphreys_auto_excerpt_more' );
+add_filter('excerpt_more', 'alastairhumphreys_auto_excerpt_more');
 
 /**
  * Adds a pretty "Continue Reading" link to custom post excerpts.

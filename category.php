@@ -24,13 +24,13 @@ switch ($current_category) {
 		$layout = "category-blog";
 		break;
 	case $category_speaking:
-		$layout = "category";
+		$layout = "category-speaking";
 		break;
 	case $category_adventures:
 		$layout = "category-adventures";
 		break;
 	case $category_more:
-		$layout = "category";
+		$layout = "category-more";
 		break;
 	default:
 		$layout = "category";

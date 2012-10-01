@@ -16,16 +16,47 @@
 
 get_header(); ?>
 
-	<div id="primary">
-		<div id="content" role="main">
+<div class="split-layout background"<?php echo $postImage ?>>
 
-			<?php the_post(); ?>
+	<div class="container white content">
+		<div class="row">
+			<div class="span1">&nbsp;</div>
+			<div class="span10">
+				<?php while (have_posts()) : the_post(); ?>
+					<h1><?php the_title(); ?></h1>
+					<?php the_content(); ?>
+				<?php endwhile; // end of the loop. ?>
+			</div>
+			<div class="span1">&nbsp;</div>
+		</div>
+	</div>
 
-			<?php get_template_part( 'content', 'page' ); ?>
+	<!--
+	<div class="container white content">
+		<div class="row">
+			<div class="span1">&nbsp;</div>
+			<div class="span10">
+				
+			</div>
+			<div class="span1">&nbsp;</div>
+		</div>
+	</div>
+	-->
 
-			<?php comments_template( '', true ); ?>
+	<!-- Testimonials -->
+	<?php if (get_field('testimonials') != '') { ?>
+		<div class="container white content">
+			<div class="row">
+				<div class="span1">&nbsp;</div>
+				<div class="span10">
+					<h2>Testimonials</h2>
+					<?php the_field('testimonials'); ?>
+				</div>
+				<div class="span1">&nbsp;</div>
+			</div>
+		</div>
+	<?php } ?>
+</div>
 
-		</div><!-- #content -->
-	</div><!-- #primary -->
 
 <?php get_footer(); ?>

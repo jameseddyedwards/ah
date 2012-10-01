@@ -39,7 +39,7 @@ if (function_exists('z_taxonomy_image_url') && z_taxonomy_image_url() != '') {
 									<h2><a class="title" href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
 									<span class="summary"><?php the_field('book_meta') ?></span>
 									<?php the_content(); ?>
-									<a class="more-info" href="<?php the_permalink() ?>">More Information & buying options</a>
+									<a class="box-button" href="<?php the_permalink() ?>">More Information & buying options</a>
 								</div>
 							</li>
 						<?php endwhile; ?>
