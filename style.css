@@ -281,15 +281,16 @@ nav ul .current-menu-item a {background:#3a3a3a; color:#fff; text-decoration:non
 .single-post .gallery {z-index:1;}
 .single-post .gallery img {display:block; width:100%; z-index:1;}
 
-.single-post .content {margin-top:20px;}
-.single-post h1 {color:#333333; font:45px/44px din-light, helvetica, arial; margin:20px 0; text-transform:uppercase;}
-.single-post h2 {color:#333333; font:27px/36px din-light, helvetica, arial; margin-bottom:10px;}
-.single-post h3 {color:#999999; font:22px/30px din-light, helvetica, arial; margin-bottom:10px;}
-.single-post .meta {display:block; font-style:italic; margin-bottom:30px;}
-.single-post .post-date {margin-top:20px;}
-.single-post .post-date a:hover {text-decoration:none;}
-.single-post .post-date .month,
-.single-post .post-date .year {color:#d2d2d2; display:block; font:45px/40px din-light, helvetica, arial;}
+.single-post .content,
+.category-blog .content {margin-top:20px;}
+article h1 {color:#333333; font:45px/44px din-light, helvetica, arial; margin:20px 0; text-transform:uppercase;}
+article h2 {color:#333333; font:27px/36px din-light, helvetica, arial; margin-bottom:10px;}
+article h3 {color:#999999; font:22px/30px din-light, helvetica, arial; margin-bottom:10px;}
+article .meta {display:block; font-style:italic; margin-bottom:30px;}
+.post-date {margin-top:20px;}
+.post-date a:hover {text-decoration:none;}
+.post-date .month,
+.post-date .year {color:#d2d2d2; display:block; font:45px/40px din-light, helvetica, arial;}
 
 
 .addthis_toolbox {margin:30px 0 20px;}
@@ -355,5 +356,11 @@ nav ul .current-menu-item a {background:#3a3a3a; color:#fff; text-decoration:non
 .book-list .info .more-info:hover {color:#efefef; text-decoration:none;}
 
 
+/* Blog */
+.category-filter {margin-top:20px;}
+.category-filter h3 {font-size:14px;}
+.category-filter .post-categories li {display:inline-block; float:left; margin-right:10px;}
+.category-filter .post-categories li a {border:1px solid #cfcfcf; color:#333; display:block; font:bold 12px Arial, Helvetica, sans-serif; padding:7px 10px 6px; text-transform:uppercase;}
+.category-filter .post-categories li a:hover {border:1px solid #333; color:#000; text-decoration:none;}
 
-
+.category-filter-thumbs {margin-top:40px;}

@@ -59,11 +59,9 @@
 						</header>
 
 						<div class="entry-content">
-							<div class="excerpt">
-								<?php the_content(); ?>
-								<a class="continue-reading" href="<?php the_permalink(); ?>">Continue Reading</a>
-							</div>
+							<?php the_content(); ?>
 						</div>
+						<a class="continue-reading" href="<?php the_permalink(); ?>">Continue Reading</a>
 					</article>
 				</div>
 			</div>
@@ -74,27 +72,23 @@
 <div class="container white content">
 	<div class="row">
 		<div class="span12">
-			<?php echo category_description(); ?>
-		</div>
-	</div>
-
-	<hr />
-
-	<div class="row">
-		<div class="span12">
 			<?php if (have_posts()) : ?>
 				<h1>Browse blog posts</h1>
-				<div class="row">
-					<?php
-						/*
-						if ('' != $categories_list) {
-							$utility_text = __('<span class="meta">Posted in %1$s. Want to read later? <a href="%3$s" title="Permalink to %4$s" rel="bookmark">Bookmark it</a>.</span>', 'alastairhumphreys' );
-						$categories_list = get_the_category_list(__(', ', 'alastairhumphreys'));
-						printf($categories_list;);
-						*/
-					?>
+				<div class="row category-filter">
+					<div class="span3">
+						<h3>Browse Blog Posts by Category</h3>
+					</div>
+					<div class="span9">
+						<?php
+							if ('' != $categories_list) {
+								$categories_list = get_the_category_list(__('','alastairhumphreys'));
+								printf($categories_list);
+							}
+							
+						?>
+					</div>
 				</div>
-				<div class="row">
+				<div class="row category-filter-thumbs">
 					<?php while (have_posts()) : the_post(); ?>
 						<div class="span3">
 							<a class="post-thumb" href="<?php the_permalink(); ?>">
