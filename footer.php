@@ -119,15 +119,14 @@ echo "negative";
 			</div>
 			<div class="span3 social">
 				<h4>Twitter</h4>
-				<!--
 				<?=$tweetout;?>
 
-				<!-- Follow 
+				<!-- Follow -->
 				<a href="https://twitter.com/Al_Humphreys" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false">Follow @Al_Humphreys</a>
 
-				<!-- Like 
+				<!-- Like -->
 				<div class="fb-like" data-href="http://www.alastairhumphreys.com/" data-send="false" data-layout="button_count" data-width="120" data-show-faces="false"></div>
-				-->
+				
 			</div>
 		</div>
 	</div>
