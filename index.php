@@ -16,37 +16,13 @@
 
 get_header(); ?>
 
+<?php //echo do_shortcode('[gallery columns="1"]'); ?>
+
 <ul class="gallery">
 	<li><img src="<?php bloginfo('template_url'); ?>/images/gallery/home/01.png" alt="" height="" width="" /></li>
 </ul>
 
 <div class="container white">
-	<?php if (have_posts()) : ?>
-
-		<?php while (have_posts()) : the_post(); ?>
-			<div class="row">
-				<div class="span4">
-					<?php the_post_thumbnail(); ?>
-				</div>
-				<div class="span8">
-					<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'alastairhumphreys' ) ); ?>
-				</div>
-			</div>
-			<hr />
-		<?php endwhile; ?>
-
-	<?php else : ?>
-		<article id="post-0" class="post no-results not-found">
-			<header class="entry-header">
-				<h1 class="entry-title"><?php _e( 'Nothing Found', 'alastairhumphreys' ); ?></h1>
-			</header>
-
-			<div class="entry-content">
-				<p><?php _e( 'Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post.', 'alastairhumphreys' ); ?></p>
-				<?php get_search_form(); ?>
-			</div>
-		</article>
-	<?php endif; ?>
 
 	<div class="row">
 		<div class="span12 head-bar">

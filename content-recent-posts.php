@@ -29,7 +29,7 @@
 			<?php while ($queryObject -> have_posts()) { ?>
 				<?php
 					$recentPostID = get_the_ID();
-					$queryObject->the_post();
+					$queryObject -> the_post();
 				?>
 				<div class="span4">
 					<a class="post-thumb" href="<?php the_permalink(); ?>">

@@ -219,6 +219,8 @@ nav ul .current-menu-item a {background:#3a3a3a; color:#fff; text-decoration:non
 
 .sub-menu {background:#fff; display:none; height:200px; border:1px solid #ccc; width:500px;}
 
+.dropdown {display:none;}
+
 /* Search */
 .searchform .field {border:1px solid #d0d0d0; color:#797979; float:left; font-size:11px; padding:6px 5px 5px; width:230px;}
 .searchform .submit {background:url("images/icon/go.png"); border:none; float:left; height:27px; text-indent:-999px; width:29px;}
@@ -233,7 +235,7 @@ nav ul .current-menu-item a {background:#3a3a3a; color:#fff; text-decoration:non
 .footer span {color:#777; font:12px/22px arial, sans-serif;}
 .footer a {color:#2f2f2f; display:inline;}
 .footer quote {display:block; margin:10px 0;}
-.footer .blog-topics a {margin-right:15px;}
+.footer .blog-topics a {float:left; margin-right:15px;}
 .footer li strong {margin-right:5px;}
 .footer .searchform {display:block; margin-bottom:20px;}
 .footer .searchform .field {width:200px;}
@@ -263,7 +265,7 @@ nav ul .current-menu-item a {background:#3a3a3a; color:#fff; text-decoration:non
 .post-thumb {display:block; min-height:46px; overflow:hidden; position:relative;}
 .post-thumb span {background:url("images/background/dark.png"); bottom:0px; color:#fff; font:18px din-light, sans-serif; left:0px; padding:10px 13px 6px; position:absolute; width:100%;}
 .post-thumb:hover span {background:#000;}
-.excerpt {color:#191919; display:block; font-size:15px; font-style:italic; line-height:22px; margin-top:15px;}
+.excerpt {color:#191919; display:block; font-size:15px; font-style:italic; height:105px; line-height:22px; margin-top:15px; overflow:hidden;}
 
 /* Categories */
 .category-thumbs {margin:10px auto 0; width:1600px;}
@@ -288,6 +290,7 @@ nav ul .current-menu-item a {background:#3a3a3a; color:#fff; text-decoration:non
 
 .single-post .content,
 .category-blog .content {margin-top:20px;}
+.featured {margin-top:0 !important;}
 article h1 {color:#333333; font:45px/44px din-light, helvetica, arial; margin:20px 0; text-transform:uppercase;}
 article h2 {color:#333333; font:27px/36px din-light, helvetica, arial; margin-bottom:10px;}
 article h3 {color:#999999; font:22px/30px din-light, helvetica, arial; margin-bottom:10px;}
@@ -352,12 +355,24 @@ article .meta {display:block; font-style:italic; margin-bottom:30px;}
 
 .book-list li {border-bottom:1px dotted #999; display:block; margin-bottom:50px; padding-bottom:50px;}
 .book-list .wp-post-image {float:left;}
-.book-list .info {float:right; width:700px;}
+.book-list .info {float:right; width:600px;}
 .book-list .info h2,
 .book-list .info h2 a {color:#333; font:37px/46px din-light, helvetica, arial; text-transform:uppercase;}
 .book-list .info h2 a:hover {text-decoration:none;}
-.book-list .info .summary {color:#4a4a4a; display:block; font-style:italic; margin-bottom:30px;}
+.book-list .info .summary,
+.book .summary {color:#4a4a4a; display:block; font-style:italic; margin-bottom:30px;}
 
+.category-books h3 {color:#333333; font:38px/46px din-light, helvetica, arial; margin-bottom:10px; text-transform:uppercase;}
+.formats h2 {color:#333333; font:26px/32px din-light, helvetica, arial; margin-bottom:10px; text-transform:uppercase;}
+.formats li {border-bottom: 1px dotted #999; display:block; margin-bottom:20px; padding-bottom:40px;}
+.formats .format-image {float:left; width:200px;}
+.formats .format-info {float:right; width:700px;}
+.formats h3 {margin:10px 0 10px;}
+
+.book h1 {margin-bottom:10px;}
+
+.further-reading ul {margin-bottom:20px;}
+.further-reading ul li a {color:#333;}
 
 /* Blog */
 .category-blog .entry-content {height:600px; overflow:hidden; position:relative;}
@@ -384,7 +399,8 @@ article .meta {display:block; font-style:italic; margin-bottom:30px;}
 .category-more .container {margin-top:0;}
 
 
-
+/* 404 */
+.error404 .widget {margin-top:30px;}
 
 
 

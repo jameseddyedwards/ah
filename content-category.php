@@ -14,61 +14,6 @@
 	</div>
 <?php } ?>
 
-<?php if (have_posts()) : ?>
-	<div class="category-thumbs clearfix">
-		<?php
-			$counter = 1;
-			$class = "";
-		?>
-		<?php while (have_posts()) : the_post(); ?>
-			<?php
-				switch ($counter) {
-					case 1:
-						$class = "large";
-						break;
-					case 2:
-						$class = "small";
-						break;
-					case 3:
-						$class = "medium right";
-						break;
-					case 4:
-						$class = "medium";
-						break;
-					case 5:
-						$class = "small right";
-						break;
-					case 6:
-						$class = "small";
-						break;
-					case 7:
-						$class = "medium";
-						break;
-					case 8:
-						$class = "large right";
-						break;
-					case 9:
-						$class = "medium";
-						break;
-					case 10:
-						$class = "small";
-						break;
-				}
-				if ($counter != 10) {
-					$counter = $counter + 1;
-				} else {
-					$counter = 1;
-				}
-			?>
-			
-			<a href="<?php the_permalink() ?>" class="<?php echo $class ?> post-thumb">
-				<img src="<?php the_field('post_gallery_image'); ?>" title='<?php the_title(); ?>' alt='<?php the_title(); ?>' />
-				<span class="title"><?php the_title(); ?></span>
-			</a>
-		<?php endwhile; ?>
-	</div>
-<?php endif; ?>
-
 <div class="container white content">
 
 	<div class="row">

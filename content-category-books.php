@@ -7,29 +7,33 @@
  * @since Twenty Eleven 1.0
  */
 
+$current_category = 'category_' . get_query_var('cat');
 $postImage = '';
 if (function_exists('z_taxonomy_image_url') && z_taxonomy_image_url() != '') {
 	$postImage = ' style="background:url(' . z_taxonomy_image_url() . ') no-repeat center top; padding-top:700px;"';
 }
 
 ?>
+
 <div class="split-layout background"<?php echo $postImage ?>>
 
-	<div class="container white content">
-		<div class="row">
-			<div class="span1">&nbsp;</div>
-			<div class="span10">
-				<h1><?php echo single_cat_title(); ?></h1>
-				<?php echo category_description(); ?>
+	<?php if (have_posts()) : ?>
+		<div class="container white content">
+			<div class="row">
+				<div class="span1">&nbsp;</div>
+				<div class="span9">
+					<h1><?php echo single_cat_title(); ?></h1>
+					<?php echo category_description(); ?>
+				</div>
+				<div class="span2">&nbsp;</div>
 			</div>
-			<div class="span1">&nbsp;</div>
 		</div>
-	</div>
+	<?php endif; ?>
 
 	<div class="container white content">
 		<div class="row">
 			<div class="span1">&nbsp;</div>
-			<div class="span10">
+			<div class="span9">
 				<?php if (have_posts()) : ?>
 					<ul class="book-list">
 						<?php while (have_posts()) : the_post(); ?>
@@ -45,23 +49,24 @@ if (function_exists('z_taxonomy_image_url') && z_taxonomy_image_url() != '') {
 						<?php endwhile; ?>
 					</ul>
 				<?php else : ?>
-					<h1><?php echo single_cat_title(); ?><?php _e(' has no posts', 'alastairhumphreys'); ?></h1>
+					<h1><?php echo single_cat_title(); ?><?php _e(' has no books', 'alastairhumphreys'); ?></h1>
 					<p><?php _e('Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post.', 'alastairhumphreys'); ?></p>
 					<?php get_search_form(); ?>
 				<?php endif; ?>
 			</div>
-			<div class="span1">&nbsp;</div>
+			<div class="span2">&nbsp;</div>
 		</div>
 	</div>
 
 	<!-- Further Reading -->
-	<div class="container white content">
+	<div class="container white content further-reading">
 		<div class="row">
 			<div class="span1">&nbsp;</div>
-			<div class="span10">
-				<h2>Further Reading</h2>
+			<div class="span9">
+				<h3>Further Reading</h3>
+				<?php the_field('additional_info', $current_category); ?>
 			</div>
-			<div class="span1">&nbsp;</div>
+			<div class="span2">&nbsp;</div>
 		</div>
 	</div>
 </div>
