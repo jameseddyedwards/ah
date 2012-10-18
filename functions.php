@@ -38,9 +38,12 @@
  * @since Twenty Eleven 1.0
  */
 
-/* Include Meta Box */
-include 'inc/shortcodes.php';
-//include 'inc/meta-box-template.php';
+/* Includes */
+include TEMPLATEPATH . '/inc/shortcodes.php';
+include TEMPLATEPATH . '/inc/styles.php';
+include TEMPLATEPATH . '/inc/scripts.php';
+
+
 
 /**
  * Set the content width based on the theme's design and stylesheet.
@@ -111,7 +114,7 @@ function alastairhumphreys_setup() {
 	//add_custom_background();
 
 	// This theme uses Featured Images (also known as post thumbnails) for per-post/per-page Custom Header images
-	add_theme_support('post-thumbnails');
+	//add_theme_support('post-thumbnails');
 
 	// The next four constants set how Twenty Eleven supports custom headers.
 
@@ -142,59 +145,6 @@ function alastairhumphreys_setup() {
 	// custom headers. See alastairhumphreys_admin_header_style(), below.
 	add_custom_image_header( 'alastairhumphreys_header_style', 'alastairhumphreys_admin_header_style', 'alastairhumphreys_admin_header_image' );
 
-	// ... and thus ends the changeable header business.
-
-	// Default custom headers packaged with the theme. %s is a placeholder for the theme template directory URI.
-	register_default_headers( array(
-		'wheel' => array(
-			'url' => '%s/images/headers/wheel.jpg',
-			'thumbnail_url' => '%s/images/headers/wheel-thumbnail.jpg',
-			/* translators: header image description */
-			'description' => __( 'Wheel', 'alastairhumphreys' )
-		),
-		'shore' => array(
-			'url' => '%s/images/headers/shore.jpg',
-			'thumbnail_url' => '%s/images/headers/shore-thumbnail.jpg',
-			/* translators: header image description */
-			'description' => __( 'Shore', 'alastairhumphreys' )
-		),
-		'trolley' => array(
-			'url' => '%s/images/headers/trolley.jpg',
-			'thumbnail_url' => '%s/images/headers/trolley-thumbnail.jpg',
-			/* translators: header image description */
-			'description' => __( 'Trolley', 'alastairhumphreys' )
-		),
-		'pine-cone' => array(
-			'url' => '%s/images/headers/pine-cone.jpg',
-			'thumbnail_url' => '%s/images/headers/pine-cone-thumbnail.jpg',
-			/* translators: header image description */
-			'description' => __( 'Pine Cone', 'alastairhumphreys' )
-		),
-		'chessboard' => array(
-			'url' => '%s/images/headers/chessboard.jpg',
-			'thumbnail_url' => '%s/images/headers/chessboard-thumbnail.jpg',
-			/* translators: header image description */
-			'description' => __( 'Chessboard', 'alastairhumphreys' )
-		),
-		'lanterns' => array(
-			'url' => '%s/images/headers/lanterns.jpg',
-			'thumbnail_url' => '%s/images/headers/lanterns-thumbnail.jpg',
-			/* translators: header image description */
-			'description' => __( 'Lanterns', 'alastairhumphreys' )
-		),
-		'willow' => array(
-			'url' => '%s/images/headers/willow.jpg',
-			'thumbnail_url' => '%s/images/headers/willow-thumbnail.jpg',
-			/* translators: header image description */
-			'description' => __( 'Willow', 'alastairhumphreys' )
-		),
-		'hanoi' => array(
-			'url' => '%s/images/headers/hanoi.jpg',
-			'thumbnail_url' => '%s/images/headers/hanoi-thumbnail.jpg',
-			/* translators: header image description */
-			'description' => __( 'Hanoi Plant', 'alastairhumphreys' )
-		)
-	) );
 }
 endif; // alastairhumphreys_setup
 

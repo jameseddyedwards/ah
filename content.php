@@ -20,7 +20,7 @@
 
 		<?php if (has_post_thumbnail()) { ?>
 			<div class="span4">
-				<?php the_post_thumbnail(); ?>
+				<img src="<?php the_field('thumbnail'); ?>" alt="<?php the_title(); ?>" />
 			</div>
 		<?php } ?>
 

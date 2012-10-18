@@ -9,9 +9,15 @@
 
 get_header();
 
+if (get_field('post_layout') == '') {
+	$layout = post;
+} else {
+	$layout = get_field('post_layout');
+}
+
 ?>
 
 <!-- Post -->
-<?php get_template_part('content', get_field('post_layout')); ?>
+<?php get_template_part('content', $layout); ?>
 
 <?php get_footer(); ?>

@@ -14,7 +14,9 @@
  * @since Twenty Eleven 1.0
  */
 
-get_header(); ?>
+get_header();
+
+?>
 
 <div class="split-layout background"<?php echo $postImage ?>>
 
@@ -25,23 +27,11 @@ get_header(); ?>
 				<?php while (have_posts()) : the_post(); ?>
 					<h1><?php the_title(); ?></h1>
 					<?php the_content(); ?>
-				<?php endwhile; // end of the loop. ?>
+				<?php endwhile; ?>
 			</div>
 			<div class="span1">&nbsp;</div>
 		</div>
 	</div>
-
-	<!--
-	<div class="container white content">
-		<div class="row">
-			<div class="span1">&nbsp;</div>
-			<div class="span10">
-				
-			</div>
-			<div class="span1">&nbsp;</div>
-		</div>
-	</div>
-	-->
 
 	<!-- Testimonials -->
 	<?php if (get_field('testimonials') != '') { ?>

@@ -29,7 +29,7 @@
 			<?php if ($currentPostID != $recentPostID) { ?>
 				<div class="span4">
 					<a class="post-thumb" href="<?php the_permalink(); ?>">
-						<?php the_post_thumbnail(); ?>
+						<img src="<?php the_field('thumbnail'); ?>" alt="<?php the_title(); ?>" />
 						<span class="title"><?php the_title(); ?></span>
 					</a>
 					<span class="excerpt"><?php echo strip_tags(get_the_excerpt()) ?>...</span>

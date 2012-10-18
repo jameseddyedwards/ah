@@ -16,7 +16,7 @@
 	?>
 	<?php foreach($myposts as $post) : setup_postdata($post); ?>
 		<div class="gallery">
-			<img src="<?php the_field('post_background') ?>" alt="<?php echo single_cat_title(); ?>" />
+			<img src="<?php the_field('feature_image') ?>" alt="<?php echo single_cat_title(); ?>" />
 		</div>
 		<div class="container white content">
 			<div class="row">
@@ -94,7 +94,7 @@
 					<?php while (have_posts()) : the_post(); ?>
 						<div class="span3">
 							<a class="post-thumb" href="<?php the_permalink(); ?>">
-								<?php the_post_thumbnail(); ?>
+								<img src="<?php the_field('thumbnail'); ?>" alt="<?php the_title(); ?>" />
 								<span class="title"><?php the_title(); ?></span>
 							</a>
 						</div>

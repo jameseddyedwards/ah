@@ -14,13 +14,19 @@
  * @subpackage AlastairHumphreys
  */
 
-get_header(); ?>
+get_header();
 
-<?php //echo do_shortcode('[gallery columns="1"]'); ?>
+?>
 
-<ul class="gallery">
-	<li><img src="<?php bloginfo('template_url'); ?>/images/gallery/home/01.png" alt="" height="" width="" /></li>
-</ul>
+<?php if (get_field('carousel_gallery') != '') { ?>
+	<div id="myCarousel" class="carousel slide gallery">
+		<div class="carousel-inner">
+			<?php the_field('carousel_gallery'); ?>
+		</div>
+		<a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
+		<a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+	</div>
+<?php } ?>
 
 <div class="container white">
 
@@ -50,7 +56,7 @@ get_header(); ?>
 		<?php foreach($bestbits as $post) :	setup_postdata($post); ?>
 			<div class="span4">
 				<a class="post-thumb" href="<?php the_permalink(); ?>">
-					<?php the_post_thumbnail(); ?>
+					<img src="<?php the_field('thumbnail'); ?>" alt="<?php the_title(); ?>" />
 					<span class="title"><?php the_title(); ?></span>
 				</a>
 				<span class="excerpt"><?php echo strip_tags(get_the_excerpt()) ?>...</span>
@@ -67,7 +73,7 @@ get_header(); ?>
 		<?php foreach($recentPosts as $post) :	setup_postdata($post); ?>
 			<div class="span4">
 				<a class="post-thumb" href="<?php the_permalink(); ?>">
-					<?php the_post_thumbnail(); ?>
+					<img src="<?php the_field('thumbnail'); ?>" alt="<?php the_title(); ?>" />
 					<span class="title"><?php the_title(); ?></span>
 				</a>
 				<span class="excerpt"><?php echo strip_tags(get_the_excerpt()) ?>...</span>

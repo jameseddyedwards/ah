@@ -38,7 +38,7 @@ if (function_exists('z_taxonomy_image_url') && z_taxonomy_image_url() != '') {
 					<ul class="book-list">
 						<?php while (have_posts()) : the_post(); ?>
 							<li class="clearfix">
-								<?php the_post_thumbnail(); ?>
+								<img src="<?php the_field('thumbnail'); ?>" alt="<?php the_title(); ?>" />
 								<div class="info">
 									<h2><a class="title" href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
 									<span class="summary"><?php the_field('book_meta') ?></span>

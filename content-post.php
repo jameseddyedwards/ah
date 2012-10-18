@@ -11,8 +11,8 @@
 <?php while (have_posts()) : the_post(); ?>
 	<?php
 		$postImage = '';
-		if (get_field('post_background') != '') {
-			$postImage = ' style="background:url(' . get_field('post_background') . ') no-repeat center top; padding-top:700px;"';
+		if (get_field('feature_image') != '') {
+			$postImage = ' style="background:url(' . get_field('feature_image') . ') no-repeat center top; padding-top:700px;"';
 		}
 	?>
 	<div class="background"<?php echo $postImage ?>>
@@ -133,11 +133,15 @@
 		</div>
 	</div>
 
-	<!-- Comments -->
-	<?php comments_template('', true); ?>
+	<div class="background">
+		<div class="container white content">
+			<!-- Comments -->
+			<?php comments_template('', true); ?>
 
-	<!-- Comments Form -->
-	<?php get_template_part('content', 'comments-form'); ?>
+			<!-- Comments Form -->
+			<?php get_template_part('content', 'comments-form'); ?>
+		</div>
+	</div>
 
 <?php endwhile; ?>
 

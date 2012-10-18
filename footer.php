@@ -9,7 +9,7 @@
  * @since Twenty Eleven 1.0
  */
 
-// Twitter Feed Code
+/* Twitter Feed Code
 $username = "Al_Humphreys";
 $limit = 3;
 $feed = 'http://twitter.com/statuses/user_timeline.rss?screen_name='.$username.'&count='.$limit;
@@ -44,7 +44,7 @@ echo "negative";
 	$tweetout .= "$span$v</span>\n";
 	$counter++;
 }
-
+*/
 ?>
 
 <div class="footer full-section white">
@@ -119,7 +119,9 @@ echo "negative";
 			</div>
 			<div class="span3 social">
 				<h4>Twitter</h4>
-				<?=$tweetout;?>
+				<?/*
+					=$tweetout;
+				*/?>
 
 				<!-- Follow -->
 				<a href="https://twitter.com/Al_Humphreys" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false">Follow @Al_Humphreys</a>

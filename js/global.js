@@ -9,9 +9,11 @@ function tabbed(element) {
 			that.addClass("active");
 		}
 	});
-	console.log("initiated")
 }
 
 $(document).ready( function() {
 	tabbed(".tabs");
+	if ($('.gallery').length > 0) {
+		$('.gallery').carousel();
+	}
 });

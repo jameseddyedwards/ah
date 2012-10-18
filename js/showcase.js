@@ -24,7 +24,6 @@
 				$('.' + this.attr("id")).show();
 			}
 		});
-		console.log("initiated")
 	}
 
 	$(document).ready( function() {

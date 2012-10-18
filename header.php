@@ -50,6 +50,10 @@
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('template_url'); ?>/css/bootstrap.css" />
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('stylesheet_url'); ?>" />
+<?php if (get_field('carousel_gallery') != '') { ?>
+	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('template_url'); ?>/css/carousel.css" />
+<?php } ?>
+
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 <!--[if lt IE 9]>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
@@ -58,8 +62,9 @@
 	/* We add some JavaScript to pages with the comment form
 	 * to support sites with threaded comments (when in use).
 	 */
-	if ( is_singular() && get_option( 'thread_comments' ) )
-		wp_enqueue_script( 'comment-reply' );
+	if (is_singular() && get_option('thread_comments')) {
+		wp_enqueue_script('comment-reply');
+	}
 
 	/* Always have wp_head() just before the closing </head>
 	 * tag of your theme, or you will break many plugins, which
@@ -68,6 +73,9 @@
 	 */
 	wp_head();
 ?>
+
+
+
 </head>
 
 <body <?php body_class(); ?>>

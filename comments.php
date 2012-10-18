@@ -17,13 +17,12 @@
 	<div class="span2">&nbsp;</div>
 	<div class="span10">
 		<h2>Comments</h2>
-		<?php if (comments_open() && !is_page() && post_type_supports(get_post_type(), 'comments')) { // No comments or comments disabled ?>
+		<?php if (!have_comments()) { // No comments or comments disabled ?>
 			<p class="nocomments"><?php _e('There are currently no comments. Be the first to post a comment below.', 'alastairhumphreys'); ?></p>
 		<?php } elseif (have_comments()) { ?>
 			<?php if (post_password_required()) { ?>
 				<p class="nopassword"><?php _e('This post is password protected. Enter the password to view any comments.', 'alastairhumphreys'); // Comments are password protected ?></p>
 			<?php } else { ?>
-				<?php return; ?>
 
 				<?php if (get_comment_pages_count() > 1 && get_option('page_comments')) : // are there comments to navigate through ?>
 					<nav id="comment-nav-above">
