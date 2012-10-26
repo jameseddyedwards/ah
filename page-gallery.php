@@ -4,8 +4,8 @@
  * Description: A Page Template that shows a large feature image with a small gallery area below
  *
  * @package WordPress
- * @subpackage Twenty_Eleven
- * @since Twenty Eleven 1.0
+ * @subpackage AlastairHumphreys
+ * @since Alastair Humphreys 1.0
  */
 
 get_header();

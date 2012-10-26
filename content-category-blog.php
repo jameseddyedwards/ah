@@ -3,8 +3,8 @@
  * The template for displaying content in the single.php template
  *
  * @package WordPress
- * @subpackage Twenty_Eleven
- * @since Twenty Eleven 1.0
+ * @subpackage AlastairHumphreys
+ * @since Alastair Humphreys 1.0
  */
 ?>
 
@@ -15,9 +15,11 @@
 	$myposts = get_posts($args);
 	?>
 	<?php foreach($myposts as $post) : setup_postdata($post); ?>
-		<div class="gallery">
-			<img src="<?php the_field('feature_image') ?>" alt="<?php echo single_cat_title(); ?>" />
-		</div>
+		<?php if (get_field('feature_image') != '') { ?>
+			<div class="gallery">
+				<img src="<?php the_field('feature_image') ?>" alt="<?php echo single_cat_title(); ?>" />
+			</div>
+		<?php } ?>
 		<div class="container white content">
 			<div class="row">
 				<div class="span2">
@@ -94,7 +96,7 @@
 					<?php while (have_posts()) : the_post(); ?>
 						<div class="span3">
 							<a class="post-thumb" href="<?php the_permalink(); ?>">
-								<img src="<?php the_field('thumbnail'); ?>" alt="<?php the_title(); ?>" />
+								<img src="<?php echo ah_get_custom_thumb(); ?>" alt="<?php the_title(); ?>" />
 								<span class="title"><?php the_title(); ?></span>
 							</a>
 						</div>

@@ -212,14 +212,26 @@ header .searchform {float:right; margin-right:15px;}
 header #social-icons {float:right;}
 header #social-icons li {margin-left:5px;}
 
-nav {clear:right; float:right; margin:15px -10px 0 0;}
-nav ul li a {color:#252525; display:inline-block; font:21px din-light, sans-serif; padding:4px 10px 0; text-transform:uppercase;}
-nav ul li a:hover,
-nav ul .current-menu-item a {background:#3a3a3a; color:#fff; text-decoration:none;}
+nav {clear:right; float:right; margin:15px -10px 0 0; position:relative;}
+.menu > li > a {color:#252525; display:inline-block; font:21px din-light, sans-serif; padding:4px 10px 0; text-transform:uppercase;}
+.menu > li > a:hover,
+.menu > .current-menu-item > a {background:#3a3a3a; color:#fff; text-decoration:none;}
+.menu .sub-menu {display:none;}
 
 .sub-menu {background:#fff; display:none; height:200px; border:1px solid #ccc; width:500px;}
 
-.dropdown {display:none;}
+.dropdown {background:#fff; display:none; left:73px; padding:25px; position:absolute; top:37px; width:590px; z-index:10;
+box-shadow:1px 3px 5px #ccc;}
+.dropdown .category {position:relative;}
+.dropdown .cat-title {clear:both; color:#272727; display:block; font:18px din-light, sans-serif; margin-bottom:5px; text-transform:uppercase;}
+.dropdown .feature-image {display:inline-block; float:left; margin-right:20px;}
+.dropdown ul {display:inline-block; float:left; margin-right:20px; padding-bottom:40px; width:140px;}
+.dropdown ul li {display:block;}
+.dropdown ul li a {color:#272727; display:block; font:14px din-light, sans-serif;}
+.dropdown .view-all {background:url('images/button/arrow-right.png') no-repeat right center; bottom:3px; color:#272727; font-size:14px; font-style:italic; padding-right:12px; position:absolute; right:57px;}
+.micro-adventures .view-all {right:17px;}
+.speaking .view-all {right:71px;}
+.dropdown hr {margin:10px 0;}
 
 /* Search */
 .searchform .field {border:1px solid #d0d0d0; color:#797979; float:left; font-size:11px; padding:6px 5px 5px; width:230px;}
@@ -262,8 +274,8 @@ nav ul .current-menu-item a {background:#3a3a3a; color:#fff; text-decoration:non
 
 .tab-row {display:none;}
 .tab-row.active {display:block;}
-.post-thumb {display:block; min-height:46px; overflow:hidden; position:relative;}
-.post-thumb span {background:url("images/background/dark.png"); bottom:0px; color:#fff; font:18px din-light, sans-serif; left:0px; padding:10px 13px 6px; position:absolute; width:100%;}
+.post-thumb {display:block; height:240px; overflow:hidden; position:relative;}
+.post-thumb span {background:url("images/background/dark.png"); bottom:0px; color:#fff; font:18px din-light, sans-serif; left:0px; padding:1% 3%; position:absolute; width:94%;}
 .post-thumb:hover span {background:#000;}
 .excerpt {color:#191919; display:block; font-size:15px; font-style:italic; height:105px; line-height:22px; margin-top:15px; overflow:hidden;}
 
@@ -291,6 +303,8 @@ nav ul .current-menu-item a {background:#3a3a3a; color:#fff; text-decoration:non
 
 .single-post .content,
 .category-blog .content {margin-top:20px;}
+.category-blog .post-thumb {height:175px; margin-bottom:20px;}
+
 .featured {margin-top:0 !important;}
 article h1 {color:#333333; font:45px/44px din-light, helvetica, arial; margin:20px 0; text-transform:uppercase;}
 article h2 {color:#333333; font:27px/36px din-light, helvetica, arial; margin-bottom:10px;}
@@ -353,16 +367,14 @@ article .meta {display:block; font-style:italic; margin-bottom:30px;}
 
 
 /* Books */
-.split-layout .container {padding:60px 0;}
+.split-layout .container {padding:60px 30px;}
 .split-layout h1 {font-size:45px; margin:10px 0 40px; text-transform:uppercase;}
 
-.book-list li {border-bottom:1px dotted #999; display:block; margin-bottom:50px; padding-bottom:50px;}
-.book-list .wp-post-image {float:left;}
-.book-list .info {float:right; width:600px;}
-.book-list .info h2,
-.book-list .info h2 a {color:#333; font:37px/46px din-light, helvetica, arial; text-transform:uppercase;}
-.book-list .info h2 a:hover {text-decoration:none;}
-.book-list .info .summary,
+.book-menu hr {margin-bottom:50px;}
+.book-menu .info h2 {margin-bottom:0;}
+.book-menu .info h2 a {color:#333; font:37px/46px din-light, helvetica, arial; text-transform:uppercase;}
+.book-menu .info h2 a:hover {text-decoration:none;}
+.book-menu .info .summary,
 .book .summary {color:#4a4a4a; display:block; font-style:italic; margin-bottom:30px;}
 
 .category-books h3 {color:#333333; font:38px/46px din-light, helvetica, arial; margin-bottom:10px; text-transform:uppercase;}

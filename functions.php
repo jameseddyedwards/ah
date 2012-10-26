@@ -1,6 +1,6 @@
 <?php
 /**
- * Twenty Eleven functions and definitions
+ * Alastair Humphreys functions and definitions
  *
  * Sets up the theme and provides some helper functions. Some helper functions
  * are used in the theme as custom template tags. Others are attached to action and
@@ -34,8 +34,8 @@
  * For more information on hooks, actions, and filters, see http://codex.wordpress.org/Plugin_API.
  *
  * @package WordPress
- * @subpackage Twenty_Eleven
- * @since Twenty Eleven 1.0
+ * @subpackage AlastairHumphreys
+ * @since Alastair Humphreys 1.0
  */
 
 /* Includes */
@@ -43,20 +43,12 @@ include TEMPLATEPATH . '/inc/shortcodes.php';
 include TEMPLATEPATH . '/inc/styles.php';
 include TEMPLATEPATH . '/inc/scripts.php';
 
-
-
-/**
- * Set the content width based on the theme's design and stylesheet.
- */
-if (!isset($content_width))
-	$content_width = 584;
-
 /**
  * Tell WordPress to run alastairhumphreys_setup() when the 'after_setup_theme' hook is run.
  */
-add_action( 'after_setup_theme', 'alastairhumphreys_setup' );
+add_action('after_setup_theme', 'alastairhumphreys_setup');
 
-if ( ! function_exists( 'alastairhumphreys_setup' ) ):
+if (!function_exists('alastairhumphreys_setup')):
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -76,39 +68,27 @@ if ( ! function_exists( 'alastairhumphreys_setup' ) ):
  * @uses register_default_headers() To register the default custom header images provided with the theme.
  * @uses set_post_thumbnail_size() To set a custom post thumbnail size.
  *
- * @since Twenty Eleven 1.0
+ * @since Alastair Humphreys 1.0
  */
 function alastairhumphreys_setup() {
 
-	/* Make Twenty Eleven available for translation.
+	/* Make Alastair Humphreys available for translation.
 	 * Translations can be added to the /languages/ directory.
-	 * If you're building a theme based on Twenty Eleven, use a find and replace
+	 * If you're building a theme based on Alastair Humphreys, use a find and replace
 	 * to change 'alastairhumphreys' to the name of your theme in all the template files.
 	 */
-	load_theme_textdomain( 'alastairhumphreys', TEMPLATEPATH . '/languages' );
+	load_theme_textdomain('alastairhumphreys', TEMPLATEPATH . '/languages');
 
 	$locale = get_locale();
 	$locale_file = TEMPLATEPATH . "/languages/$locale.php";
-	if ( is_readable( $locale_file ) )
-		require_once( $locale_file );
-
-	// This theme styles the visual editor with editor-style.css to match the theme style.
-	add_editor_style();
-
-	// Load up our theme options page and related code.
-	require( dirname( __FILE__ ) . '/inc/theme-options.php' );
-
-	// Grab Twenty Eleven's Ephemera widget.
-	require( dirname( __FILE__ ) . '/inc/widgets.php' );
+	if (is_readable($locale_file))
+		require_once($locale_file);
 
 	// Add default posts and comments RSS feed links to <head>.
-	add_theme_support( 'automatic-feed-links' );
+	add_theme_support('automatic-feed-links');
 
 	// This theme uses wp_nav_menu() in one location.
-	register_nav_menu('primary', __( 'Primary Menu', 'alastairhumphreys'));
-
-	// Add support for a variety of post formats
-	//add_theme_support('post-formats', array('video'));
+	register_nav_menu('primary', __('Primary Menu', 'alastairhumphreys'));
 
 	// Add support for custom backgrounds
 	//add_custom_background();
@@ -116,134 +96,131 @@ function alastairhumphreys_setup() {
 	// This theme uses Featured Images (also known as post thumbnails) for per-post/per-page Custom Header images
 	//add_theme_support('post-thumbnails');
 
-	// The next four constants set how Twenty Eleven supports custom headers.
-
-	// The default header text color
-	define('HEADER_TEXTCOLOR', '000');
-
-	// By leaving empty, we allow for random image rotation.
-	define('HEADER_IMAGE', '');
-
-	// The height and width of your custom header.
-	// Add a filter to alastairhumphreys_header_image_width and alastairhumphreys_header_image_height to change these values.
-	define( 'HEADER_IMAGE_WIDTH', apply_filters( 'alastairhumphreys_header_image_width', 1000 ) );
-	define( 'HEADER_IMAGE_HEIGHT', apply_filters( 'alastairhumphreys_header_image_height', 288 ) );
-
-	// We'll be using post thumbnails for custom header images on posts and pages.
-	// We want them to be the size of the header image that we just defined
-	// Larger images will be auto-cropped to fit, smaller ones will be ignored. See header.php.
-	set_post_thumbnail_size( HEADER_IMAGE_WIDTH, HEADER_IMAGE_HEIGHT, true );
-
-	// Add Twenty Eleven's custom image sizes
-	add_image_size( 'large-feature', HEADER_IMAGE_WIDTH, HEADER_IMAGE_HEIGHT, true ); // Used for large feature (header) images
-	add_image_size( 'small-feature', 500, 300 ); // Used for featured posts if a large-feature doesn't exist
-
-	// Turn on random header image rotation by default.
-	add_theme_support( 'custom-header', array( 'random-default' => true ) );
-
-	// Add a way for the custom header to be styled in the admin panel that controls
-	// custom headers. See alastairhumphreys_admin_header_style(), below.
-	add_custom_image_header( 'alastairhumphreys_header_style', 'alastairhumphreys_admin_header_style', 'alastairhumphreys_admin_header_image' );
-
+	// Add Alastair Humphreys's custom image sizes
+	add_image_size('feature', 1600, 860); // Used for large feature (header) images
+	add_image_size('thumbnail', 370, 240); // Used for featured posts if a large-feature doesn't exist
 }
 endif; // alastairhumphreys_setup
 
-if ( ! function_exists( 'alastairhumphreys_header_style' ) ) :
-/**
- * Styles the header image and text displayed on the blog
- *
- * @since Twenty Eleven 1.0
- */
-function alastairhumphreys_header_style() {
 
-	// If no custom options for text are set, let's bail
-	// get_header_textcolor() options: HEADER_TEXTCOLOR is default, hide text (returns 'blank') or any hex value
-	if ( HEADER_TEXTCOLOR == get_header_textcolor() )
-		return;
-	// If we get this far, we have custom styles. Let's do this.
+function ah_get_custom_thumb() {
+	$defaultThumbnail = get_field('thumbnail') == '' ? get_bloginfo('template_url') . '/images/posts/Thumbs/default.jpg' : get_field('thumbnail');
+	return $defaultThumbnail;
+}
+
+function ah_get_dropdown($categories, $menuId) {
+	$i = 1;
+	$categoryCount = count($categories);
 	?>
-	<style type="text/css">
-	<?php
-		// Has the text been hidden?
-		if ( 'blank' == get_header_textcolor() ) :
-	?>
-		#site-title,
-		#site-description {
-			position: absolute !important;
-			clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
-			clip: rect(1px, 1px, 1px, 1px);
+	<div class="dropdown">
+		<?php
+		foreach ($categories as $category) {
+			$categoryId = get_cat_ID($category);
+			$categoryPosts = get_posts(array('numberposts'=>10, 'cat'=>$categoryId));
+			$featureImagePost = get_posts(array('numberposts'=>1, 'cat'=>$categoryId));
+			$categoryURL = esc_url(home_url('/')) . '?cat=' . $categoryId;
+			$categoryClass = strtolower(str_replace(" ", "-", $category));
+			?>
+		
+			<div class="category clearfix <?php echo $categoryClass ?>">
+				<a href="<?php echo $categoryURL ?>" class="cat-title"><?php echo $category ?></a>
+				<?php foreach($featureImagePost as $post) : setup_postdata($post); ?>
+					<a class="feature-image" href="<?php the_permalink(); ?>">
+						<img src="<?php echo ah_get_custom_thumb(); ?>" alt="<?php the_title(); ?>" width="215" />
+					</a>
+				<?php endforeach; ?>
+				<ul>
+					<?php foreach($categoryPosts as $post) : setup_postdata($post); ?>
+						<li>
+							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+						</li>
+					<?php endforeach; ?>
+				</ul>
+				<a href="<?php echo $categoryURL ?>" class="view-all">view all <?php echo $category ?></a>
+			</div>
+			<?php if ($i != $categoryCount) { ?>
+				<hr />
+			<?php } ?>
+			<?php
+			$i = $i + 1;
 		}
-	<?php
-		// If the user has set a custom color for the text use that
-		else :
-	?>
-		#site-title a,
-		#site-description {
-			color: #<?php echo get_header_textcolor(); ?> !important;
-		}
-	<?php endif; ?>
-	</style>
+		?>
+	</div>
 	<?php
 }
-endif; // alastairhumphreys_header_style
 
-if ( ! function_exists( 'alastairhumphreys_admin_header_style' ) ) :
-/**
- * Styles the header image displayed on the Appearance > Header admin panel.
- *
- * Referenced via add_custom_image_header() in alastairhumphreys_setup().
- *
- * @since Twenty Eleven 1.0
- */
-function alastairhumphreys_admin_header_style() {
-?>
-	<style type="text/css">
-	.appearance_page_custom-header #headimg {
-		border: none;
-	}
-	#headimg h1,
-	#desc {
-		font-family: "Helvetica Neue", Arial, Helvetica, "Nimbus Sans L", sans-serif;
-	}
-	#headimg h1 {
-		margin: 0;
-	}
-	#headimg h1 a {
-		font-size: 32px;
-		line-height: 36px;
-		text-decoration: none;
-	}
-	#desc {
-		font-size: 14px;
-		line-height: 23px;
-		padding: 0 0 3em;
-	}
-	<?php
-		// If the user has set a custom color for the text use that
-		if ( get_header_textcolor() != HEADER_TEXTCOLOR ) :
-	?>
-		#site-title a,
-		#site-description {
-			color: #<?php echo get_header_textcolor(); ?>;
+
+function twitter_messages($username = 'Al_Humphreys', $num = 3, $list = false, $update = true, $linked  = '#', $hyperlinks = true, $twitter_users = true, $encode_utf8 = false) {
+
+	global $twitter_options;
+	include_once(ABSPATH . WPINC . '/rss.php');
+
+	$rss= fetch_feed('http://api.twitter.com/1/statuses/user_timeline/'.$username.'.rss');
+
+	if ($list) echo '<ul class="twitter">';
+
+	if ($username == '') {
+		if ($list) echo '<li>';
+		echo 'RSS not configured';
+		if ($list) echo '</li>';
+	} else {
+			if ( is_wp_error($rss) ) {
+						if ($list) echo '<li>';
+						echo 'error retrieving feed';
+						if ($list) echo '</li>';
+			} else {
+				$messages = $rss->get_items(0, $num);
+
+				foreach ($messages as $message ) {
+					$msg = " ".substr(strstr($message->get_description(),': '), 2, strlen($message->get_description()))." ";
+
+					if($encode_utf8) {
+						$msg = utf8_encode($msg);
+					}
+					$link = $message->get_permalink();
+					if ($list)
+						echo '<li class="twitter-item">';
+					elseif ($num != 1)
+						echo '<p class="twitter-message">';
+		          	if ($hyperlinks) {
+		          		$msg = hyperlinks($msg);
+		          	}
+		          	if ($twitter_users)  {
+		          		$msg = twitter_users($msg);
+		          	}
+					if ($linked != '' || $linked != false) {
+			            if($linked == 'all')  {
+			            	$msg = '<a href="'.$link.'" class="twitter-link">'.$msg.'</a>';  // Puts a link to the status of each tweet
+			            } else {
+			            	$msg = $msg . '<a href="'.$link.'" class="twitter-link">'.$linked.'</a>'; // Puts a link to the status of each tweet
+			            }
+		          	}
+		        	echo $msg;
+		        	if($update) {
+		        	    $time = strtotime($message['pubdate']);
+		        	    if ( ( abs( time() - $time) ) < 86400 ) {
+		        	        $h_time = sprintf( __('%s ago'), human_time_diff( $time ) );
+		        		}
+		        	    else {
+		        	        $h_time = date(__('Y/m/d'), $time);
+		        	    }
+		        	    echo sprintf( __('%s', 'twitter-for-wordpress'),' <span class="twitter-timestamp"><abbr title="' . date(__('Y/m/d H:i:s'), $time) . '">' . $h_time . '</abbr></span>' );
+		        	}
+					if ($list) echo '</li>'; elseif ($num != 1) echo '</p>';
+				} /* end foreach*/
+			} /* close else */
 		}
-	<?php endif; ?>
-	#headimg img {
-		max-width: 1000px;
-		height: auto;
-		width: 100%;
-	}
-	</style>
-<?php
+		if ($list) echo '</ul>';
 }
-endif; // alastairhumphreys_admin_header_style
 
-if ( ! function_exists( 'alastairhumphreys_admin_header_image' ) ) :
+
+if (!function_exists( 'alastairhumphreys_admin_header_image')) :
 /**
  * Custom header image markup displayed on the Appearance > Header admin panel.
  *
  * Referenced via add_custom_image_header() in alastairhumphreys_setup().
  *
- * @since Twenty Eleven 1.0
+ * @since Alastair Humphreys 1.0
  */
 function alastairhumphreys_admin_header_image() { ?>
 	<div id="headimg">
@@ -269,51 +246,10 @@ endif; // alastairhumphreys_admin_header_image
  * To override this length in a child theme, remove the filter and add your own
  * function tied to the excerpt_length filter hook.
  */
-function alastairhumphreys_excerpt_length( $length ) {
+function alastairhumphreys_excerpt_length($length) {
 	return 40;
 }
-add_filter( 'excerpt_length', 'alastairhumphreys_excerpt_length' );
-
-/**
- * Returns a "Continue Reading" link for excerpts
- */
-function alastairhumphreys_continue_reading_link() {
-	return ' <a href="'. esc_url( get_permalink() ) . '">' . __( '...', 'alastairhumphreys' ) . '</a>';
-}
-
-/**
- * Replaces "[...]" (appended to automatically generated excerpts) with an ellipsis and alastairhumphreys_continue_reading_link().
- *
- * To override this in a child theme, remove the filter and add your own
- * function tied to the excerpt_more filter hook.
- */
-function alastairhumphreys_auto_excerpt_more( $more ) {
-	return '' . alastairhumphreys_continue_reading_link();
-}
-add_filter('excerpt_more', 'alastairhumphreys_auto_excerpt_more');
-
-/**
- * Adds a pretty "Continue Reading" link to custom post excerpts.
- *
- * To override this link in a child theme, remove the filter and add your own
- * function tied to the get_the_excerpt filter hook.
- */
-function alastairhumphreys_custom_excerpt_more( $output ) {
-	if ( has_excerpt() && ! is_attachment() ) {
-		$output .= alastairhumphreys_continue_reading_link();
-	}
-	return $output;
-}
-add_filter( 'get_the_excerpt', 'alastairhumphreys_custom_excerpt_more' );
-
-/**
- * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
- */
-function alastairhumphreys_page_menu_args( $args ) {
-	$args['show_home'] = true;
-	return $args;
-}
-add_filter( 'wp_page_menu_args', 'alastairhumphreys_page_menu_args' );
+add_filter('excerpt_length', 'alastairhumphreys_excerpt_length');
 
 /**
  * Removes automatic html tags in post text
@@ -322,140 +258,27 @@ add_filter( 'wp_page_menu_args', 'alastairhumphreys_page_menu_args' );
 //remove_filter('the_excerpt', 'wpautop');
 remove_filter('term_description', 'wpautop');
 
-$filters = array('pre_term_description', 'pre_link_description', 'pre_link_notes', 'pre_user_description');
-foreach ( $filters as $filter ) {
+$filters = array('pre_term_description', 'term_description', 'pre_link_description', 'pre_link_notes', 'pre_user_description');
+foreach ($filters as $filter) {
     remove_filter($filter, 'wp_filter_kses');
 }
-
-$filters = array('term_description', 'pre_link_description', 'pre_link_notes', 'pre_user_description');
-foreach ( $filters as $filter ) {
-    remove_filter($filter, 'wp_filter_kses');
-}
-
-/**
- * Register our sidebars and widgetized areas. Also register the default Epherma widget.
- *
- * @since Twenty Eleven 1.0
- */
-/*
-function alastairhumphreys_widgets_init() {
-
-	register_widget( 'Twenty_Eleven_Ephemera_Widget' );
-
-	register_sidebar( array(
-		'name' => __( 'Main Sidebar', 'alastairhumphreys' ),
-		'id' => 'sidebar-1',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => "</aside>",
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
-	) );
-
-	register_sidebar( array(
-		'name' => __( 'Showcase Sidebar', 'alastairhumphreys' ),
-		'id' => 'sidebar-2',
-		'description' => __( 'The sidebar for the optional Showcase Template', 'alastairhumphreys' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => "</aside>",
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
-	) );
-
-	register_sidebar( array(
-		'name' => __( 'Footer Area One', 'alastairhumphreys' ),
-		'id' => 'sidebar-3',
-		'description' => __( 'An optional widget area for your site footer', 'alastairhumphreys' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => "</aside>",
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
-	) );
-
-	register_sidebar( array(
-		'name' => __( 'Footer Area Two', 'alastairhumphreys' ),
-		'id' => 'sidebar-4',
-		'description' => __( 'An optional widget area for your site footer', 'alastairhumphreys' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => "</aside>",
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
-	) );
-
-	register_sidebar( array(
-		'name' => __( 'Footer Area Three', 'alastairhumphreys' ),
-		'id' => 'sidebar-5',
-		'description' => __( 'An optional widget area for your site footer', 'alastairhumphreys' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => "</aside>",
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
-	) );
-}
-add_action( 'widgets_init', 'alastairhumphreys_widgets_init' );
-*/
 
 /**
  * Display navigation to next/previous pages when applicable
  */
-function alastairhumphreys_content_nav( $nav_id ) {
+function alastairhumphreys_content_nav($nav_id) {
 	global $wp_query;
 
-	if ( $wp_query->max_num_pages > 1 ) : ?>
+	if ($wp_query->max_num_pages > 1) : ?>
 		<nav id="<?php echo $nav_id; ?>">
 			<h3 class="assistive-text"><?php _e( 'Post navigation', 'alastairhumphreys' ); ?></h3>
 			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'alastairhumphreys' ) ); ?></div>
 			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'alastairhumphreys' ) ); ?></div>
-		</nav><!-- #nav-above -->
+		</nav>
 	<?php endif;
 }
 
-/**
- * Return the URL for the first link found in the post content.
- *
- * @since Twenty Eleven 1.0
- * @return string|bool URL or false when no link is present.
- */
-function alastairhumphreys_url_grabber() {
-	if ( ! preg_match( '/<a\s[^>]*?href=[\'"](.+?)[\'"]/is', get_the_content(), $matches ) )
-		return false;
-
-	return esc_url_raw( $matches[1] );
-}
-
-/**
- * Count the number of footer sidebars to enable dynamic classes for the footer
- */
-function alastairhumphreys_footer_sidebar_class() {
-	$count = 0;
-
-	if ( is_active_sidebar( 'sidebar-3' ) )
-		$count++;
-
-	if ( is_active_sidebar( 'sidebar-4' ) )
-		$count++;
-
-	if ( is_active_sidebar( 'sidebar-5' ) )
-		$count++;
-
-	$class = '';
-
-	switch ( $count ) {
-		case '1':
-			$class = 'one';
-			break;
-		case '2':
-			$class = 'two';
-			break;
-		case '3':
-			$class = 'three';
-			break;
-	}
-
-	if ( $class )
-		echo 'class="' . $class . '"';
-}
-
-if ( ! function_exists( 'alastairhumphreys_comment' ) ) :
+if (!function_exists('alastairhumphreys_comment')) :
 /**
  * Template for comments and pingbacks.
  *
@@ -464,11 +287,11 @@ if ( ! function_exists( 'alastairhumphreys_comment' ) ) :
  *
  * Used as a callback by wp_list_comments() for displaying the comments.
  *
- * @since Twenty Eleven 1.0
+ * @since Alastair Humphreys 1.0
  */
-function alastairhumphreys_comment( $comment, $args, $depth ) {
+function alastairhumphreys_comment($comment, $args, $depth) {
 	$GLOBALS['comment'] = $comment;
-	switch ( $comment->comment_type ) :
+	switch ($comment->comment_type) :
 		case 'pingback' :
 		case 'trackback' :
 	?>
@@ -520,62 +343,29 @@ function alastairhumphreys_comment( $comment, $args, $depth ) {
 		<div class="clear"></div>
 	</li>
 	<?php
-			break;
+		break;
 	endswitch;
 }
 endif; // ends check for alastairhumphreys_comment()
 
-if ( ! function_exists( 'alastairhumphreys_posted_on' ) ) :
-/**
- * Prints HTML with meta information for the current post-date/time and author.
- * Create your own alastairhumphreys_posted_on to override in a child theme
- *
- * @since Twenty Eleven 1.0
- */
-/*
-function alastairhumphreys_posted_on() {
-	printf( __('<span class="sep">Posted on </span><a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', 'alastairhumphreys' ),
-		esc_url(get_permalink()),
-		esc_attr(get_the_time()),
-		esc_attr(get_the_date('c')),
-		esc_html(get_the_date()),
-		esc_url(get_author_posts_url( get_the_author_meta('ID'))),
-		sprintf(esc_attr__('View all posts by %s', 'alastairhumphreys'), get_the_author()),
-		esc_html(get_the_author())
-	);
-}
-*/
-function alastairhumphreys_posted_on() {
-	printf( __('<a href="%1$s" title="%2$s" rel="bookmark"><time class="month" datetime="%3$s" pubdate>%4$s</time><span class="year">%5$s</span></a>'),
-		esc_url(get_permalink()),
-		esc_attr(get_the_time()),
-		esc_attr(get_the_date('c')),
-		esc_html(get_the_date('d/m')),
-		esc_html(get_the_date('Y')),
-		esc_url(get_author_posts_url( get_the_author_meta('ID'))),
-		sprintf(esc_attr__('View all posts by %s', 'alastairhumphreys'), get_the_author()),
-		esc_html(get_the_author())
-	);
-}
-endif;
-
-/**
- * Adds two classes to the array of body classes.
- * The first is if the site has only had one author with published posts.
- * The second is if a singular post being displayed
- *
- * @since Twenty Eleven 1.0
- */
-function alastairhumphreys_body_classes( $classes ) {
-
-	if ( ! is_multi_author() ) {
-		$classes[] = 'single-author';
+if (!function_exists('alastairhumphreys_posted_on')) {
+	/**
+	 * Prints HTML with meta information for the current post-date/time and author.
+	 * Create your own alastairhumphreys_posted_on to override in a child theme
+	 *
+	 * @since Alastair Humphreys 1.0
+	 */
+	function alastairhumphreys_posted_on() {
+		printf( __('<a href="%1$s" title="%2$s" rel="bookmark"><time class="month" datetime="%3$s" pubdate>%4$s</time><span class="year">%5$s</span></a>'),
+			esc_url(get_permalink()),
+			esc_attr(get_the_time()),
+			esc_attr(get_the_date('c')),
+			esc_html(get_the_date('d/m')),
+			esc_html(get_the_date('Y')),
+			esc_url(get_author_posts_url( get_the_author_meta('ID'))),
+			sprintf(esc_attr__('View all posts by %s', 'alastairhumphreys'), get_the_author()),
+			esc_html(get_the_author())
+		);
 	}
-
-	if ( is_singular() && ! is_home() && ! is_page_template( 'showcase.php' ) && ! is_page_template( 'sidebar-page.php' ) )
-		$classes[] = 'singular';
-
-	return $classes;
-}
-add_filter( 'body_class', 'alastairhumphreys_body_classes' );
+};
 

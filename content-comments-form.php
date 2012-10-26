@@ -3,8 +3,8 @@
  * The template for displaying the comment form on any post
  *
  * @package WordPress
- * @subpackage Twenty_Eleven
- * @since Twenty Eleven 1.0
+ * @subpackage AlastairHumphreys
+ * @since Alastair Humphreys 1.0
  */
 
 global $current_user;

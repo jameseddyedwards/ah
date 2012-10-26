@@ -1,10 +1,10 @@
 <?php
 /**
- * The template for displaying search forms in Twenty Eleven
+ * The template for displaying search forms in Alastair Humphreys
  *
  * @package WordPress
- * @subpackage Twenty_Eleven
- * @since Twenty Eleven 1.0
+ * @subpackage AlastairHumphreys
+ * @since Alastair Humphreys 1.0
  */
 ?>
 

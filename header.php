@@ -103,21 +103,19 @@
 				<?php /* Our navigation menu.  If one isn't filled out, wp_nav_menu falls back to wp_page_menu. The menu assiged to the primary position is the one used. If none is assigned, the menu with the lowest ID is used. */ ?>
 				<?php wp_nav_menu(array(
 					'theme_location'	=> 'primary',
-					'items_wrap'		=> '<ul class="inline">%3$s</ul>'
+					'menu_class'		=> 'menu inline'
 				)); ?>
 
-				<!-- Adventures -->
-				<div class="dropdown">
-					
-				</div>
+				<?php //ah_get_dropdown(array('Adventures','Micro Adventures'), 'menu-item-8380'); ?>
 
+				<?php get_template_part('content', 'dropdown'); ?>
 
 			</nav>
 		</div>
 	</header>
 
 	<div class="skip-link">
-		<a class="assistive-text" href="#content" title="<?php esc_attr_e( 'Skip to primary content', 'alastairhumphreys' ); ?>">
-			<?php _e( 'Skip to primary content', 'alastairhumphreys' ); ?>
+		<a class="assistive-text" href="#content" title="<?php esc_attr_e('Skip to primary content', 'alastairhumphreys'); ?>">
+			<?php _e('Skip to primary content', 'alastairhumphreys'); ?>
 		</a>
 	</div>

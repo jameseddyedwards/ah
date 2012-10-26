@@ -3,14 +3,14 @@
  * The template for displaying content in the single.php template
  *
  * @package WordPress
- * @subpackage Twenty_Eleven
- * @since Twenty Eleven 1.0
+ * @subpackage AlastairHumphreys
+ * @since Alastair Humphreys 1.0
  */
 ?>
 
 <?php if (function_exists('z_taxonomy_image_url')) { ?>
 	<div class="gallery">
-		<img src="<?php echo z_taxonomy_image_url(); ?>" alt="" />
+		<img src="<?php echo z_taxonomy_image_url(); ?>" alt="<?php echo category_title(); ?>" />
 	</div>
 <?php } ?>
 

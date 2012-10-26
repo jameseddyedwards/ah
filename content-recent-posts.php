@@ -3,8 +3,8 @@
  * The template for displaying recent posts in the single.php template
  *
  * @package WordPress
- * @subpackage Twenty_Eleven
- * @since Twenty Eleven 1.0
+ * @subpackage AlastairHumphreys
+ * @since Alastair Humphreys 1.0
  */
 ?>
 <?php
@@ -33,7 +33,9 @@
 				?>
 				<div class="span4">
 					<a class="post-thumb" href="<?php the_permalink(); ?>">
-						<img src="<?php the_field('thumbnail'); ?>" alt="<?php the_title(); ?>" />
+						<?php echo '~~~' . $defaultThumbnail; ?>
+						<?php $thumbnail = get_field('thumbnail') == '' ? $defaultThumbnail : get_field('thumbnail'); ?>
+						<img src="<?php echo $thumbnail; ?>" alt="<?php the_title(); ?>" />
 						<span class="title"><?php the_title(); ?></span>
 					</a>
 					<span class="excerpt"><?php echo strip_tags(get_the_excerpt()) ?>...</span>

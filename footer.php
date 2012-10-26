@@ -5,14 +5,15 @@
  * Contains the closing of the id=main div and all content after
  *
  * @package WordPress
- * @subpackage Twenty_Eleven
- * @since Twenty Eleven 1.0
+ * @subpackage AlastairHumphreys
+ * @since Alastair Humphreys 1.0
  */
 
-/* Twitter Feed Code
+/* Twitter Feed Code 
 $username = "Al_Humphreys";
 $limit = 3;
-$feed = 'http://twitter.com/statuses/user_timeline.rss?screen_name='.$username.'&count='.$limit;
+//$feed = 'http://twitter.com/statuses/user_timeline.rss?screen_name='.$username.'&count=';
+$feed = 'http://api.twitter.com/1/statuses/user_timeline.json?screen_name=' . $username . '&include_rts=true&count=' . $limit . '&callback=twitterCallback2';
 $tweets = file_get_contents($feed);
 
 $tweets = str_replace("&", "&", $tweets);	
@@ -119,9 +120,8 @@ echo "negative";
 			</div>
 			<div class="span3 social">
 				<h4>Twitter</h4>
-				<?/*
-					=$tweetout;
-				*/?>
+				<?//=$tweetout; ?>
+				<?php twitter_messages(); ?>
 
 				<!-- Follow -->
 				<a href="https://twitter.com/Al_Humphreys" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false">Follow @Al_Humphreys</a>

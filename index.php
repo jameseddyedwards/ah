@@ -39,7 +39,7 @@ get_header();
 			<a class="view-all" href="<?php get_author_posts_url('','admin'); ?>">view all</a>
 		</div>
 	</div>
-	
+
 	<?php
 		$category_best = get_cat_ID('Best bits');
 		$category_blog = get_cat_ID('Blog');
@@ -56,7 +56,7 @@ get_header();
 		<?php foreach($bestbits as $post) :	setup_postdata($post); ?>
 			<div class="span4">
 				<a class="post-thumb" href="<?php the_permalink(); ?>">
-					<img src="<?php the_field('thumbnail'); ?>" alt="<?php the_title(); ?>" />
+					<img src="<?php echo ah_get_custom_thumb(); ?>" alt="<?php the_title(); ?>" />
 					<span class="title"><?php the_title(); ?></span>
 				</a>
 				<span class="excerpt"><?php echo strip_tags(get_the_excerpt()) ?>...</span>
@@ -68,12 +68,13 @@ get_header();
 		'numberposts'		=> 3,
 		'cat'				=> $category_blog . ',' . $category_adventures
 	); ?>
+	
 	<?php $recentPosts = get_posts($recentArgs); ?>
 	<div class="row tab-row recent">
-		<?php foreach($recentPosts as $post) :	setup_postdata($post); ?>
+		<?php foreach($recentPosts as $post) : setup_postdata($post); ?>
 			<div class="span4">
 				<a class="post-thumb" href="<?php the_permalink(); ?>">
-					<img src="<?php the_field('thumbnail'); ?>" alt="<?php the_title(); ?>" />
+					<img src="<?php echo ah_get_custom_thumb(); ?>" alt="<?php the_title(); ?>" />
 					<span class="title"><?php the_title(); ?></span>
 				</a>
 				<span class="excerpt"><?php echo strip_tags(get_the_excerpt()) ?>...</span>

@@ -3,8 +3,8 @@
  * The default template for displaying content
  *
  * @package WordPress
- * @subpackage Twenty_Eleven
- * @since Twenty Eleven 1.0
+ * @subpackage AlastairHumphreys
+ * @since Alastair Humphreys 1.0
  */
 ?>
 
@@ -20,7 +20,7 @@
 
 		<?php if (has_post_thumbnail()) { ?>
 			<div class="span4">
-				<img src="<?php the_field('thumbnail'); ?>" alt="<?php the_title(); ?>" />
+				<img src="<?php echo ah_get_custom_thumb(); ?>" alt="<?php the_title(); ?>" />
 			</div>
 		<?php } ?>
 

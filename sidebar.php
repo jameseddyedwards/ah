@@ -3,8 +3,8 @@
  * The Sidebar containing the main widget area.
  *
  * @package WordPress
- * @subpackage Twenty_Eleven
- * @since Twenty Eleven 1.0
+ * @subpackage AlastairHumphreys
+ * @since Alastair Humphreys 1.0
  */
 
 $options = alastairhumphreys_get_theme_options();
