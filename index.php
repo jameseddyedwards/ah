@@ -18,14 +18,14 @@ get_header();
 
 ?>
 
+<div class="gallery">
+	<a href="http://127.0.0.1:4001/wordpress/wp-content/uploads/2012/07/01.png"><img src="http://127.0.0.1:4001/wordpress/wp-content/uploads/2012/07/01.png" alt="" title="01" width="1600" height="788" class="alignnone size-full wp-image-8371" /></a>
+</div>
+
+<?php the_field('carousel_gallery'); ?>
+
 <?php if (get_field('carousel_gallery') != '') { ?>
-	<div id="myCarousel" class="carousel slide gallery">
-		<div class="carousel-inner">
-			<?php the_field('carousel_gallery'); ?>
-		</div>
-		<a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
-		<a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
-	</div>
+	<?php the_field('carousel_gallery'); ?>
 <?php } ?>
 
 <div class="container white">
@@ -33,8 +33,8 @@ get_header();
 	<div class="row">
 		<div class="span12 head-bar">
 			<ul id="post-view" class="tabs clearfix">
-				<li id="best" class="active">Best bits</li>
-				<li id="recent">Recent posts</li>
+				<li id="recent" class="active">Latest posts</li>
+				<li id="best">Best bits</li>
 			</ul>
 			<a class="view-all" href="<?php get_author_posts_url('','admin'); ?>">view all</a>
 		</div>
@@ -52,7 +52,7 @@ get_header();
 		);
 	?>
 	<?php $bestbits = get_posts($bestArgs); ?>
-	<div class="row tab-row best active">
+	<div class="row tab-row best">
 		<?php foreach($bestbits as $post) :	setup_postdata($post); ?>
 			<div class="span4">
 				<a class="post-thumb" href="<?php the_permalink(); ?>">
@@ -70,7 +70,7 @@ get_header();
 	); ?>
 	
 	<?php $recentPosts = get_posts($recentArgs); ?>
-	<div class="row tab-row recent">
+	<div class="row tab-row recent active">
 		<?php foreach($recentPosts as $post) : setup_postdata($post); ?>
 			<div class="span4">
 				<a class="post-thumb" href="<?php the_permalink(); ?>">

@@ -23,12 +23,13 @@
 	<html <?php language_attributes(); ?>>
 <!--<![endif]-->
 <head>
+
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width" />
-<title><?php
-	/*
-	 * Print the <title> tag based on what is being viewed.
-	 */
+
+<title>
+<?php
+	// Print the <title> tag based on what is being viewed.
 	global $page, $paged;
 
 	wp_title('|', true, 'right');
@@ -37,16 +38,18 @@
 	bloginfo('name');
 
 	// Add the blog description for the home/front page.
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) )
+	$site_description = get_bloginfo('description', 'display');
+	if ($site_description && (is_home() || is_front_page())) {
 		echo " | $site_description";
+	}
 
 	// Add a page number if necessary:
-	if ( $paged >= 2 || $page >= 2 )
-		echo ' | ' . sprintf( __( 'Page %s', 'alastairhumphreys' ), max( $paged, $page ) );
-
-	?>
+	if ($paged >= 2 || $page >= 2) {
+		echo ' | ' . sprintf(__('Page %s', 'alastairhumphreys'), max($paged, $page));
+	}
+?>
 </title>
+
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('template_url'); ?>/css/bootstrap.css" />
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('stylesheet_url'); ?>" />
@@ -84,20 +87,22 @@
 
 	<header class="clearfix">
 		<div class="container">
-			<a id="logo" href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" rel="home">
+			<a class="logo" href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" rel="home">
 				<img src="<?php bloginfo('template_url'); ?>/images/alastair-humphreys-logo.png" alt="<?php bloginfo( 'name' ); ?>" />
 			</a>
 
-			<ul id="social-icons" class="inline">
+			<ul class="social-icons inline visible-desktop">
 				<li><a href=""><img src="<?php bloginfo('template_url'); ?>/images/icon/rss.png" /></a></li>
 				<li><a href=""><img src="<?php bloginfo('template_url'); ?>/images/icon/twitter.png" /></a></li>
 				<li><a href=""><img src="<?php bloginfo('template_url'); ?>/images/icon/facebook.png" /></a></li>
 				<li><a href=""><img src="<?php bloginfo('template_url'); ?>/images/icon/flickr.png" /></a></li>
 			</ul>
 
-			<?php get_search_form(); ?>
+			<div class="visible-desktop">
+				<?php get_search_form(); ?>
+			</div>
 
-			<nav id="access" role="navigation">
+			<nav class="access visible-desktop" role="navigation">
 				<?php /* Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff. */ ?>
 				<div class="skip-link"><a class="assistive-text" href="#secondary" title="<?php esc_attr_e( 'Skip to secondary content', 'alastairhumphreys' ); ?>"><?php _e( 'Skip to secondary content', 'alastairhumphreys' ); ?></a></div>
 				<?php /* Our navigation menu.  If one isn't filled out, wp_nav_menu falls back to wp_page_menu. The menu assiged to the primary position is the one used. If none is assigned, the menu with the lowest ID is used. */ ?>

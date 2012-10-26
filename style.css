@@ -201,24 +201,22 @@ cite {font-style:normal;}
 
 /* Assistive text */
 .assistive-text {position:absolute !important; clip:rect(1px 1px 1px 1px); /* IE6, IE7 */ clip:rect(1px, 1px, 1px, 1px);}
-#access a.assistive-text:active,
-#access a.assistive-text:focus {background:#eee; border-bottom:1px solid #ddd; color:#1982d1; clip:auto !important; font-size:12px; position:absolute; text-decoration:underline; top:0; left:7.6%;}
+.access a.assistive-text:active,
+.access a.assistive-text:focus {background:#eee; border-bottom:1px solid #ddd; color:#1982d1; clip:auto !important; font-size:12px; position:absolute; text-decoration:underline; top:0; left:7.6%;}
 
 
 /* Header */
 header {background:#fff; width:100%;}
-header #logo {float:left;}
+header .logo {float:left;}
 header .searchform {float:right; margin-right:15px;}
-header #social-icons {float:right;}
-header #social-icons li {margin-left:5px;}
+header .social-icons {float:right;}
+header .social-icons li {margin-left:5px;}
 
 nav {clear:right; float:right; margin:15px -10px 0 0; position:relative;}
 .menu > li > a {color:#252525; display:inline-block; font:21px din-light, sans-serif; padding:4px 10px 0; text-transform:uppercase;}
 .menu > li > a:hover,
 .menu > .current-menu-item > a {background:#3a3a3a; color:#fff; text-decoration:none;}
-.menu .sub-menu {display:none;}
-
-.sub-menu {background:#fff; display:none; height:200px; border:1px solid #ccc; width:500px;}
+.menu .sub-menu {background:#fff; display:none; height:200px; border:1px solid #ccc; width:500px;}
 
 .dropdown {background:#fff; display:none; left:73px; padding:25px; position:absolute; top:37px; width:590px; z-index:10;
 box-shadow:1px 3px 5px #ccc;}
@@ -254,6 +252,9 @@ box-shadow:1px 3px 5px #ccc;}
 .footer .social span {display:block; margin-bottom:15px;}
 .footer .social .twitter-follow-button {float:left; margin-right:10px;}
 
+.footer .twitter-feed {margin-bottom:10px;}
+.footer .twitter-feed img {display:inline;}
+
 /* Credits */
 .credits {background:#232323; color:#ccc;}
 .credits a,
@@ -274,10 +275,12 @@ box-shadow:1px 3px 5px #ccc;}
 
 .tab-row {display:none;}
 .tab-row.active {display:block;}
+
 .post-thumb {display:block; height:240px; overflow:hidden; position:relative;}
 .post-thumb span {background:url("images/background/dark.png"); bottom:0px; color:#fff; font:18px din-light, sans-serif; left:0px; padding:1% 3%; position:absolute; width:94%;}
 .post-thumb:hover span {background:#000;}
-.excerpt {color:#191919; display:block; font-size:15px; font-style:italic; height:105px; line-height:22px; margin-top:15px; overflow:hidden;}
+
+.excerpt {color:#191919; display:block; font-size:15px; font-style:italic; height:105px; line-height:22px; margin:15px 0; overflow:hidden;}
 
 /* Categories */
 .category-thumbs {margin:10px auto 0; width:1600px;}

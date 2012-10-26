@@ -121,7 +121,9 @@ echo "negative";
 			<div class="span3 social">
 				<h4>Twitter</h4>
 				<?//=$tweetout; ?>
-				<?php twitter_messages(); ?>
+				<div class="twitter-feed">
+					<?php echo do_shortcode('[twitter-feed username="Al_Humphreys" num=3 img="no" followlink="no"]'); ?>
+				</div>
 
 				<!-- Follow -->
 				<a href="https://twitter.com/Al_Humphreys" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false">Follow @Al_Humphreys</a>

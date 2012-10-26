@@ -7,7 +7,6 @@ function menu() {
 
 	dropdowns.each(function() {
 		parentMenuId = '#' + $(this).attr("id").split('dropdown-')[1];
-		console.log($(parentMenuId));
 		$(parentMenuId).append($(this));
 	});
 
@@ -35,7 +34,4 @@ function tabbed(element) {
 $(document).ready( function() {
 	menu();
 	tabbed(".tabs");
-	if ($('.gallery').length > 0) {
-		$('.gallery').carousel();
-	}
 });
