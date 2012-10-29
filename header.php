@@ -51,24 +51,12 @@
 </title>
 
 <link rel="profile" href="http://gmpg.org/xfn/11" />
-<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('template_url'); ?>/css/bootstrap.css" />
-<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('stylesheet_url'); ?>" />
-<?php if (get_field('carousel_gallery') != '') { ?>
-	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('template_url'); ?>/css/carousel.css" />
-<?php } ?>
 
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 <!--[if lt IE 9]>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 <![endif]-->
 <?php
-	/* We add some JavaScript to pages with the comment form
-	 * to support sites with threaded comments (when in use).
-	 */
-	if (is_singular() && get_option('thread_comments')) {
-		wp_enqueue_script('comment-reply');
-	}
-
 	/* Always have wp_head() just before the closing </head>
 	 * tag of your theme, or you will break many plugins, which
 	 * generally use this hook to add elements to <head> such
@@ -91,31 +79,30 @@
 				<img src="<?php bloginfo('template_url'); ?>/images/alastair-humphreys-logo.png" alt="<?php bloginfo( 'name' ); ?>" />
 			</a>
 
-			<ul class="social-icons inline visible-desktop">
-				<li><a href=""><img src="<?php bloginfo('template_url'); ?>/images/icon/rss.png" /></a></li>
-				<li><a href=""><img src="<?php bloginfo('template_url'); ?>/images/icon/twitter.png" /></a></li>
-				<li><a href=""><img src="<?php bloginfo('template_url'); ?>/images/icon/facebook.png" /></a></li>
-				<li><a href=""><img src="<?php bloginfo('template_url'); ?>/images/icon/flickr.png" /></a></li>
-			</ul>
+			<div id="phone-nav" class="visible-desktop phone-nav">
+				<ul class="social-icons inline">
+					<li><a href=""><img src="<?php bloginfo('template_url'); ?>/images/icon/rss.png" /></a></li>
+					<li><a href=""><img src="<?php bloginfo('template_url'); ?>/images/icon/twitter.png" /></a></li>
+					<li><a href=""><img src="<?php bloginfo('template_url'); ?>/images/icon/facebook.png" /></a></li>
+					<li><a href=""><img src="<?php bloginfo('template_url'); ?>/images/icon/flickr.png" /></a></li>
+				</ul>
 
-			<div class="visible-desktop">
 				<?php get_search_form(); ?>
+
+				<nav class="access" role="navigation">
+					<?php /* Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff. */ ?>
+					<div class="skip-link"><a class="assistive-text" href="#secondary" title="<?php esc_attr_e( 'Skip to secondary content', 'alastairhumphreys' ); ?>"><?php _e( 'Skip to secondary content', 'alastairhumphreys' ); ?></a></div>
+					<?php /* Our navigation menu.  If one isn't filled out, wp_nav_menu falls back to wp_page_menu. The menu assiged to the primary position is the one used. If none is assigned, the menu with the lowest ID is used. */ ?>
+					<?php wp_nav_menu(array(
+						'theme_location'	=> 'primary',
+						'menu_class'		=> 'menu'
+					)); ?>
+
+					<?php //ah_get_dropdown(array('Adventures','Micro Adventures'), 'menu-item-8380'); ?>
+
+					<?php get_template_part('content', 'dropdown'); ?>
+				</nav>
 			</div>
-
-			<nav class="access visible-desktop" role="navigation">
-				<?php /* Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff. */ ?>
-				<div class="skip-link"><a class="assistive-text" href="#secondary" title="<?php esc_attr_e( 'Skip to secondary content', 'alastairhumphreys' ); ?>"><?php _e( 'Skip to secondary content', 'alastairhumphreys' ); ?></a></div>
-				<?php /* Our navigation menu.  If one isn't filled out, wp_nav_menu falls back to wp_page_menu. The menu assiged to the primary position is the one used. If none is assigned, the menu with the lowest ID is used. */ ?>
-				<?php wp_nav_menu(array(
-					'theme_location'	=> 'primary',
-					'menu_class'		=> 'menu inline'
-				)); ?>
-
-				<?php //ah_get_dropdown(array('Adventures','Micro Adventures'), 'menu-item-8380'); ?>
-
-				<?php get_template_part('content', 'dropdown'); ?>
-
-			</nav>
 		</div>
 	</header>
 
@@ -124,3 +111,6 @@
 			<?php _e('Skip to primary content', 'alastairhumphreys'); ?>
 		</a>
 	</div>
+
+	<div class="main">
+		<img id="nav-toggle" src="<?php bloginfo('template_url'); ?>/images/button/tab-nav.gif" class="nav-toggle visible-phone" alt="Navigation Toggle" />

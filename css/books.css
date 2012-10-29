@@ -1,0 +1,22 @@
+/* Books */
+.split-layout .container {padding:60px 30px;}
+.split-layout h1 {font-size:45px; margin:10px 0 40px; text-transform:uppercase;}
+
+.book-menu hr {margin-bottom:50px;}
+.book-menu .info h2 {margin-bottom:0;}
+.book-menu .info h2 a {color:#333; font:37px/46px din-light, helvetica, arial; text-transform:uppercase;}
+.book-menu .info h2 a:hover {text-decoration:none;}
+.book-menu .info .summary,
+.book .summary {color:#4a4a4a; display:block; font-style:italic; margin-bottom:30px;}
+
+.category-books h3 {color:#333333; font:38px/46px din-light, helvetica, arial; margin-bottom:10px; text-transform:uppercase;}
+.formats h2 {color:#333333; font:26px/32px din-light, helvetica, arial; margin-bottom:10px; text-transform:uppercase;}
+.formats li {border-bottom: 1px dotted #999; display:block; margin-bottom:20px; padding-bottom:40px;}
+.formats .format-image {float:left; width:200px;}
+.formats .format-info {float:right; width:700px;}
+.formats h3 {margin:10px 0 10px;}
+
+.book h1 {margin-bottom:10px;}
+
+.further-reading ul {margin-bottom:20px;}
+.further-reading ul li a {color:#333;}

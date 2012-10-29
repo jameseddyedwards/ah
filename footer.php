@@ -48,6 +48,8 @@ echo "negative";
 */
 ?>
 
+</div> <!-- Close 'main' container <div> -->
+
 <div class="footer full-section white">
 	<div class="container">
 		<div class="row">
@@ -87,7 +89,7 @@ echo "negative";
 				<quote>“With the possible exception of Sir David Attenborough, that was the best lecture, and the longest applause that I have heard in the past 15 years.”</quote>
 				<p>– President of the Royal Geographical Society</p>
 			</div>
-			<div class="span3">
+			<div class="span3 clearfix">
 				<h4>Blog Topics</h4>
 				<?php 
 					$blogCategoriesArgs = array(

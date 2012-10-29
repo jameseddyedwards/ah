@@ -1,0 +1,38 @@
+/* Categories */
+.category-thumbs {margin:10px auto 0; width:1600px;}
+.category-thumbs .post-thumb {display:inline-block; float:left; margin:0 10px 10px 0;}
+.category-thumbs span img {display:block;}
+.category-thumbs .small {height:280px; width:310px;}
+.category-thumbs .medium {height:280px; width:480px;}
+.category-thumbs .large {height:570px; width:790px;}
+.category-thumbs .right {margin-right:0;}
+.category-thumbs .fl-right {float:right;}
+
+.category .content {margin-top:25px;}
+
+.category-posts {margin-bottom:100px;}
+.category-posts li {min-height:20px; line-height:28px; float:left; width:33%;}
+.category-posts a {color:#1a1a1a; font-size:18px;}
+
+.content .searchform {margin-top:30px;}
+
+
+/* Blog */
+.category-blog .entry-content {height:600px; overflow:hidden; position:relative;}
+
+.continue-reading {border-top:1px dotted #ccc; display:block; margin-top:40px;}
+.continue-reading span {background:url('images/button/continue-reading.png') no-repeat; display:block; height:64px; margin:-20px auto 0; text-indent:-9999px; width:136px;}
+
+.category-filter {margin-top:20px;}
+.category-filter h3 {font-size:14px;}
+.category-filter .post-categories li {display:inline-block; float:left; margin-right:10px;}
+.category-filter .post-categories li a {border:1px solid #cfcfcf; color:#333; display:block; font:bold 12px Arial, Helvetica, sans-serif; padding:7px 10px 6px; text-transform:uppercase;}
+.category-filter .post-categories li a:hover {border:1px solid #333; color:#000; text-decoration:none;}
+
+.category-filter-thumbs {margin-top:40px;}
+
+
+/* More */
+.category-more .gallery {width:1230px;}
+.category-more iframe {display:block; margin:0;}
+.category-more .container {margin-top:0;}

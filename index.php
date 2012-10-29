@@ -18,17 +18,30 @@ get_header();
 
 ?>
 
-<div class="gallery">
-	<a href="http://127.0.0.1:4001/wordpress/wp-content/uploads/2012/07/01.png"><img src="http://127.0.0.1:4001/wordpress/wp-content/uploads/2012/07/01.png" alt="" title="01" width="1600" height="788" class="alignnone size-full wp-image-8371" /></a>
-</div>
-
-<?php the_field('carousel_gallery'); ?>
-
-<?php if (get_field('carousel_gallery') != '') { ?>
-	<?php the_field('carousel_gallery'); ?>
+<?php if (have_posts()) { ?>
+	<?php while (have_posts()) : the_post(); ?>
+		<?php if (get_field('carousel_gallery_2') != '') { ?>
+			<div class="gallery">
+				<?php the_field('carousel_gallery'); ?>
+			</div>
+		<?php } ?>
+	<?php endwhile; ?>
 <?php } ?>
 
 <div class="container white">
+	<?php if (have_posts()) { ?>
+		<?php while (have_posts()) : the_post(); ?>
+			<div class="row">
+				<div class="span4">
+					<?php the_post_thumbnail(); ?>
+				</div>
+				<div class="span8">
+					<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'alastairhumphreys' ) ); ?>
+				</div>
+			</div>
+			<hr />
+		<?php endwhile; ?>
+	<?php } ?>
 
 	<div class="row">
 		<div class="span12 head-bar">

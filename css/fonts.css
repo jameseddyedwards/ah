@@ -1,0 +1,42 @@
+/* Fonts /*
+/* IE 4–8 */
+@font-face {font-family:din-light; src: url("../font/din/light.eot");}
+
+/* WOFF-capable browsers */
+@font-face {font-family:din-light; src: url("../font/din/light.woff") format("woff");}
+
+
+/* Textual */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {margin:0; font-weight:normal; color:#2c2c2c; text-rendering:optimizelegibility;}
+h1 small,
+h2 small,
+h3 small,
+h4 small,
+h5 small,
+h6 small {font-weight:normal; color:#2c2c2c;}
+h1 {font:27px din-light, sans-serif;  line-height:30px; margin-bottom:10px;}
+h1 small {font-size:18px;}
+h2 {font-size:24px; line-height:40px; margin-bottom:20px;}
+h2 small {font-size:18px;}
+h3 {line-height:30px; font-size:22px;}
+h3 small {font-size:14px;}
+h4, h5, h6 {line-height:20px;}
+h4 {font-size:14px;}
+h4 small {font-size:12px;}
+h5 {font-size:12px;}
+h6 {font-size:11px; color:#999999; text-transform:uppercase;}
+
+a {color:#6793b3; display:inline-block; text-decoration:none;}
+a:hover {color:#005580; text-decoration:underline;}
+a:focus {outline:thin dotted #333; outline:5px auto -webkit-focus-ring-color; outline-offset:-2px;}
+a:hover, a:active {outline:0;}
+a img {display:inline-block;}
+.row a img {display:block;}
+
+p {color:#1a1a1a; font-size:16px; line-height:23px; margin:0 0 10px;}
+p small {font-size:9px; color:#cccccc;}

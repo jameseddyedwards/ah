@@ -12,9 +12,9 @@ function menu() {
 
 	navItems.hover(function() {
 		dropdownClass = '.dropdown.' + $(this).attr("id");
-		$(dropdownClass).show();
+		$(dropdownClass).addClass('active');
 	}, function() {
-		$(dropdownClass).hide();
+		$(dropdownClass).removeClass('active');
 	});
 }
 
@@ -31,7 +31,14 @@ function tabbed(element) {
 	});
 }
 
+function navToggle() {
+	$("#nav-toggle").click(function() {
+		$("#phone-nav").toggle();
+	});
+}
+
 $(document).ready( function() {
+	navToggle();
 	menu();
 	tabbed(".tabs");
 });
