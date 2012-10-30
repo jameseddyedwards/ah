@@ -37,9 +37,12 @@ switch ($current_category) {
 		break;
 
 }
+
+echo $current_category;
+echo $layout;
 //echo $layout;
 get_template_part('content', $layout);
 
 ?>
-
+<h1>Eddy</h1>
 <?php get_footer(); ?>

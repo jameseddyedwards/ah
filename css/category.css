@@ -20,8 +20,8 @@
 /* Blog */
 .category-blog .entry-content {height:600px; overflow:hidden; position:relative;}
 
-.continue-reading {border-top:1px dotted #ccc; display:block; margin-top:40px;}
-.continue-reading span {background:url('images/button/continue-reading.png') no-repeat; display:block; height:64px; margin:-20px auto 0; text-indent:-9999px; width:136px;}
+.main .continue-reading {border-top:1px dotted #ccc; display:block; margin-top:40px;}
+.main .continue-reading span {background:url('images/button/continue-reading.png') no-repeat; display:block; height:64px; margin:-20px auto 0; text-indent:-9999px; width:136px;}
 
 .category-filter {margin-top:20px;}
 .category-filter h3 {font-size:14px;}

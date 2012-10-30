@@ -104,24 +104,30 @@ nav .menu > .current-menu-item > a {background:#3a3a3a; color:#fff; text-decorat
 	header .social-icons li {margin-left:5px;}
 
 	nav {clear:right; float:right; margin-right:-10px; position:relative;}
-	nav .menu li {display:inline-block; float:left; list-style:none;}
+	nav .menu > li {display:inline-block; float:left; list-style:none;}
 	nav .menu .sub-menu {background:#fff; display:none; height:200px; border:1px solid #ccc; width:500px;}
 
-	nav .dropdown {background:#fff; left:73px; padding:25px; position:absolute; top:37px; width:590px; z-index:10;
+	nav .dropdown {background:#fff; right:0; padding:25px; position:absolute; top:37px; width:590px; z-index:10;
 		box-shadow:1px 3px 5px #ccc;
 	}
 	nav .active {display:block;}
 	nav .dropdown .category {position:relative;}
-	nav .dropdown .cat-title {clear:both; color:#272727; display:block; font:18px din-light, sans-serif; margin-bottom:5px; text-transform:uppercase;}
+	nav .dropdown .sub-title {clear:both; color:#272727; display:block; font:18px/24px din-light, sans-serif; margin-bottom:5px; text-transform:uppercase;}
 	nav .dropdown .feature-image {display:inline-block; float:left; margin-right:20px;}
 	nav .dropdown ul {display:inline-block; float:left; margin-right:20px; padding-bottom:40px; width:140px;}
 	nav .dropdown ul li {display:block;}
 	nav .dropdown ul li a {color:#272727; display:block; font:14px din-light, sans-serif;}
-	nav .dropdown .view-all {background:url('../images/button/arrow-right.png') no-repeat right center; bottom:3px; color:#272727; font-size:14px; font-style:italic; padding-right:12px; position:absolute; right:57px;}
+	nav .dropdown .view-all {bottom:3px; position:absolute; right:0px;}
 	nav .dropdown hr {margin:10px 0;}
 
-	.micro-adventures .view-all {right:17px;}
-	.speaking .view-all {right:71px;}
+	nav .adventures .view-all {right:57px;}
+	nav .micro-adventures .view-all {right:17px;}
+	nav .speaking .view-all {right:71px;}
+
+	nav .latest-post {border-bottom:1px dotted #999; margin-bottom:20px; padding-bottom:20px;}
+	nav .latest-post .post-text {float:left; width:350px;}
+	nav .latest-post .post-text .sub-title {margin:0; text-transform:none;}
+	nav .latest-post .post-text .excerpt {margin:5px 0;}
 
 	.credits .copyright {float:left;}
 	.credits .credit {float:right;}
