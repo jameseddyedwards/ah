@@ -90,21 +90,18 @@ function alastairhumphreys_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menu('primary', __('Primary Menu', 'alastairhumphreys'));
 
-	// Add support for custom backgrounds
-	//add_custom_background();
-
-	// This theme uses Featured Images (also known as post thumbnails) for per-post/per-page Custom Header images
-	//add_theme_support('post-thumbnails');
-
 	// Add Alastair Humphreys's custom image sizes
 	add_image_size('feature', 1600, 860); // Used for large feature (header) images
 	add_image_size('thumbnail', 370, 240); // Used for featured posts if a large-feature doesn't exist
 }
 endif; // alastairhumphreys_setup
 
-
-function ah_get_custom_thumb() {
-	$defaultThumbnail = get_field('thumbnail') == '' ? get_bloginfo('template_url') . '/images/posts/Thumbs/default.jpg' : get_field('thumbnail');
+function ah_get_custom_thumb($pageID = '') {
+	if (isset($pageID)) {
+		$defaultThumbnail = get_field('thumbnail', $pageID) == '' ? get_bloginfo('template_url') . '/images/posts/Thumbs/default.jpg' : get_field('thumbnail', $pageID);
+	} else {
+		$defaultThumbnail = get_field('thumbnail') == '' ? get_bloginfo('template_url') . '/images/posts/Thumbs/default.jpg' : get_field('thumbnail');
+	}
 	return $defaultThumbnail;
 }
 

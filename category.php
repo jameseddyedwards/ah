@@ -10,39 +10,19 @@
 get_header();
 
 $current_category = get_query_var('cat');
-$category_books = get_cat_ID('Books');
-$category_blog = get_cat_ID('Blog');
-$category_speaking = get_cat_ID('Speaking');
-$category_adventures = get_cat_ID('Adventures');
-$category_more = get_cat_ID('More');
+$blog = get_cat_ID('Blog');
 
 switch ($current_category) {
-	case $category_books:
-		$layout = "category-books";
-		break;
-	case $category_blog:
-		$layout = "category-blog";
-		break;
-	case $category_speaking:
-		$layout = "category-speaking";
-		break;
-	case $category_adventures:
-		$layout = "category-adventures";
-		break;
-	case $category_more:
-		$layout = "category-more";
+	case $blog:
+		$layout = "blog";
 		break;
 	default:
 		$layout = "category";
 		break;
-
 }
 
-echo $current_category;
-echo $layout;
-//echo $layout;
 get_template_part('content', $layout);
 
 ?>
-<h1>Eddy</h1>
+
 <?php get_footer(); ?>

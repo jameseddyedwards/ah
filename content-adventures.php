@@ -8,11 +8,10 @@
  */
 ?>
 
-<?php if (function_exists('z_taxonomy_image_url')) { ?>
-	<div class="gallery">
-		<img src="<?php echo z_taxonomy_image_url(); ?>" alt="<?php echo single_cat_title(); ?>" />
-	</div>
-<?php } ?>
+<!-- Page Gallery Custom Field to go here -->
+<div class="gallery">
+	<img src="" alt="<?php the_title(); ?>" />
+</div>
 
 <?php if (have_posts()) : ?>
 	<div class="category-thumbs clearfix">
@@ -73,16 +72,41 @@
 
 	<div class="row">
 		<div class="span12">
-			<?php echo category_description(); ?>
+			<?php the_content(); ?>
 		</div>
 	</div>
+
+	<?php
+		$args = array(
+			'sort_order' => 'ASC',
+			'sort_column' => 'post_title',
+			'hierarchical' => 1,
+			'exclude' => '',
+			'include' => '',
+			'meta_key' => '',
+			'meta_value' => '',
+			'authors' => '',
+			'child_of' => get_query_var('page_id'),
+			'parent' => -1,
+			'exclude_tree' => '',
+			'number' => '',
+			'offset' => 0,
+			'post_type' => 'page',
+			'post_status' => 'publish'
+		);
+		$categoryPages = get_pages(); 
+		foreach ($categoryPages as $page) {
+			echo get_page_link($page->ID);
+			echo $page->post_title;
+		}
+		?>
 
 	<hr />
 
 	<div class="row">
 		<div class="span12">
 			<?php if (have_posts()) : ?>
-				<h1><?php echo single_cat_title(); ?></h1>
+				<h1><?php the_title(); ?></h1>
 				<ul class="category-posts clearfix">
 					<?php while (have_posts()) : the_post(); ?>
 						<li><a href="<?php the_permalink() ?>"><?php the_title(); ?> &#187;</a></li>
@@ -101,7 +125,7 @@
 				<script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=xa-5055c67455ab2ff5"></script>
 				<!-- AddThis Button END -->
 			<?php else : ?>
-				<h1><?php echo single_cat_title(); ?><?php _e(' has no posts', 'alastairhumphreys'); ?></h1>
+				<h1><?php the_title(); ?><?php _e(' has no posts', 'alastairhumphreys'); ?></h1>
 				<p><?php _e('Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post.', 'alastairhumphreys'); ?></p>
 				<?php get_search_form(); ?>
 			<?php endif; ?>

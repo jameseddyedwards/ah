@@ -16,8 +16,44 @@
 
 get_header();
 
+$currentPageId = get_query_var('page_id');
+$books = get_object_vars(get_page_by_title('Books'));
+$booksId = $books[ID];
+$speaking = get_object_vars(get_page_by_title('Speaking'));
+$speakingId = $speaking[ID];
+$adventures = get_object_vars(get_page_by_title('Adventures'));
+$adventuresId = $adventures[ID];
+$more = get_object_vars(get_page_by_title('More'));
+$moreId = $more[ID];
+
+switch ($currentPageId) {
+	case $booksId:
+		$layout = "books";
+		break;
+	case $adventuresId:
+		$layout = "adventures";
+		break;
+	case $speakingId:
+		$layout = "speaking";
+		break;
+	case $moreId:
+		$layout = "more";
+		break;
+	default:
+		$layout = "page";
+		break;
+}
+
+get_template_part('content', $layout);
+
+echo $currentPageId . '<br />';
+echo $adventuresId . '<br />';
+echo $layout . '<br />';
+//$books_id = get_object_vars($page_books);
+//print_r($books_id[ID]);
 ?>
 
+<!--
 <div class="split-layout background"<?php echo $postImage ?>>
 
 	<div class="container white content">
@@ -33,7 +69,7 @@ get_header();
 		</div>
 	</div>
 
-	<!-- Testimonials -->
+	<!-- Testimonials 
 	<?php if (get_field('testimonials') != '') { ?>
 		<div class="container white content">
 			<div class="row">
@@ -47,6 +83,7 @@ get_header();
 		</div>
 	<?php } ?>
 </div>
+-->
 
 
 <?php get_footer(); ?>

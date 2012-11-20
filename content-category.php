@@ -8,12 +8,12 @@
  */
 ?>
 
-<?php if (function_exists('z_taxonomy_image_url')) { ?>
+<?php //if (function_exists('z_taxonomy_image_url')) { ?>
 	<div class="gallery">
-		<img src="<?php echo z_taxonomy_image_url(); ?>" alt="<?php echo category_title(); ?>" />
+		<img src="<?php //echo z_taxonomy_image_url(); ?>" alt="<?php //echo category_title(); ?>" />
 	</div>
-<?php } ?>
-<h1>Eddy</h1>
+<?php //} ?>
+
 <div class="container white content">
 
 	<div class="row">

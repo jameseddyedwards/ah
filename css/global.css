@@ -114,12 +114,15 @@ nav .menu > .current-menu-item > a {background:#3a3a3a; color:#fff; text-decorat
 	nav .dropdown .category {position:relative;}
 	nav .dropdown .sub-title {clear:both; color:#272727; display:block; font:18px/24px din-light, sans-serif; margin-bottom:5px; text-transform:uppercase;}
 	nav .dropdown .feature-image {display:inline-block; float:left; margin-right:20px;}
-	nav .dropdown ul {display:inline-block; float:left; margin-right:20px; padding-bottom:40px; width:140px;}
+	nav .dropdown ul {display:inline-block; float:left; margin:0 7px 40px 0; width:152px;}
+	nav .blog ul {border-right:1px dotted #999; margin:0 40px 40px 0; width:162px;}
+	nav .dropdown ul.last {border-right:0; margin-right:0;}
 	nav .dropdown ul li {display:block;}
 	nav .dropdown ul li a {color:#272727; display:block; font:14px din-light, sans-serif;}
 	nav .dropdown .view-all {bottom:3px; position:absolute; right:0px;}
 	nav .dropdown hr {margin:10px 0;}
 
+	nav .blog .view-all {right:69px;}
 	nav .adventures .view-all {right:57px;}
 	nav .micro-adventures .view-all {right:17px;}
 	nav .speaking .view-all {right:71px;}
@@ -128,6 +131,20 @@ nav .menu > .current-menu-item > a {background:#3a3a3a; color:#fff; text-decorat
 	nav .latest-post .post-text {float:left; width:350px;}
 	nav .latest-post .post-text .sub-title {margin:0; text-transform:none;}
 	nav .latest-post .post-text .excerpt {margin:5px 0;}
+
+	nav .menu-item-8529 .menu-item-8529, /* Books */
+	nav .menu-item-10204 .menu-item-10204 {width:640px;}
+	nav .menu-item-10221 .menu-item-10221, /* More */
+	nav .menu-item-10221 .menu-item-10221 {width:150px;}
+	nav .books .feature-image {float:left; margin-right:10px; width:120px;}
+	nav .books .feature-image.last {margin-right:0;}
+	nav .books .feature-image span {color:#272727; display:block; font:18px/20px din-light, sans-serif; margin-top:5px;}
+	nav .menu-item-10204 .view-all,
+	nav .menu-item-8529 .view-all {display:inline-block; position:relative;}
+	nav .menu-item-10204 hr,
+	nav .menu-item-8529 hr {margin:15px 0;}
+	nav .view-all-link {text-align:right;}
+	nav .more a {color:#272727; display:block; font:18px/20px din-light, sans-serif; margin-top:5px;}
 
 	.credits .copyright {float:left;}
 	.credits .credit {float:right;}

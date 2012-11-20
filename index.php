@@ -20,7 +20,7 @@ get_header();
 
 <?php if (have_posts()) { ?>
 	<?php while (have_posts()) : the_post(); ?>
-		<?php if (get_field('carousel_gallery_2') != '') { ?>
+		<?php if (get_field('carousel_gallery') != '') { ?>
 			<div class="gallery">
 				<?php the_field('carousel_gallery'); ?>
 			</div>
