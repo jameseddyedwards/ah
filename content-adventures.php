@@ -96,8 +96,10 @@
 		);
 		$categoryPages = get_pages(); 
 		foreach ($categoryPages as $page) {
-			echo get_page_link($page->ID);
-			echo $page->post_title;
+		?>
+			<a href="<?php echo get_page_link($page->ID); ?>"><?php echo $page->post_title; ?> &#187;</a>
+			
+		<?php
 		}
 		?>
 

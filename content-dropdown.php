@@ -39,7 +39,7 @@ $subNavs = array(
 		)
 	),
 	'More' => array(
-		'menu_item' => $js ? 10221 : 10221, // Local
+		'menu_item' => $js ? 8658 : 10221, // Local
 		'type' => 'more',
 		'page_parent' => array(
 			'Books'

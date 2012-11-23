@@ -10,36 +10,24 @@
 
 get_header();
 
-$featureImage = get_field('feature_image');
-$galleryImages = get_field('gallery_images');
-$args = array(
-	'depth'			=> 1,
-	'child_of'		=> $post->ID,
-	'title_li'		=> '',
-	'link_after'	=> ' &#187;',
-	/*
-	'show_date'    => '',
-	'date_format'  => get_option('date_format'),
-	'exclude'      => '',
-	'include'      => '',
-	'echo'         => 1,
-	'authors'      => '',
-	'sort_column'  => 'menu_order, post_title',
-	'link_before'  => '',
-	'walker'       => '',
-	'post_type'    => 'page',
-    'post_status'  => 'publish' 
-    */
-);
-$galleryImageCount = 10;
 ?>
 
 <?php while (have_posts()) : the_post(); ?>
+	<?php
+		$featureImage = get_field('feature_image');
+		$args = array(
+			'depth'			=> 1,
+			'child_of'		=> $post->ID,
+			'title_li'		=> '',
+			'link_after'	=> ' &#187;',
+		);
+		$galleryImageCount = 10;
+	?>
 
 	<!-- Feature Image -->
 	<?php if ($featureImage != '') { ?>
 		<div class="gallery">
-			<img src="<?php echo $featureImage; ?>" alt="<?php echo single_cat_title(); ?>" />
+			<img src="<?php echo $featureImage; ?>" alt="<?php the_title(); ?>" />
 		</div>
 	<?php } ?>
 
@@ -85,7 +73,7 @@ $galleryImageCount = 10;
 			?>
 			<?php if (get_field($galleryImage) != '') { ?>
 				<a class="<?php echo $class ?> post-thumb" href="<?php the_field($galleryLink); ?>">
-					<?php the_field($galleryImage); ?>
+					<img src="<?php the_field($galleryImage); ?>" alt="<?php the_field($galleryTitle); ?>" />
 					<span class="title"><?php the_field($galleryTitle); ?></span>
 				</a>
 			<?php } ?>
@@ -106,7 +94,7 @@ $galleryImageCount = 10;
 			<div class="span12">
 				<h1><?php the_title(); ?></h1>
 				<ul class="category-posts clearfix">
-					<?php wp_list_pages( $args ); ?>
+					<?php wp_list_pages($args); ?>
 				</ul>
 
 				<!-- AddThis Button BEGIN -->
