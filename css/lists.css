@@ -22,7 +22,7 @@ abbr {font-size:90%; text-transform:uppercase; border-bottom:1px dotted #ddd; cu
 
 .post ul {list-style:disc;}
 .post ol {list-style:decimal;}
-.post li {line-height:20px;}
+.post li {line-height:25px; margin-bottom:5px;}
 
 .bullet {list-style:disc;}
 .bullet li {margin-left:20px;}

@@ -11,17 +11,9 @@
 .tab-row {display:none;}
 .tab-row.active {display:block;}
 
-.post-thumb {display:block; overflow:hidden; position:relative;}
-.post-thumb span {background:url("../images/background/dark.png"); bottom:0px; color:#fff; font:18px din-light, sans-serif; left:0px; padding:1% 3%; position:absolute; width:94%;}
-.post-thumb:hover span {background:url("../images/background/darker.png"); opacity:0.8;}
-
-.main .excerpt {height:105px; margin:15px 0; overflow:hidden;}
-
-
 /* Media Queries */
 /* Phone - Vertical */
 @media (max-width:480px) {
-	.post-thumb {height:140px;}
 	.head-bar .view-all {display:block; margin-top:5px;}
 }
 
@@ -49,8 +41,6 @@
 @media (min-width:1200px) {
 	.tabs {display:inline-block; float:left;}
 	.head-bar .view-all {float:right; padding-right:14px;}
-
-	.post-thumb {height:240px;}
 }
 
 /* Large Browser */

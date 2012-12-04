@@ -32,8 +32,9 @@ function tabbed(element) {
 }
 
 function navToggle() {
-	$("#nav-toggle").click(function() {
-		$("#phone-nav").toggle();
+	$("#nav-tab").click(function() {
+		$("#navigation").toggleClass('visible-phone').toggleClass('visible-tablet');
+		console.log("tab clicked");
 	});
 }
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * The Template for displaying all single posts.
+ * The Template for displaying all single POSTS.
  *
  * @package WordPress
  * @subpackage AlastairHumphreys
@@ -9,13 +9,17 @@
 
 get_header();
 
-if (get_field('post_layout') == '') {
-	$layout = post;
+if (get_field('post_layout') == 'post-menu') {
+	$layout = 'post-menu';
 } else {
-	$layout = get_field('post_layout');
+	$layout = 'blog';	
 }
 
 ?>
+
+<?php if ($testSite) { ?>
+	<h1>single.php</h1>
+<?php } ?>
 
 <!-- Post -->
 <?php get_template_part('content', $layout); ?>

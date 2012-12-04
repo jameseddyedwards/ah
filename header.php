@@ -79,7 +79,7 @@
 				<img src="<?php bloginfo('template_url'); ?>/images/alastair-humphreys-logo.png" alt="<?php bloginfo( 'name' ); ?>" />
 			</a>
 
-			<div id="phone-nav" class="visible-desktop phone-nav">
+			<div id="navigation" class="visible-desktop phone-nav">
 				<ul class="social-icons inline">
 					<li><a href=""><img src="<?php bloginfo('template_url'); ?>/images/icon/rss.png" /></a></li>
 					<li><a href=""><img src="<?php bloginfo('template_url'); ?>/images/icon/twitter.png" /></a></li>
@@ -98,8 +98,6 @@
 						'menu_class'		=> 'menu'
 					)); ?>
 
-					<?php //ah_get_dropdown(array('Adventures','Micro Adventures'), 'menu-item-8380'); ?>
-
 					<?php get_template_part('content', 'dropdown'); ?>
 				</nav>
 			</div>
@@ -113,4 +111,4 @@
 	</div>
 
 	<div class="main">
-		<img id="nav-toggle" src="<?php bloginfo('template_url'); ?>/images/button/tab-nav.gif" class="nav-toggle visible-phone" alt="Navigation Toggle" />
+		<img id="nav-tab" src="<?php bloginfo('template_url'); ?>/images/button/tab-nav.gif" class="nav-tab hidden-desktop" alt="Show/Hide Navigation" />

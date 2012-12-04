@@ -2,7 +2,6 @@
 /**
  * The main template file.
  *
- * Template Name: Home Template
  *
  * This is the most generic template file in a WordPress theme
  * and one of the two required files for a theme (the other being style.css).
@@ -17,6 +16,10 @@
 get_header();
 
 ?>
+
+<?php if ($testSite) { ?>
+	<h1>Index.php</h1>
+<?php } ?>
 
 <?php if (have_posts()) { ?>
 	<?php while (have_posts()) : the_post(); ?>

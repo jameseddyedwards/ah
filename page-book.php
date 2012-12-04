@@ -1,6 +1,7 @@
 <?php
 /**
- * The template for displaying content in the single.php template
+ * Template Name: Book Template
+ * Description: A Template used to display a single Book
  *
  * @package WordPress
  * @subpackage AlastairHumphreys

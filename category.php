@@ -10,11 +10,11 @@
 get_header();
 
 $current_category = get_query_var('cat');
-$blog = get_cat_ID('Blog');
+$microAdventures = get_cat_ID('MicroAdventures') != '' ? get_cat_ID('MicroAdventures') : get_cat_ID('Micro Adventures');
 
 switch ($current_category) {
-	case $blog:
-		$layout = "blog";
+	case $microAdventures:
+		$layout = "category-gallery";
 		break;
 	default:
 		$layout = "category";

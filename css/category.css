@@ -1,24 +1,11 @@
 /* Categories */
-.category-thumbs {margin:10px auto 0; width:1600px;}
-.category-thumbs .post-thumb {display:inline-block; float:left; margin:0 10px 10px 0;}
-.category-thumbs span img {display:block;}
-.category-thumbs .small {height:280px; width:310px;}
-.category-thumbs .medium {height:280px; width:480px;}
-.category-thumbs .large {height:570px; width:790px;}
-.category-thumbs .right {margin-right:0;}
-.category-thumbs .fl-right {float:right;}
-
 .category .content {margin-top:25px;}
-
-.category-posts {margin-bottom:100px;}
-.category-posts li {min-height:20px; line-height:28px; float:left; width:33%;}
-.category-posts a {color:#1a1a1a; font-size:18px;}
 
 .content .searchform {margin-top:30px;}
 
 
 /* Blog */
-.category-blog .entry-content {height:600px; overflow:hidden; position:relative;}
+.category-blog .entry-content {height:590px; overflow:hidden; position:relative;}
 
 .main .continue-reading {border-top:1px dotted #ccc; display:block; margin-top:40px;}
 .main .continue-reading span {background:url('../images/button/continue-reading.png') no-repeat; display:block; height:64px; margin:-20px auto 0; text-indent:-9999px; width:136px;}

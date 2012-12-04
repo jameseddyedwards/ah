@@ -43,6 +43,8 @@ include TEMPLATEPATH . '/inc/shortcodes.php';
 include TEMPLATEPATH . '/inc/styles.php';
 include TEMPLATEPATH . '/inc/scripts.php';
 
+$testSite = false;
+
 /**
  * Tell WordPress to run alastairhumphreys_setup() when the 'after_setup_theme' hook is run.
  */
@@ -91,8 +93,13 @@ function alastairhumphreys_setup() {
 	register_nav_menu('primary', __('Primary Menu', 'alastairhumphreys'));
 
 	// Add Alastair Humphreys's custom image sizes
-	add_image_size('feature', 1600, 860); // Used for large feature (header) images
-	add_image_size('thumbnail', 370, 240); // Used for featured posts if a large-feature doesn't exist
+	add_image_size('Feature Wide', 1600, 9999); // Used for Wide feature images
+	add_image_size('Feature Normal', 1230, 9999); // Feature image that is only the width of the page container
+	add_image_size('Thumbnail', 370, 240, true); // Used for post thumbnail images
+	add_image_size('Gallery Small', 280, 310, true); // Used for small gallery images
+	add_image_size('Gallery Medium', 280, 480, true); // Used for large feature (header) images
+	add_image_size('Gallery Large', 570, 790, true); // Used for post thumbnail images
+	add_image_size('Full Post Width', 970, 9999); // Used for inline post images to span the full width
 }
 endif; // alastairhumphreys_setup
 
@@ -230,10 +237,11 @@ function alastairhumphreys_comment($comment, $args, $depth) {
 	?>
 	<li class="post pingback">
 		<p>
-			<?php _e( 'Pingback:', 'alastairhumphreys' ); ?>
+			<?php _e('Pingback:', 'alastairhumphreys'); ?>
 			<?php comment_author_link(); ?>
-			<?php edit_comment_link( __( 'Edit', 'alastairhumphreys' ), '<span class="edit-link">', '</span>' ); ?>
+			<?php edit_comment_link( __('| Edit', 'alastairhumphreys'), '<span class="edit-link">', '</span>'); ?>
 		</p>
+	</li>
 	<?php
 			break;
 		default :

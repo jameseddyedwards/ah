@@ -32,7 +32,7 @@ get_header();
 	<?php } ?>
 
 	<!-- Gallery Images -->
-	<div class="gallery-thumbs clearfix">
+	<div class="category-thumbs clearfix">
 		<?php for ($i = 1; $i <= $galleryImageCount; $i++) { ?>
 			<?php
 				switch ($i) {
@@ -92,8 +92,8 @@ get_header();
 
 		<div class="row">
 			<div class="span12">
-				<h2><?php the_title(); ?></h2>
-				<ul class="link-list clearfix">
+				<h1><?php the_title(); ?></h1>
+				<ul class="category-posts clearfix">
 					<?php wp_list_pages($args); ?>
 				</ul>
 
