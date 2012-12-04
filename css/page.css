@@ -3,9 +3,9 @@
 .page iframe {margin:30px 0;}
 
 /* More */
-.category-more .gallery {width:1230px;}
-.category-more iframe {display:block; margin:0;}
-.category-more .container {margin-top:0;}
+.page-more .gallery {width:1230px;}
+.page-more iframe {display:block; margin:0;}
+.page-more .container {margin-top:0;}
 
 
 /* Phone - Vertical */

@@ -33,16 +33,20 @@
 		} else if (is_page()) {
 			wp_register_style('page', get_template_directory_uri() . '/css/page.css', __FILE__);	
 			wp_register_style('gallery', get_template_directory_uri() . '/css/gallery.css', __FILE__);	
+			wp_register_style('comments', get_template_directory_uri() . '/css/comments.css', __FILE__);	
 			wp_enqueue_style('page');
 			wp_enqueue_style('gallery');
+			wp_enqueue_style('comments');
 		} else if (is_category()) {
 			wp_register_style('category', get_template_directory_uri() . '/css/category.css', __FILE__);
 			wp_enqueue_style('category');
 		} else if (is_single()) {
 			wp_register_style('post', get_template_directory_uri() . '/css/post.css', __FILE__);
 			wp_register_style('recommended', get_template_directory_uri() . '/css/recommended.css', __FILE__);
+			wp_register_style('comments', get_template_directory_uri() . '/css/comments.css', __FILE__);
 			wp_enqueue_style('post');
 			wp_enqueue_style('recommended');
+			wp_enqueue_style('comments');
 		}
 
 

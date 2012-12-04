@@ -17,9 +17,32 @@
 .category-filter .post-categories li a:hover {border:1px solid #333; color:#000; text-decoration:none;}
 
 .category-filter-thumbs {margin-top:40px;}
+.category-filter-thumbs .post-thumb {height:175px; margin-bottom:20px;}
 
+/* Phone - Vertical */
+@media (max-width:480px) {
+	
+}
 
-/* More */
-.category-more .gallery {width:1230px;}
-.category-more iframe {display:block; margin:0;}
-.category-more .container {margin-top:0;}
+/* Phone - Horizontal */
+@media (max-width:767px) {
+}
+
+/* Tablet - Vertical */
+@media (min-width:768px) and (max-width:979px) {
+}
+
+/* Tablet - Horizontal */
+@media (min-width:979px) {
+
+}
+
+/* Small Browser */
+@media (min-width:1200px) {
+	
+}
+
+/* Large Browser */
+@media (min-width:1600px) {
+
+}

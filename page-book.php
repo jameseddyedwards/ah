@@ -8,6 +8,8 @@
  * @since Alastair Humphreys 1.0
  */
 
+get_header();
+
 $featuredClass = "";
 
 ?>
@@ -78,3 +80,5 @@ $featuredClass = "";
 		</div>
 	<?php } ?>
 <?php endwhile; ?>
+
+<?php get_footer(); ?>
