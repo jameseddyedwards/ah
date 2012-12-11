@@ -95,10 +95,10 @@ function alastairhumphreys_setup() {
 	// Add Alastair Humphreys's custom image sizes
 	add_image_size('Feature Wide', 1600, 9999); // Used for Wide feature images
 	add_image_size('Feature Normal', 1230, 9999); // Feature image that is only the width of the page container
-	add_image_size('Thumbnail', 370, 240, true); // Used for post thumbnail images
-	add_image_size('Gallery Small', 280, 310, true); // Used for small gallery images
-	add_image_size('Gallery Medium', 280, 480, true); // Used for large feature (header) images
-	add_image_size('Gallery Large', 570, 790, true); // Used for post thumbnail images
+	add_image_size('Thumbnail', 370, 240); // Used for post thumbnail images
+	add_image_size('Gallery Small', 310, 280, true); // Used for small gallery images
+	add_image_size('Gallery Medium', 475, 280, true); // Used for large feature (header) images
+	add_image_size('Gallery Large', 795, 570, true); // Used for post thumbnail images
 	add_image_size('Full Post Width', 970, 9999); // Used for inline post images to span the full width
 }
 endif; // alastairhumphreys_setup

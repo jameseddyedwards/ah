@@ -11,7 +11,8 @@
 <?php if (have_posts()) : ?>
 	<?php
 	global $post;
-	$args = array('numberposts' => 1, 'category' => get_query_var('cat'));
+	$currentCategoryId = get_query_var('cat');
+	$args = array('numberposts' => 1, 'category' => $currentCategoryId);
 	$myposts = get_posts($args);
 	?>
 	<?php foreach($myposts as $post) : setup_postdata($post); ?>
@@ -83,13 +84,26 @@
 						<h3>Browse Blog Posts by Category</h3>
 					</div>
 					<div class="span9">
-						<?php
-							if ('' != $categories_list) {
-								$categories_list = get_the_category_list(__('','alastairhumphreys'));
-								printf($categories_list);
+
+						<!-- Category List -->
+						<ul class="post-categories">
+							<?php
+							$categories = get_categories();
+							foreach($categories as $category) {
+								$obj = get_object_vars($category);
+								$catId = $obj[cat_ID];
+								$catName = $obj[name];
+								$catURL = esc_url(home_url('/')) . '?cat=' . $catId;
+								?>
+
+								<li>
+									<a<?php echo $currentCategoryId == $catId ? ' class="current"' : ''; ?> rel="category" title="View latest posts in <?php echo $catName; ?>" href="<?php echo $catURL; ?>"><?php echo $catName; ?></a>
+								</li>
+
+								<?php
 							}
-							
-						?>
+							?>
+						</ul>
 					</div>
 				</div>
 				<div class="row category-filter-thumbs">

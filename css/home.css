@@ -11,6 +11,8 @@
 .tab-row {display:none;}
 .tab-row.active {display:block;}
 
+.post-thumb {height:240px; margin-bottom:20px;}
+
 /* Media Queries */
 /* Phone - Vertical */
 @media (max-width:480px) {

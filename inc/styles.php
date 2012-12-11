@@ -37,6 +37,11 @@
 			wp_enqueue_style('page');
 			wp_enqueue_style('gallery');
 			wp_enqueue_style('comments');
+
+			if (get_the_title() == 'Books') {
+				wp_register_style('books', get_template_directory_uri() . '/css/books.css', __FILE__);	
+				wp_enqueue_style('books');
+			}
 		} else if (is_category()) {
 			wp_register_style('category', get_template_directory_uri() . '/css/category.css', __FILE__);
 			wp_enqueue_style('category');

@@ -3,7 +3,7 @@
 .gallery-thumbs .post-thumb {display:inline-block; float:left; margin:0 10px 10px 0;}
 .gallery-thumbs span img {display:block;}
 .gallery-thumbs .small {height:280px; width:310px;}
-.gallery-thumbs .medium {height:280px; width:480px;}
-.gallery-thumbs .large {height:570px; width:790px;}
+.gallery-thumbs .medium {height:280px; width:475px;}
+.gallery-thumbs .large {height:570px; width:795px;}
 .gallery-thumbs .right {margin-right:0;}
 .gallery-thumbs .fl-right {float:right;}

@@ -12,11 +12,13 @@
 
 .category-filter {margin-top:20px;}
 .category-filter h3 {font-size:14px;}
-.category-filter .post-categories li {display:inline-block; float:left; margin-right:10px;}
-.category-filter .post-categories li a {border:1px solid #cfcfcf; color:#333; display:block; font:bold 12px Arial, Helvetica, sans-serif; padding:7px 10px 6px; text-transform:uppercase;}
-.category-filter .post-categories li a:hover {border:1px solid #333; color:#000; text-decoration:none;}
+.category-filter .post-categories li {display:inline-block; float:left; margin:0 7px 7px 0;}
+.category-filter .post-categories li a {border:1px solid #cfcfcf; color:#333; display:block; font:bold 11px Arial, Helvetica, sans-serif; padding:4px 10px; text-transform:uppercase;}
+.category-filter .post-categories li a:hover,
+.category-filter .post-categories li a.current {border:1px solid #333; color:#000; text-decoration:none;}
+.category-filter .post-categories li a.current {cursor:default;}
 
-.category-filter-thumbs {margin-top:40px;}
+.category-filter-thumbs {margin-top:20px;}
 .category-filter-thumbs .post-thumb {height:175px; margin-bottom:20px;}
 
 /* Phone - Vertical */

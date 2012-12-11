@@ -28,19 +28,5 @@
 			<div class="span1">&nbsp;</div>
 		</div>
 	</div>
-
-	<!-- Testimonials -->
-	<?php if (get_field('testimonials') != '') { ?>
-		<div class="container white content">
-			<div class="row">
-				<div class="span1">&nbsp;</div>
-				<div class="span10">
-					<h2>Testimonials</h2>
-					<?php the_field('testimonials'); ?>
-				</div>
-				<div class="span1">&nbsp;</div>
-			</div>
-		</div>
-	<?php } ?>
 </div>
 

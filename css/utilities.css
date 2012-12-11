@@ -1,16 +1,33 @@
+/* Quotes */
+blockquote,
+blockquote p {color:#8d8d8d; display:block; font:25px din-light, Arial, Helvetica, sans-serif; line-height:30px; margin:1px 0 30px;}
+blockquote span,
+blockquote em {clear:both; display:block; font:16px Arial, Helvetica, sans-serif; line-height:20px; margin-left:30px; color:#999999;}
+
+address {display:block; margin-bottom:20px; line-height:20px; font-style:normal;}
+small {font-size:100%;}
+cite {font-style:normal;}
+
+
 /* Utility Classes */
-
-.clearfix, .container {*zoom:1;}
-.clearfix:before, .container:before,
-.clearfix:after, .container:after {display:table; content:"";}
-.clearfix:after, .container:after {clear:both;}
-
 .arrow-link {background:url('../images/button/arrow-right.png') no-repeat right center; color:#272727; font-size:14px; font-style:italic; padding-right:12px;}
+.bottom {border-bottom:0;}
 .clear {clear:both;}
 .excerpt {color:#191919; display:block; font-size:15px; font-style:italic; line-height:22px;}
 .hidden {display:none; visibility:hidden;}
 .hide-text {background-color:transparent; border:0; color:transparent; font:0/0 a; text-shadow:none;}
 .lead {margin-bottom:20px; font-size:20px; font-weight:200; line-height:30px;}
+.video {max-width:100%; /*height:auto !important; width:100% !important; */}
+
+/* Utility Blocks */
+.assistive-text {position:absolute !important; clip:rect(1px 1px 1px 1px); /* IE6, IE7 */}
+.access a.assistive-text:active,
+.access a.assistive-text:focus {background:#eee; border-bottom:1px solid #ddd; color:#1982d1; clip:auto !important; font-size:12px; position:absolute; text-decoration:underline; top:0; left:7.6%;}
+
+.clearfix, .container {*zoom:1;}
+.clearfix:before, .container:before,
+.clearfix:after, .container:after {display:table; content:"";}
+.clearfix:after, .container:after {clear:both;}
 
 .post-date {margin-top:20px;}
 .post-date a:hover {text-decoration:none;}
@@ -27,7 +44,7 @@
 .next-previous .next span {margin-left:10px;}
 
 .post-thumb {display:block; overflow:hidden; position:relative;}
-.post-thumb span {background:url("../images/background/dark.png"); bottom:0px; color:#fff; font:18px din-light, sans-serif; left:0px; padding:1% 3%; position:absolute; width:94%;}
+.post-thumb span {background:url("../images/background/dark.png"); bottom:0px; color:#fff; font:18px din-light, sans-serif; left:0px; padding:5px 10px; position:absolute; width:100%;}
 .post-thumb:hover span {background:url("../images/background/darker.png"); opacity:0.8;}
 
 .link-list {margin-bottom:100px;}
@@ -38,7 +55,11 @@
 
 article .meta {display:block; font-style:italic; margin-bottom:30px;}
 
+.subscribe {display:block;}
+.subscribe input[type="text"] {border:1px solid #d0d0d0; color:#797979; float:left; font-size:11px; padding:6px 5px 5px; width:230px;}
+.subscribe input[type="submit"] {background:#1a1a1a; border:none; color:#fff; float:left; font-family:din-light, helvetica, arial; height:27px; line-height:27px;}
 
+/* Responsive Visibility */
 .visible-phone {display:none;}
 .visible-tablet {display:none;}
 .hidden-desktop {display:none;}

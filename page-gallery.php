@@ -21,7 +21,7 @@ get_header();
 			'title_li'		=> '',
 			'link_after'	=> ' &#187;',
 		);
-		$galleryImageCount = 10;
+		$galleryImageCount = 15;
 	?>
 
 	<!-- Feature Image -->
@@ -35,6 +35,11 @@ get_header();
 	<div class="gallery-thumbs clearfix">
 		<?php for ($i = 1; $i <= $galleryImageCount; $i++) { ?>
 			<?php
+				$galleryLink = 'gallery_link_' . $i;
+				$galleryImageField = 'gallery_image_' . $i;
+				$galleryTitle = 'gallery_title_' . $i;
+
+				/* Generate Gallery Classes */
 				switch ($i) {
 					case 1:
 						$class = "large";
@@ -61,19 +66,41 @@ get_header();
 						$class = "small fl-right";
 						break;
 					case 9:
-						$class = "medium fl-right";
-						break;
-					case 10:
 						$class = "small fl-right";
 						break;
+					case 10:
+						$class = "medium fl-right";
+						break;
 				}
-				$galleryLink = 'gallery_link_' . $i;
-				$galleryImage = 'gallery_image_' . $i;
-				$galleryTitle = 'gallery_title_' . $i;
+
+				/* Find Image Size */
+				switch ($i) {
+					// Large
+					case 1;
+					case 6;
+						$imageSize = 'Gallery Large';
+						break;
+					// Medium
+					case 3;
+					case 4;
+					case 7;
+					case 10;
+						$imageSize = 'Gallery Medium';
+						break;
+					// Small
+					case 2;
+					case 5;
+					case 8;
+					case 9;
+						$imageSize = 'Gallery Small';
+						break;
+				}
+				$galleryImageURL = get_field($galleryImageField);
+				$galleryImageURL = $galleryImageURL[sizes][$imageSize];
 			?>
-			<?php if (get_field($galleryImage) != '') { ?>
+			<?php if ($galleryImageURL != '') { ?>
 				<a class="<?php echo $class ?> post-thumb" href="<?php the_field($galleryLink); ?>">
-					<img src="<?php the_field($galleryImage); ?>" alt="<?php the_field($galleryTitle); ?>" />
+					<img src="<?php echo $galleryImageURL; ?>" alt="<?php the_field($galleryTitle); ?>" />
 					<span class="title"><?php the_field($galleryTitle); ?></span>
 				</a>
 			<?php } ?>

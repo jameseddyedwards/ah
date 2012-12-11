@@ -74,13 +74,13 @@ $subNavs = array(
 							<span class="sub-title">Latest Post</span>
 
 							<?php foreach($categoryPosts as $categoryPost) : setup_postdata($categoryPost); ?>
-								<a class="feature-image" href="<?php the_permalink(); ?>">
-									<img src="<?php echo ah_get_custom_thumb($categoryPost->ID); ?>" alt="<?php the_title(); ?>" width="215" />
+								<a class="feature-image" href="<?php echo get_permalink($categoryPost->ID); ?>">
+									<img src="<?php echo ah_get_custom_thumb($categoryPost->ID); ?>" alt="<?php echo $categoryPost->post_title ?>" width="215" />
 								</a>
 								<div class="post-text">
-									<a href="<?php the_permalink(); ?>" class="sub-title"><?php the_title(); ?></a>
+									<a href="<?php echo get_permalink($categoryPost->ID); ?>" class="sub-title"><?php echo $categoryPost->post_title ?></a>
 									<span class="excerpt"><?php echo strip_tags(get_the_excerpt()) ?></span>
-									<a class="arrow-link continue-reading" href="<?php the_permalink(); ?>">continue reading</a>
+									<a class="arrow-link continue-reading" href="<?php echo get_permalink($categoryPost->ID); ?>">continue reading</a>
 								</div>
 							<?php endforeach; ?>
 						</div>
@@ -175,7 +175,7 @@ $subNavs = array(
 				);
 				$bookPages = get_posts($bookArgs);
 				$counter = 0;
-				$booksURL = esc_url(home_url('/')) . '?cat=' . $categoryId;
+				$booksURL = esc_url(home_url('/')) . '?page_id=803';
 
 				?>
 				<div class="books clearfix <?php echo $categoryClass ?>">

@@ -1,13 +1,19 @@
 /* Books */
-.split-layout .container {padding:60px 30px;}
-.split-layout h1 {font-size:45px; margin:10px 0 40px; text-transform:uppercase;}
+p a {color:#1A1A1A; text-decoration:underline;}
+h3 {margin:20px 0 15px;}
+h3,
+.book-menu h2 a {color:#333; font:37px/37px din-light, helvetica, arial; text-transform:uppercase;}
+
+.split-layout .container {padding:50px 30px;}
+.split-layout h1 {font-size:45px; margin:0 0 40px; text-transform:uppercase;}
 
 .book-menu hr {margin-bottom:50px;}
 .book-menu .info h2 {margin-bottom:0;}
-.book-menu .info h2 a {color:#333; font:37px/46px din-light, helvetica, arial; text-transform:uppercase;}
 .book-menu .info h2 a:hover {text-decoration:none;}
+.book-menu .info p {margin-bottom:20px;}
+.book-menu .info .box-button {margin-top:0;}
 .book-menu .info .summary,
-.book .summary {color:#4a4a4a; display:block; font-style:italic; margin-bottom:30px;}
+.book .summary {color:#4a4a4a; display:block; font-style:italic; margin-bottom:20px;}
 
 .category-books h3 {color:#333333; font:38px/46px din-light, helvetica, arial; margin-bottom:10px; text-transform:uppercase;}
 .formats h2 {color:#333333; font:26px/32px din-light, helvetica, arial; margin-bottom:10px; text-transform:uppercase;}
@@ -20,3 +26,4 @@
 
 .further-reading ul {margin-bottom:20px;}
 .further-reading ul li a {color:#333;}
+.further-reading ul li a:after {content:" \BB \ ";}

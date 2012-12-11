@@ -1,6 +1,7 @@
 /* Page */
+.page-template-default h1 {margin-bottom:20px;}
 .page h2 {margin-bottom:10px; text-transform:uppercase;}
-.page iframe {margin:30px 0;}
+.page .video {margin:30px 0;}
 
 /* More */
 .page-more .gallery {width:1230px;}
