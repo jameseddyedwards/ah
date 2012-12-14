@@ -14,7 +14,8 @@
 		wp_register_style('structure', get_template_directory_uri() . '/css/structure.css', __FILE__);
 		wp_register_style('global', get_template_directory_uri() . '/css/global.css', __FILE__);
 		wp_register_style('lists', get_template_directory_uri() . '/css/lists.css', __FILE__);
-		wp_register_style('buttons', get_template_directory_uri() . '/css/buttons.css', __FILE__);
+		wp_register_style('forms', get_template_directory_uri() . '/css/forms.css', __FILE__);
+		wp_register_style('ah_buttons', get_template_directory_uri() . '/css/buttons.css', __FILE__);
 		wp_register_style('utilities', get_template_directory_uri() . '/css/utilities.css', __FILE__);
 		
 		wp_enqueue_style('reset');
@@ -22,7 +23,8 @@
 		wp_enqueue_style('structure');
 		wp_enqueue_style('global');
 		wp_enqueue_style('lists');
-		wp_enqueue_style('buttons');
+		wp_enqueue_style('forms');
+		wp_enqueue_style('ah_buttons');
 		wp_enqueue_style('utilities');
 
 

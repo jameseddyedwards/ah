@@ -88,7 +88,7 @@
 						<!-- Category List -->
 						<ul class="post-categories">
 							<?php
-							$categories = get_categories();
+							$categories = get_categories(array('number'=>12));
 							foreach($categories as $category) {
 								$obj = get_object_vars($category);
 								$catId = $obj[cat_ID];

@@ -56,5 +56,5 @@ button:active,
 	border-bottom: 1px solid #333333;
 }
 
-.box-button {background:#3a3a3a url('../images/button/arrow-right-invert.gif') no-repeat right center; color:#fff; display:inline-block; font:24px/24px din-light, helvetica, arial; margin:30px 0; padding:9px 36px 4px 20px; text-transform:uppercase;}
-.box-button:hover {color:#efefef; text-decoration:none;}
+.box-button {background:#3a3a3a url('../images/button/arrow-right-invert.png') no-repeat right center; border:0; color:#fff; display:inline-block; font:24px/24px din-light, helvetica, arial; margin:30px 0; padding:9px 36px 4px 20px; text-transform:uppercase;}
+.box-button:hover {background:#222222 url('../images/button/arrow-right-invert-dark.png') no-repeat right center; color:#ededed; text-decoration:none;}

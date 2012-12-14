@@ -15,7 +15,7 @@
 
 <div class="row comments">
 	<div class="span2">&nbsp;</div>
-	<div class="span10">
+	<div class="span9">
 		<h2>Comments</h2>
 		<?php if (!have_comments()) { // No comments or comments disabled ?>
 			<p class="nocomments"><?php _e('There are currently no comments. Be the first to post a comment below.', 'alastairhumphreys'); ?></p>
@@ -55,4 +55,5 @@
 		<?php } ?>
 		<hr />
 	</div>
+	<div class="span1">&nbsp;</div>
 </div>

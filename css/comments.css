@@ -6,14 +6,14 @@
 .commentlist .comment-author {border-right:1px dotted #999; margin-right:20px; padding-right:10px;}
 .commentlist .comment-author .avatar {float:left; margin-right:10px;}
 .commentlist .comment-author {float:left; width:30%;}
-.commentlist .author-meta {display:block; float:left; width:210px;}
+.commentlist .author-meta {display:block; float:left; width:170px;}
 .commentlist .author-meta span {display:block;}
 .commentlist .author {color:#787878;  font-family:Arial, Helvetica, sans-serif; font-size:13px;}
 .commentlist .author a {color:#1f1f1f; font-family:Arial, Helvetica, sans-serif; font-size:15px; font-weight:bold; line-height:18px; margin:2px 0 5px;}
 .commentlist .posted,
 .commentlist .posted a {color:#787878; display:inline; font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px;}
 .commentlist .edit-link {margin-right:10px;}
-.commentlist .comment-content {float:left; width:640px;}
+.commentlist .comment-content {float:left; width:570px;}
 .commentlist .reply {display:inline;}
 
 /* Comment Form */
@@ -26,9 +26,12 @@
 .comment-form p,
 .comment-form label {color:#191919; display:block; font:18px/24px; margin:8px 0;}
 .comment-form .required {color:red;}
-.comment-form form {background:url('images/background/comment-form.gif'); padding:20px;}
+.comment-form form {padding:20px 0 20px 20px;}
+
 .comment-form input[type="text"],
-.comment-form textarea {border:1px solid #e1e1e1; display:block; margin-bottom:15px; padding:4px 10px; width:98%;}
+.comment-form textarea {width:528px;}
+.comment-form textarea {height:75px;}
+
 
 /* Phone - Vertical */
 @media (max-width:480px) {

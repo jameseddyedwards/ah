@@ -39,7 +39,7 @@ $subNavs = array(
 		)
 	),
 	'More' => array(
-		'menu_item' => $js ? 8658 : 10221, // Local
+		'menu_item' => $js ? 9206 : 10221, // Local
 		'type' => 'more',
 		'page_parents' => array(
 			'More'
@@ -197,8 +197,9 @@ $subNavs = array(
 					$pageVars = get_object_vars(get_page_by_title($subNavPage));
 					$pageId = $pageVars[ID];
 					$moreArgs = array(
-						'post_type'       => 'page',
-						'post_parent'     => $pageId
+						'numberposts'		=> -1,
+						'post_type'			=> 'page',
+						'post_parent'		=> $pageId
 					);
 					$moreLinks = get_posts($moreArgs);
 					$counter = 0;

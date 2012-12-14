@@ -9,43 +9,6 @@
  * @since Alastair Humphreys 1.0
  */
 
-/* Twitter Feed Code 
-$username = "Al_Humphreys";
-$limit = 3;
-//$feed = 'http://twitter.com/statuses/user_timeline.rss?screen_name='.$username.'&count=';
-$feed = 'http://api.twitter.com/1/statuses/user_timeline.json?screen_name=' . $username . '&include_rts=true&count=' . $limit . '&callback=twitterCallback2';
-$tweets = file_get_contents($feed);
-
-$tweets = str_replace("&", "&", $tweets);	
-$tweets = str_replace("<", "<", $tweets);
-$tweets = str_replace(">", ">", $tweets);
-$tweet = explode("<item>", $tweets);
-$tcount = count($tweet) - 1;
-
-for ($i = 1; $i <= $tcount; $i++) {
-	$endtweet = explode("</item>", $tweet[$i]);
-	$title = explode("<title>", $endtweet[0]);
-	$content = explode("</title>", $title[1]);
-	$content[0] = str_replace("&#8211;", "&mdash;", $content[0]);
-	$content[0] = preg_replace("/(http:\/\/|(www\.))(([^\s<]{4,68})[^\s<]*)/", '<a href="http://$2$3" target="_blank">$1$2$4</a>', $content[0]);
-	$content[0] = str_replace("$username: ", "", $content[0]);
-	$content[0] = preg_replace("/@(\w+)/", "<a href=\"http://www.twitter.com/\\1\" target=\"_blank\">@\\1</a>", $content[0]);
-	$content[0] = preg_replace("/#(\w+)/", "<a href=\"http://search.twitter.com/search?q=\\1\" target=\"_blank\">#\\1</a>", $content[0]);
-	$mytweets[] = $content[0];
-}
-
-$counter = 0;
-while (list(, $v) = each($mytweets)) {
-	if ($var < 0) 
-echo "negative";
-	if ($counter == 0)
-		$span = "<span class='firstTweet'>";
-	else
-		$span = "<span>";
-	$tweetout .= "$span$v</span>\n";
-	$counter++;
-}
-*/
 ?>
 
 </div> <!-- Close 'main' container <div> -->
@@ -111,8 +74,6 @@ echo "negative";
 						
 						foreach($categories as $category) { 
 							echo '<a href="' . get_category_link( $category->term_id ) . '" title="' . sprintf( __( "View all posts in %s" ), $category->name ) . '" ' . '>' . $category->name.'</a>';
-							//echo '<p>Description:'. $category->description . '</p>';
-							//echo '<p>Post Count: '. $category->count . '</p>';
 						} 
 					?>
 				</span>
@@ -122,7 +83,6 @@ echo "negative";
 			</div>
 			<div class="span3 social">
 				<h4>Twitter</h4>
-				<?//=$tweetout; ?>
 				<div class="twitter-feed">
 					<?php echo do_shortcode('[twitter-feed username="Al_Humphreys" num=3 img="no" followlink="no"]'); ?>
 				</div>

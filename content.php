@@ -29,7 +29,7 @@
 						</div>
 					<?php endif; ?>
 				</div>
-				<div class="span10">
+				<div class="span9">
 					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 						<header>
 							<h1><?php the_title(); ?></h1>
@@ -133,6 +133,7 @@
 					
 					<hr />
 				</div>
+				<div class="span1">&nbsp;</div>
 			</div>
 		</div>
 	</div>

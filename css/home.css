@@ -42,7 +42,7 @@
 /* Small Browser */
 @media (min-width:1200px) {
 	.tabs {display:inline-block; float:left;}
-	.head-bar .view-all {float:right; padding-right:14px;}
+	.head-bar .view-all {float:right; margin-top:7px; padding-right:14px;}
 }
 
 /* Large Browser */

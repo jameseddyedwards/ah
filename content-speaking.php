@@ -23,9 +23,11 @@
 					<?php the_content(); ?>
 
 					<?php if (get_field('information_resources') != '') { ?>
-						<!-- Information & Resources -->
-						<h2>Information and Resources</h2>
-						<?php the_field('information_resources'); ?>
+						<div class="information-resources">
+							<!-- Information & Resources -->
+							<h2>Information and Resources</h2>
+							<?php the_field('information_resources'); ?>
+						</div>
 					<?php } ?>
 				<?php endwhile; ?>
 			</div>
@@ -35,7 +37,7 @@
 
 	<!-- Testimonials -->
 	<?php if (get_field('testimonials') != '') { ?>
-		<div class="container white content">
+		<div class="container white content testimonials">
 			<div class="row">
 				<div class="span1">&nbsp;</div>
 				<div class="span10">
@@ -46,4 +48,19 @@
 			</div>
 		</div>
 	<?php } ?>
+
+	<!-- Book Alastair -->
+	<div class="container white content booking-form">
+		<div class="row">
+			<div class="span1">&nbsp;</div>
+			<div class="span10">
+				<h1>Book Alastair</h1>
+				<p>If you would like to book Alastair for a speaking event, or for more information, please fill out the form below. Alternatively, email <a href="mailto:speaking@alastairhumphreys.com">speaking@alastairhumphreys.com</a>.</p>
+				<?php echo do_shortcode('[contact-form-7 id="10253" title="Book Alastair"]'); ?>
+				
+			</div>
+			<div class="span1">&nbsp;</div>
+		</div>
+	</div>
+
 </div>

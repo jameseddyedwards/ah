@@ -8,6 +8,26 @@
 .page-more iframe {display:block; margin:0;}
 .page-more .container {margin-top:0;}
 
+/* Information & Resources */
+.information-resources {margin-top:30px;}
+
+/* Testimonials */
+.testimonials h2 {font-size:30px; margin-bottom:30px;}
+.testimonials blockquote {border-bottom:1px dotted #ccc; margin-bottom:25px; padding-bottom:25px;}
+.testimonials blockquote.last {border-bottom:0;}
+
+/* Booking Form */
+.booking-form a {color:#1A1A1A; text-decoration:underline;}
+.booking-form .wpcf7 {border-top:1px dotted #999; margin-top:40px; padding-top:30px;}
+.booking-form .wpcf7 form {width:500px;}
+
+.booking-form form input[type="text"] {width:260px;}
+.booking-form form .large input[type="text"] {width:478px;}
+.booking-form form select {width:200px;}
+.booking-form form textarea {width:478px;}
+.booking-form form .left {float:left; margin-right:30px; width:270px;}
+.booking-form form .right {float:right; width:200px;}
+.booking-form form .button-field {margin-right:-20px; text-align:right;}
 
 /* Phone - Vertical */
 @media (max-width:480px) {

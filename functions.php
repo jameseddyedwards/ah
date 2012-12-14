@@ -235,6 +235,7 @@ function alastairhumphreys_comment($comment, $args, $depth) {
 		case 'pingback' :
 		case 'trackback' :
 	?>
+	<!-- Do nothing for pingbacks & trackbacks
 	<li class="post pingback">
 		<p>
 			<?php _e('Pingback:', 'alastairhumphreys'); ?>
@@ -242,6 +243,7 @@ function alastairhumphreys_comment($comment, $args, $depth) {
 			<?php edit_comment_link( __('| Edit', 'alastairhumphreys'), '<span class="edit-link">', '</span>'); ?>
 		</p>
 	</li>
+	-->
 	<?php
 			break;
 		default :

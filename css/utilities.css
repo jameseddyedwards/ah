@@ -17,7 +17,12 @@ cite {font-style:normal;}
 .hidden {display:none; visibility:hidden;}
 .hide-text {background-color:transparent; border:0; color:transparent; font:0/0 a; text-shadow:none;}
 .lead {margin-bottom:20px; font-size:20px; font-weight:200; line-height:30px;}
-.video {max-width:100%; /*height:auto !important; width:100% !important; */}
+
+/* Elastic Videos */
+.video-container {height:0; overflow:hidden; padding-bottom:56.25%; padding-top:30px; position:relative;}
+.video-container iframe,  
+.video-container object,  
+.video-container embed {height:100%; left:0; position:absolute; top:0; width:100%;}
 
 /* Utility Blocks */
 .assistive-text {position:absolute !important; clip:rect(1px 1px 1px 1px); /* IE6, IE7 */}
@@ -48,8 +53,13 @@ cite {font-style:normal;}
 .post-thumb:hover span {background:url("../images/background/darker.png"); opacity:0.8;}
 
 .link-list {margin-bottom:100px;}
-.link-list li {min-height:20px; line-height:28px; float:left; width:33%;}
-.link-list a {color:#1a1a1a; font-size:18px;}
+.link-list li {display:inline-block;}
+.link-list li a {color:#1a1a1a; font-size:18px; line-height:28px;}
+.link-list li a:after {content:" \BB \ ";}
+.link-list.one-column li {display:block;}
+.link-list.two-column li {float:left; margin-right:2%; width:48%;}
+.link-list.three-column li {float:left; margin-right:2%; width:31%;}
+
 
 .main .excerpt {height:105px; margin:15px 0; overflow:hidden;}
 

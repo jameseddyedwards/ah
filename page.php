@@ -22,6 +22,8 @@ $speaking = get_object_vars(get_page_by_title('Speaking'));
 $speakingId = $speaking[ID];
 $more = get_object_vars(get_page_by_title('More'));
 $moreId = $more[ID];
+$videos = get_object_vars(get_page_by_title('Videos'));
+$videosId = $videos[ID];
 
 switch ($currentPageId) {
 	case $booksId:
@@ -32,6 +34,9 @@ switch ($currentPageId) {
 		break;
 	case $moreId:
 		$layout = "more";
+		break;
+	case $videosId:
+		$layout = "videos";
 		break;
 	default:
 		$layout = "";

@@ -19,7 +19,6 @@ get_header();
 			'depth'			=> 1,
 			'child_of'		=> $post->ID,
 			'title_li'		=> '',
-			'link_after'	=> ' &#187;',
 		);
 		$galleryImageCount = 15;
 	?>
@@ -120,7 +119,7 @@ get_header();
 		<div class="row">
 			<div class="span12">
 				<h2><?php the_title(); ?></h2>
-				<ul class="link-list clearfix">
+				<ul class="link-list three-column clearfix">
 					<?php wp_list_pages($args); ?>
 				</ul>
 

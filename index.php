@@ -52,7 +52,7 @@ get_header();
 				<li id="recent" class="active">Latest posts</li>
 				<li id="best">Best bits</li>
 			</ul>
-			<a class="view-all" href="<?php get_author_posts_url('','admin'); ?>">view all</a>
+			<a class="view-all" href="<?php echo get_site_url(); ?>/?cat=5">view all</a>
 		</div>
 	</div>
 

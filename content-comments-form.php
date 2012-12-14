@@ -26,7 +26,7 @@ comment_form($fields);
 <?php if ('open' == $post->comment_status) : ?>
 	<?php $req = get_option('require_name_email'); ?>
 
-	<div class="row comment-form">
+	<div id="respond" class="row comment-form">
 		<div class="span2">&nbsp;</div>
 		<div class="span3">
 			<h2><?php comment_form_title('Post a Comment', 'Post a Comment to %s'); ?></h2>
@@ -36,7 +36,7 @@ comment_form($fields);
 			</p>
 			<?php show_subscription_checkbox(); ?>
 		</div>
-		<div class="span7 respond">
+		<div class="span6">
 			<?php cancel_comment_reply_link(); ?>
 
 			<?php if (get_option('comment_registration') && !$user_ID) : ?>
@@ -58,7 +58,7 @@ comment_form($fields);
 						<?php endif; ?>
 
 						<label for="comment">Comment</label>
-						<textarea id="comment" name="comment" cols="100%" rows="10" tabindex="4"></textarea>
+						<textarea id="comment" name="comment" tabindex="4"></textarea>
 						<?php comment_id_fields(); ?>
 
 						<input name="submit" type="submit" id="submit" tabindex="5" value="Submit Comment" class="button" />
@@ -69,6 +69,7 @@ comment_form($fields);
 
 			<?php endif; ?>
 		</div>
+		<div class="span1">&nbsp;</div>
 	</div>
 <?php endif; ?>
 

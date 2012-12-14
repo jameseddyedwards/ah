@@ -9,4 +9,10 @@ function button_shortcode($atts, $content = null) {
 }
 add_shortcode('button', 'button_shortcode');
 
+function video_shortcode($atts, $content = null) {
+
+	return '<div class="video-container">' . do_shortcode($content) . '</div>';
+}
+add_shortcode('video', 'video_shortcode');
+
 ?>
