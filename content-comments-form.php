@@ -29,15 +29,14 @@ comment_form($fields);
 	<div id="respond" class="row comment-form">
 		<div class="span2">&nbsp;</div>
 		<div class="span3">
-			<h2><?php comment_form_title('Post a Comment', 'Post a Comment to %s'); ?></h2>
+			<h2><?php comment_form_title('Post a Comment', 'Post a reply to %s'); ?></h2>
 			<p>
-				<strong>You may use these HTML tags and attributes:</strong>
+				<strong>HTML tags you can use:</strong>
 				<code><?php echo allowed_tags(); ?></code>
 			</p>
 			<?php show_subscription_checkbox(); ?>
 		</div>
 		<div class="span6">
-			<?php cancel_comment_reply_link(); ?>
 
 			<?php if (get_option('comment_registration') && !$user_ID) : ?>
 				<p>You must be <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?redirect_to=">logged in</a> to post a comment.</p>
@@ -45,7 +44,7 @@ comment_form($fields);
 				<form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform">
 					<fieldset>
 						<?php if ($user_ID) : ?>
-							<p>Logged in as <a href="<?php echo admin_url('profile.php'); ?>"><?php echo $current_user->display_name ?></a>. <a title="Log out of this account" href="<?php echo wp_logout_url(get_permalink()); ?>">Log out?</a></p>
+							<p class="logged-in">Logged in and commenting as <a href="<?php echo admin_url('profile.php'); ?>"><?php echo $current_user->display_name ?></a>. Not you? <a title="Log out of this account" href="<?php echo wp_logout_url(get_permalink()); ?>">Log out</a>.</p>
 						<?php else : ?>
 							<label for="author">Name <?php if ($req) echo "<span class='required'>*</span>"; ?></label>
 							<input id="author" name="author" type="text" value="<?php echo $comment_author; ?>" size="22" tabindex="1" />
@@ -62,6 +61,7 @@ comment_form($fields);
 						<?php comment_id_fields(); ?>
 
 						<input name="submit" type="submit" id="submit" tabindex="5" value="Submit Comment" class="button" />
+						<?php cancel_comment_reply_link("Cancel reply"); ?>
 						<?php do_action('comment_form', $post->ID); ?>
 					</fieldset>
 				</form>

@@ -11,7 +11,7 @@ cite {font-style:normal;}
 
 /* Utility Classes */
 .arrow-link {background:url('../images/button/arrow-right.png') no-repeat right center; color:#272727; font-size:14px; font-style:italic; padding-right:12px;}
-.bottom {border-bottom:0;}
+.bottom {border-bottom:0 !important;}
 .clear {clear:both;}
 .excerpt {color:#191919; display:block; font-size:15px; font-style:italic; line-height:22px;}
 .hidden {display:none; visibility:hidden;}
@@ -19,7 +19,7 @@ cite {font-style:normal;}
 .lead {margin-bottom:20px; font-size:20px; font-weight:200; line-height:30px;}
 
 /* Elastic Videos */
-.video-container {height:0; overflow:hidden; padding-bottom:56.25%; padding-top:30px; position:relative;}
+.video-container {height:0; margin:20px 0; overflow:hidden; padding-bottom:56.25%; padding-top:30px; position:relative;}
 .video-container iframe,  
 .video-container object,  
 .video-container embed {height:100%; left:0; position:absolute; top:0; width:100%;}
@@ -39,6 +39,14 @@ cite {font-style:normal;}
 .post-date .month,
 .post-date .year {color:#d2d2d2; display:block; font:45px/40px din-light, helvetica, arial;}
 
+/* Category List */
+.post-categories li {display:inline-block; float:left; margin:0 7px 7px 0;}
+.post-categories li a {border:1px solid #cfcfcf; color:#333; display:block; font:bold 11px Arial, Helvetica, sans-serif; padding:4px 10px; text-transform:uppercase;}
+.post-categories li a:hover,
+.post-categories li a.current {border:1px solid #333; color:#000; text-decoration:none;}
+.post-categories li a.current {cursor:default;}
+
+/* Next Previous Links */
 .next-previous {margin:30px 0; position:relative;}
 .next-previous div {display:inline-block;}
 .next-previous div a {color:#1a1a1a;}

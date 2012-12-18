@@ -1,4 +1,4 @@
-function menu() {
+function menu($) {
 	var dropdowns = $(".dropdown"),
 		menu = $("#menu-primary-menu"),
 		navItems = $(".menu-item", menu),
@@ -18,7 +18,7 @@ function menu() {
 	});
 }
 
-function tabbed(element) {
+function tabbed($, element) {
 	var tabs = $("li", element);
 	tabs.click(function(){
 		tabs.removeClass("active");
@@ -31,15 +31,15 @@ function tabbed(element) {
 	});
 }
 
-function navToggle() {
+function navToggle($) {
 	$("#nav-tab").click(function() {
 		$("#navigation").toggleClass('visible-phone').toggleClass('visible-tablet');
 		console.log("tab clicked");
 	});
 }
 
-$(document).ready( function() {
-	navToggle();
-	menu();
-	tabbed(".tabs");
+jQuery(document).ready(function($) {
+	navToggle($);
+	menu($);
+	tabbed($, ".tabs");
 });

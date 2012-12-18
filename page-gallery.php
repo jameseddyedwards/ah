@@ -41,18 +41,23 @@ get_header();
 				/* Generate Gallery Classes */
 				switch ($i) {
 					case 1:
+					case 11:
 						$class = "large";
 						break;
 					case 2:
+					case 12:
 						$class = "small";
 						break;
 					case 3:
+					case 13:
 						$class = "medium right";
 						break;
 					case 4:
+					case 14:
 						$class = "medium";
 						break;
 					case 5:
+					case 15:
 						$class = "small right";
 						break;
 					case 6:
@@ -77,6 +82,7 @@ get_header();
 					// Large
 					case 1;
 					case 6;
+					case 11;
 						$imageSize = 'Gallery Large';
 						break;
 					// Medium
@@ -84,6 +90,8 @@ get_header();
 					case 4;
 					case 7;
 					case 10;
+					case 13;
+					case 14;
 						$imageSize = 'Gallery Medium';
 						break;
 					// Small
@@ -91,6 +99,8 @@ get_header();
 					case 5;
 					case 8;
 					case 9;
+					case 12;
+					case 15;
 						$imageSize = 'Gallery Small';
 						break;
 				}

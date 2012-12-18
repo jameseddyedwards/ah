@@ -50,14 +50,13 @@
 	<?php } ?>
 
 	<!-- Book Alastair -->
-	<div class="container white content booking-form">
+	<div id="booking-form" class="container white content booking-form">
 		<div class="row">
 			<div class="span1">&nbsp;</div>
 			<div class="span10">
 				<h1>Book Alastair</h1>
-				<p>If you would like to book Alastair for a speaking event, or for more information, please fill out the form below. Alternatively, email <a href="mailto:speaking@alastairhumphreys.com">speaking@alastairhumphreys.com</a>.</p>
+				<p>If you would like to book Alastair for a speaking event, or for more information, please fill out the form below.<br />Alternatively, email <a href="mailto:speaking@alastairhumphreys.com">speaking@alastairhumphreys.com</a>.</p>
 				<?php echo do_shortcode('[contact-form-7 id="10253" title="Book Alastair"]'); ?>
-				
 			</div>
 			<div class="span1">&nbsp;</div>
 		</div>

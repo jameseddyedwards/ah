@@ -6,7 +6,7 @@
  
 // Let's hook in our function with the javascript files with the wp_enqueue_scripts hook 
 
-//add_action('wp_enqueue_scripts', 'ahumphreys_load_javascript_files');
+add_action('wp_enqueue_scripts', 'ahumphreys_load_javascript_files');
 
 // Register some javascript files, because we love javascript files. Enqueue a couple as well 
 
@@ -21,10 +21,13 @@ function ahumphreys_load_javascript_files() {
 	if (is_singular() && get_option('thread_comments')) {
 		wp_enqueue_script('comment-reply');
 	}
+	if (is_front_page()) {
+		wp_register_script('ah_carousel', get_template_directory_uri() . '/js/jquery.carouFredSel.js', array('jquery'), '5.5.0', true);
+		wp_enqueue_script('ah_carousel');
+	}
 	
 	wp_enqueue_script('global_js');
 
-	//if (get_field('carousel_gallery') != '') {
-	//}
 }
+
 ?>

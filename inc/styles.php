@@ -54,6 +54,9 @@
 			wp_enqueue_style('post');
 			wp_enqueue_style('recommended');
 			wp_enqueue_style('comments');
+		} else if (is_search()) {
+			wp_register_style('search', get_template_directory_uri() . '/css/search.css', __FILE__);
+			wp_enqueue_style('search');
 		}
 
 

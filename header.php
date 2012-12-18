@@ -87,7 +87,14 @@
 					<li><a href=""><img src="<?php bloginfo('template_url'); ?>/images/icon/flickr.png" /></a></li>
 				</ul>
 
-				<?php get_search_form(); ?>
+				<?php //get_search_form(); ?>
+				<form class="newsletter-form" action="http://groups.google.com/group/alastairhumphreys/boxsubscribe">
+					<div>
+						<input name="email" type="text" placeholder="Email sign up for monthly eNewsletter">
+						<input name="sub" type="submit" value="email">
+						<br class="clear" />
+					</div>
+				</form>
 
 				<nav class="access" role="navigation">
 					<?php /* Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff. */ ?>
