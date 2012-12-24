@@ -73,6 +73,8 @@ cite {font-style:normal;}
 
 article .meta {display:block; font-style:italic; margin-bottom:30px;}
 
+.content .searchform {margin-top:30px;}
+
 .subscribe {display:block;}
 .subscribe input[type="text"] {border:1px solid #d0d0d0; color:#797979; float:left; font-size:11px; padding:6px 5px 5px; width:230px;}
 .subscribe input[type="submit"] {background:#1a1a1a; border:none; color:#fff; float:left; font-family:din-light, helvetica, arial; height:27px; line-height:27px;}
@@ -85,7 +87,7 @@ article .meta {display:block; font-style:italic; margin-bottom:30px;}
 
 /* Phone - Vertical */
 @media (max-width:480px) {
-
+	.main .excerpt {margin:15px 0 30px;}
 }
 
 /* Phone - Horizontal */

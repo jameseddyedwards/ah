@@ -80,17 +80,17 @@
 			</a>
 
 			<div id="navigation" class="visible-desktop phone-nav">
-				<ul class="social-icons inline">
-					<li><a href=""><img src="<?php bloginfo('template_url'); ?>/images/icon/rss.png" /></a></li>
-					<li><a href=""><img src="<?php bloginfo('template_url'); ?>/images/icon/twitter.png" /></a></li>
-					<li><a href=""><img src="<?php bloginfo('template_url'); ?>/images/icon/facebook.png" /></a></li>
-					<li><a href=""><img src="<?php bloginfo('template_url'); ?>/images/icon/flickr.png" /></a></li>
+				<ul class="social-icons inline clearfix">
+					<li><a href="<?php bloginfo('rdf_url'); ?>"><img src="<?php bloginfo('template_url'); ?>/images/icon/rss.png" /></a></li>
+					<li><a href="https://twitter.com/Al_Humphreys"><img src="<?php bloginfo('template_url'); ?>/images/icon/twitter.png" /></a></li>
+					<li><a href="http://www.facebook.com/pages/Alastair-Humphreys/149963098097"><img src="<?php bloginfo('template_url'); ?>/images/icon/facebook.png" /></a></li>
+					<li><a href="http://www.flickr.com/photos/alastairhumphreys/"><img src="<?php bloginfo('template_url'); ?>/images/icon/flickr.png" /></a></li>
 				</ul>
 
-				<?php //get_search_form(); ?>
+				<!-- Newsletter Signup Form -->
 				<form class="newsletter-form" action="http://groups.google.com/group/alastairhumphreys/boxsubscribe">
 					<div>
-						<input name="email" type="text" placeholder="Email sign up for monthly eNewsletter">
+						<input name="email" type="text" placeholder="Email sign up for monthly newsletter">
 						<input name="sub" type="submit" value="email">
 						<br class="clear" />
 					</div>
@@ -102,7 +102,7 @@
 					<?php /* Our navigation menu.  If one isn't filled out, wp_nav_menu falls back to wp_page_menu. The menu assiged to the primary position is the one used. If none is assigned, the menu with the lowest ID is used. */ ?>
 					<?php wp_nav_menu(array(
 						'theme_location'	=> 'primary',
-						'menu_class'		=> 'menu'
+						'menu_class'		=> 'menu clearfix'
 					)); ?>
 
 					<?php get_template_part('content', 'dropdown'); ?>

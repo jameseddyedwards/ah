@@ -13,13 +13,8 @@
 <?php } ?>
 
 <?php while (have_posts()) : the_post(); ?>
-	<?php
-		$postImage = '';
-		if (get_field('feature_image') != '') {
-			$postImage = ' style="background:url(' . get_field('feature_image') . ') no-repeat center top; padding-top:700px;"';
-		}
-	?>
-	<div class="background"<?php echo $postImage ?>>
+
+	<div class="background"<?php echo ah_get_feature_image($pageID = $post->ID, $size = 'Feature Wide', $type = 'background'); ?>>
 		<div class="container white content">
 			<div class="row">
 				<div class="span2">

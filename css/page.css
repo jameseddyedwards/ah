@@ -29,6 +29,8 @@
 .booking-form form .right {float:right; width:200px;}
 .booking-form form .button-field {margin-right:-20px; text-align:right;}
 
+.page-template-page-gallery-php .main .nav-tab {top:0;}
+
 /* Book */
 .book {margin-top:0;}
 

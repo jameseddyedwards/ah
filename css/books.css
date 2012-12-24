@@ -4,6 +4,8 @@ h3 {margin:20px 0 15px;}
 h3,
 .book-menu h2 a {color:#333; font:37px/37px din-light, helvetica, arial; text-transform:uppercase;}
 
+.main .nav-tab {top:0;}
+
 .books .container {padding:50px 30px;}
 .books h1 {font-size:45px; margin:0 0 40px; text-transform:uppercase;}
 
