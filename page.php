@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying all pages.
+ * The template for determining what layout to use for hierarchical pages, defaulting to a standard post layout.
  *
  *
  * This is the template that displays all pages by default.
@@ -20,8 +20,6 @@ $books = get_object_vars(get_page_by_title('Books'));
 $booksId = $books[ID];
 $speaking = get_object_vars(get_page_by_title('Speaking'));
 $speakingId = $speaking[ID];
-$more = get_object_vars(get_page_by_title('More'));
-$moreId = $more[ID];
 $videos = get_object_vars(get_page_by_title('Videos'));
 $videosId = $videos[ID];
 
@@ -32,9 +30,6 @@ switch ($currentPageId) {
 	case $speakingId:
 		$layout = "speaking";
 		break;
-	case $moreId:
-		$layout = "more";
-		break;
 	case $videosId:
 		$layout = "videos";
 		break;
@@ -42,15 +37,13 @@ switch ($currentPageId) {
 		$layout = "";
 		break;
 }
+
 ?>
 
 <?php if ($testSite) { ?>
 	<h1>page.php</h1>
 <?php } ?>
 
-<?php
-get_template_part('content', $layout);
-
-?>
+<?php get_template_part('content', $layout); ?>
 
 <?php get_footer(); ?>

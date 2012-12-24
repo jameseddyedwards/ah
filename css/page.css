@@ -29,6 +29,9 @@
 .booking-form form .right {float:right; width:200px;}
 .booking-form form .button-field {margin-right:-20px; text-align:right;}
 
+/* Book */
+.book {margin-top:0;}
+
 /* Phone - Vertical */
 @media (max-width:480px) {
 	

@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying content in the single.php template
+ * The fall back template for displaying content in the single.php template
  *
  * @package WordPress
  * @subpackage AlastairHumphreys

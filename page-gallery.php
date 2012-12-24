@@ -14,7 +14,6 @@ get_header();
 
 <?php while (have_posts()) : the_post(); ?>
 	<?php
-		$featureImage = get_field('feature_image');
 		$args = array(
 			'depth'			=> 1,
 			'child_of'		=> $post->ID,
@@ -24,11 +23,7 @@ get_header();
 	?>
 
 	<!-- Feature Image -->
-	<?php if ($featureImage != '') { ?>
-		<div class="gallery">
-			<img src="<?php echo $featureImage; ?>" alt="<?php the_title(); ?>" />
-		</div>
-	<?php } ?>
+	<?php echo ah_get_feature_image($pageID = $post->ID, $size = 'Feature Wide'); ?>
 
 	<!-- Gallery Images -->
 	<div class="gallery-thumbs clearfix">

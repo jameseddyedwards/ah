@@ -13,6 +13,20 @@
 
 .post-thumb {height:240px; margin-bottom:20px;}
 
+/* Carousel */
+.carousel-wrapper {margin:0 auto; max-width:1600px; overflow:hidden; position:relative; width:100%;}
+.carousel-wrapper .carousel {width:1000000px;}
+.carousel-wrapper .carousel > img,
+.carousel-wrapper .carousel > a {height:auto; width:auto; display:block; float:left;}
+
+.next,
+.previous {height:49px; margin-top:-25px; opacity:0.6; position:absolute; top:50%; width:49px; z-index:10;}
+.next:hover,
+.previous:hover {opacity:1;}
+.next {background:url("../images/icon/right.png") no-repeat; right:20px;}
+.previous {background:url("../images/icon/left.png") no-repeat; left:20px;}
+
+
 /* Media Queries */
 /* Phone - Vertical */
 @media (max-width:480px) {

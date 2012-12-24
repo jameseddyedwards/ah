@@ -18,7 +18,6 @@
 
 /* Comment Form */
 .subscribe-to-comments {padding:0 0 0 25px; position:relative;}
-.logged-in .subscribe-to-comments {padding:0;}
 .subscribe-to-comments input {left:2px; position:absolute; top:5px;}
 
 .comment-form {padding-top:20px;}

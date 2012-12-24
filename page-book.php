@@ -16,12 +16,8 @@ $featuredClass = "";
 
 <?php while (have_posts()) : the_post(); ?>
 
-	<?php if (get_field('feature_image') != '') { ?>
-		<?php $featuredClass = "featured" ?>
-		<div class="feature">
-			<img src="<?php the_field('feature_image'); ?>" alt="<?php the_title(); ?>" />
-		</div>
-	<?php } ?>
+	<!-- Feature Image -->
+	<?php echo ah_get_feature_image($pageID = $post->ID); ?>
 
 	<div class="container white content book <?php echo $featuredClass?>">
 		<div class="row">

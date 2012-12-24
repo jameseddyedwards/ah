@@ -7,11 +7,6 @@
  * @since Alastair Humphreys 1.0
  */
 
-$current_category = 'category_' . get_query_var('cat');
-$postImage = '';
-if (function_exists('z_taxonomy_image_url') && z_taxonomy_image_url() != '') {
-	$postImage = ' style="background:url(' . z_taxonomy_image_url() . ') no-repeat center top; padding-top:700px;"';
-}
 $numberOfBooks = 3;
 $counter = 1;
 $bookPageArgs = array(
@@ -22,14 +17,14 @@ $bookPageArgs = array(
 );
 $bookPages = get_posts($bookPageArgs);
 
-
+echo $testSite;
 ?>
 
 <?php if ($testSite) { ?>
 	<h1>content-books.php</h1>
 <?php } ?>
 
-<div class="split-layout background"<?php echo $postImage ?>>
+<div class="books background"<?php echo ah_get_feature_image($pageID = $post->ID, $size = 'Feature Wide', $type = 'background'); ?>>
 
 	<?php if (have_posts()) : the_post(); ?>
 		<div class="container white content">

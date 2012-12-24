@@ -112,6 +112,34 @@ function ah_get_custom_thumb($pageID = '') {
 	return $defaultThumbnail;
 }
 
+/*
+ * $type = 'background' or 'normal'
+ * $size = Any image size shown above
+*/
+function ah_get_feature_image($pageID = '', $size = 'Feature Normal', $type = 'normal') {
+	if (isset($pageID)) {
+		$featureImageHtml = "";
+		$featureImageObj = get_field('feature_image', $pageID);
+		
+		if ($featureImageObj != '') {
+			$featureImageUrl = $featureImageObj[sizes][$size];
+			$featureImageTitle = $featureImageObj[title];
+
+			if ($type == 'background') {
+				$featureImageHtml = ' style="background:url(' . $featureImageUrl . ') no-repeat center top; padding-top:700px;"';
+			} else {
+				$featureImageHtml = '<div class="feature"><img src="' . $featureImageUrl . '" alt="' . $featureImageTitle . '" /></div>';
+			}
+			return $featureImageHtml;
+		} else {
+			return;
+		}
+	} else {
+		echo "No Page ID set";
+	}
+}
+
+
 function ah_get_dropdown($categories, $menuId) {
 	$i = 1;
 	$categoryCount = count($categories);
