@@ -43,7 +43,7 @@ include TEMPLATEPATH . '/inc/shortcodes.php';
 include TEMPLATEPATH . '/inc/styles.php';
 include TEMPLATEPATH . '/inc/scripts.php';
 
-$testSite = false;
+$testSite = true;
 
 /**
  * Tell WordPress to run alastairhumphreys_setup() when the 'after_setup_theme' hook is run.

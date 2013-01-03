@@ -73,5 +73,7 @@ jQuery(document).ready(function($) {
 	navToggle($);
 	menu($);
 	tabbed($, ".tabs");
-	carousel($);
+	if ($("#carousel").length > 0) {
+		carousel($);
+	}
 });

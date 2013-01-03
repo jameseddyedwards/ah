@@ -9,8 +9,10 @@
 .category-filter {margin-top:20px;}
 .category-filter h3 {font-size:14px;}
 
-.category-filter-thumbs {margin-top:20px;}
+.category-filter-thumbs {background-color:#fff;}
 .category-filter-thumbs .post-thumb {height:175px; margin-bottom:20px;}
+
+.wrapper {background:url('../images/icon/loading.gif') no-repeat center 70px; margin-top:20px;}
 
 /* Phone - Vertical */
 @media (max-width:480px) {

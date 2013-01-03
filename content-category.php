@@ -86,7 +86,7 @@
 					<div class="span9">
 
 						<!-- Category List -->
-						<ul class="post-categories">
+						<ul id="category-links" class="post-categories">
 							<?php
 							$categories = get_categories(array('number'=>12));
 							foreach($categories as $category) {
@@ -106,7 +106,7 @@
 						</ul>
 					</div>
 				</div>
-				<div class="row category-filter-thumbs">
+				<div id="category-filter-thumbs" class="row category-filter-thumbs">
 					<?php while (have_posts()) : the_post(); ?>
 						<div class="span3">
 							<a class="post-thumb" href="<?php the_permalink(); ?>">
@@ -121,7 +121,94 @@
 				<p><?php _e('Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post.', 'alastairhumphreys'); ?></p>
 				<?php get_search_form(); ?>
 			<?php endif; ?>
+
+			<!-- Pagination -->
+			<div id="pagination" class="row">
+				<div class="span12">
+					<?php 
+						if (function_exists('wp_paginate')) {
+							wp_paginate();
+						} else if ($wp_query->max_num_pages > 1) {
+							alastairhumphreys_content_nav('nav-below');
+						}
+					?>
+				</div>
+			</div>
+
 		</div>
 	</div>
 </div>
+
+<script type="text/javascript">
+	
+	jQuery(document).ready(function($){
+		var container = $("#category-links"),
+			links = $("a", container),
+			pagination = $("#pagination"),
+			paginationLinks = $("a", pagination),
+			pathname = window.location.href,
+			posts = $("#category-filter-thumbs"),
+			thumbs,
+			wrapper = $('<div id="wrapper" class="wrapper">').css("height", posts.outerHeight()),
+			url;
+
+		if (!$("#wrapper").length > 0) {
+			posts.wrap(wrapper);
+		}
+
+		function initPaginationAjax() {
+			$("a", "#pagination").click(function(event){
+				event.preventDefault();
+
+				url = $(this).attr("href");
+				ajaxPagination(url);
+			});
+		}
+
+		function ajaxPagination(url) {
+			$.get(url, function(data) {
+				thumbs = $(data).find("#category-filter-thumbs").html();
+				newPagination = $(data).find("#pagination").html();
+				
+				posts.html(thumbs); // Replace posts with Ajax'd posts (while hidden)
+				//console.log($("#category-filter-thumbs").outerHeight());
+				//console.log(wrapper);
+				wrapper.animate({height : $("#category-filter-thumbs").outerHeight()}, 500); // Calculate new post wrapper height and animate
+
+				posts.fadeIn(); // Once wrapper height is the correct size load the new thumbs
+				//console.log($("a", newPagination).length);
+				if ($("a", newPagination).length > 0) {					
+					pagination.html(newPagination);
+					initPaginationAjax();
+					pagination.fadeIn();
+					//console.log("pagination ajax initiated");
+				} else {
+					pagination.fadeOut();
+				}
+			});
+		}
+
+		links.click(function(event){
+			event.preventDefault();
+
+			if (!$(this).hasClass("current")) {
+
+				url = $(this).attr("href");
+
+				links.removeClass("current");
+				$(this).addClass("current");
+
+				posts.fadeOut();
+
+				ajaxPagination(url);
+			}
+		});
+
+		if (paginationLinks.length > 0) {
+			initPaginationAjax();
+			//console.log("pagination initiated on load");
+		}
+	});
+
+</script>
 

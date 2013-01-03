@@ -16,20 +16,19 @@ get_header();
 	<h1>page-basic.php</h1>
 <?php } ?>
 
-<!-- Feature Image -->
-<?php echo ah_get_feature_image($pageID = $post->ID); ?>
-
 <!-- Basic Content -->
-<div class="container white content">
-	<div class="row">
-		<div class="span1">&nbsp;</div>
-		<div class="span10">
-			<?php while (have_posts()) : the_post(); ?>
-				<h1><?php the_title(); ?></h1>
-				<?php the_content(); ?>
-			<?php endwhile; ?>
+<div class="background"<?php echo ah_get_feature_image($pageID = $post->ID, $size = 'Feature Wide', $type = 'background'); ?>>
+	<div class="container white content">
+		<div class="row">
+			<div class="span1">&nbsp;</div>
+			<div class="span10">
+				<?php while (have_posts()) : the_post(); ?>
+					<h1><?php the_title(); ?></h1>
+					<?php the_content(); ?>
+				<?php endwhile; ?>
+			</div>
+			<div class="span1">&nbsp;</div>
 		</div>
-		<div class="span1">&nbsp;</div>
 	</div>
 </div>
 

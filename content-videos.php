@@ -31,7 +31,7 @@ $x = new SimpleXmlElement($content);
 				<div class="row category-filter-thumbs">
 					<?php foreach($x->channel->item as $video) { ?>
 						<div class="span3">
-							<?php print_r($video); ?>
+							<?php //print_r($video); ?>
 							<a class="post-thumb" href="<?php echo $video->link ?>">
 								<img src="<?php echo ah_get_custom_thumb(); ?>" alt="<?php echo $video->title; ?>" />
 								<span class="title"><?php echo $video->title; ?></span>
