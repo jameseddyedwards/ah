@@ -44,15 +44,20 @@
 
 /* Phone - Horizontal */
 @media (max-width:767px) {
+	.comment-form input[type="text"],
+	.comment-form textarea {width:90%;}
 }
 
 /* Tablet - Vertical */
 @media (min-width:768px) and (max-width:979px) {
+	.comment-form input[type="text"],
+	.comment-form textarea {width:300px;}
 }
 
 /* Tablet - Horizontal */
 @media (min-width:979px) {
-
+	.comment-form input[type="text"],
+	.comment-form textarea {width:400px;}
 }
 
 /* Small Browser */

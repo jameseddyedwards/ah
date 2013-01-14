@@ -7,43 +7,49 @@
  * @since Alastair Humphreys 1.0
  */
 
-/*
-$homepage = file_get_contents('http://vimeo.com/channels/alastairhumphreys/videos/rss');
-print_r($homepage);
-*/
-
+// Pull in RSS feed from Vimeo
 $content = file_get_contents('http://vimeo.com/channels/alastairhumphreys/videos/rss');
 $x = new SimpleXmlElement($content);	
 
-//getFeed('http://vimeo.com/channels/alastairhumphreys/videos/rss');
+function video_image($videoId){
+	$hash = unserialize(file_get_contents("http://vimeo.com/api/v2/video/" . $videoId . ".php"));
+	echo $hash[0]["thumbnail_large"];
+}
 
 ?>
 
-<div class="feature-video">
-	
+<div class="feature-video container">
+	<?php the_content(); ?>
 </div>
 
 <div class="container white content">
 	<div class="row">
 		<div class="span12">
-			<?php if (have_posts()) : ?>
-				<h1>Browse Videos</h1>
-				<div class="row category-filter-thumbs">
-					<?php foreach($x->channel->item as $video) { ?>
-						<div class="span3">
-							<?php //print_r($video); ?>
-							<a class="post-thumb" href="<?php echo $video->link ?>">
-								<img src="<?php echo ah_get_custom_thumb(); ?>" alt="<?php echo $video->title; ?>" />
-								<span class="title"><?php echo $video->title; ?></span>
-							</a>
-						</div>
-					<?php } ?>
-				</div>
-			<?php else : ?>
-				<h1><?php _e('There are no videos currently', 'alastairhumphreys'); ?></h1>
-				<p><?php _e('Apologies, but no videos have been found. Perhaps searching will help find a video.', 'alastairhumphreys'); ?></p>
-				<?php get_search_form(); ?>
-			<?php endif; ?>
+			<h1><?php the_title(); ?></h1>
+			<div class="row posts">
+				<?php foreach($x->channel->item as $video) { ?>
+					<div class="span3">
+						<?php //print_r($video); ?>
+						<?php
+						//$hash = unserialize(file_get_contents("http://vimeo.com/api/v2/video/".substr($image_url['path'], 1).".php"));
+        				//return $hash[0]["thumbnail_small"];
+
+						//$description = $video->description;
+						//$imageUrl = explode('"', $description, 2);
+						//$imageUrl = $imageUrl[1];
+						//print_r($imageUrl);
+						//video_image($video->id)
+						 ?>
+						<?php $videoId = explode("/", $video->link);
+						//echo video_image($videoId[5]);
+						?>
+						<a class="post-thumb" href="<?php echo $video->link ?>">
+							<img src="<?php video_image($videoId[5]); ?>" alt="<?php echo $video->title; ?>" />
+							<span class="title"><?php echo $video->title; ?></span>
+						</a>
+					</div>
+				<?php } ?>
+			</div>
 		</div>
 	</div>
 </div>

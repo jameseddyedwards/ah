@@ -19,7 +19,7 @@
 ?>
 
 <?php if ($queryObject -> have_posts()) { ?>
-	<div class="container white">
+	<div class="container recent white">
 		<div class="row">
 			<div class="span12">
 				<h2>Recent Posts</h2>

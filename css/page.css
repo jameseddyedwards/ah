@@ -1,6 +1,6 @@
 /* Page */
 .page-template-default h1 {margin-bottom:20px;}
-.page h2 {margin-bottom:10px; text-transform:uppercase;}
+.page h2 {margin-bottom:10px;}
 .page .video {margin:30px 0;}
 
 /* More */
@@ -12,7 +12,7 @@
 .information-resources {margin-top:30px;}
 
 /* Testimonials */
-.testimonials h2 {font-size:30px; margin-bottom:30px;}
+.testimonials h2 {margin-bottom:30px;}
 .testimonials blockquote {border-bottom:1px dotted #ccc; margin-bottom:25px; padding-bottom:25px;}
 .testimonials blockquote.last {border-bottom:0;}
 
@@ -29,7 +29,7 @@
 .booking-form form .right {float:right; width:200px;}
 .booking-form form .button-field {margin-right:-20px; text-align:right;}
 
-.page-template-page-gallery-php .main .nav-tab {top:0;}
+.page-template-page-gallery-php .main .nav-tab {top:0 !important;}
 
 /* Book */
 .book {margin-top:0;}

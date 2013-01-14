@@ -2,8 +2,10 @@
 /* Structure */
 .full-section {width:100%;}
 .container {margin:35px auto 0; padding:30px;}
-.feature {margin:0 auto; width:1600px;}
+.feature {margin:0 auto;}
 .feature img {display:block;}
+.page-template-page-book-php .feature {width:100%;}
+
 .white {background:#fff;}
 .main {position:relative;}
 
@@ -30,18 +32,20 @@
 .hidden {display:none; visibility:hidden;}
 
 
+
+
 /* Media Queries */
 @media (max-width:480px) {
-	.header .container {margin:0 auto;}
+
 }
 
 @media (max-width:767px) {
-	.container,
-	.feature {width:auto;}
-	.container {margin:0 auto;}
+	.header .container {margin:0 auto;}
+	.container {width:auto;}
 	.row {margin-left:0;}
 	[class*="span"] {display:block; float:none; margin-left:0; width:auto;}
 	.span12 {box-sizing:border-box; moz-box-sizing:border-box; webkit-box-sizing:border-box; width:100%;}
+	.span1 {display:none;}
 	.span3 {clear:both; margin-bottom:15px;}
 	.post-thumb {height:158px;}
 }
@@ -52,7 +56,6 @@
 	.row:after {content:""; display:table; line-height:0;}
 	.row:after {clear:both;}
 	[class*="span"] {float:left; margin-left:20px;}
-	.feature,
 	.container,
 	.span12 {width:724px;}
 	.span11 {width:662px;}
@@ -66,19 +69,33 @@
 	.span3 {width:166px;}
 	.span2 {width:104px;}
 	.span1 {width:42px;}
+	.header .container {width:100%;}
 	.carousel {height:362px;}
+	.formats .format-info {width:350px;}
 }
 
 @media (min-width:979px) {
-	.feature {width:1230px;}
-}
-
-@media (min-width:1200px) {
 	.row {margin-left:-30px; zoom:1;}
 	.row:before,
 	.row:after {content:""; display:table; line-height:0;}
 	.row:after {clear:both;}
 	[class*="span"] {float:left; margin-left:30px;}
+	.container,
+	.span12 {width:930px;}
+	.span11 {width:850px;}
+	.span10 {width:770px;}
+	.span9 {width:690px;}
+	.span8 {width:610px;}
+	.span7 {width:530px;}
+	.span6 {width:450px;}
+	.span5 {width:370px;}
+	.span4 {width:290px;}
+	.span3 {width:210px;}
+	.span2 {width:130px;}
+	.span1 {width:50px;}
+}
+
+@media (min-width:1200px) {
 	.container,
 	.span12 {width:1170px;}
 	.span11 {width:1070px;}
@@ -92,6 +109,10 @@
 	.span3 {width:270px;}
 	.span2 {width:170px;}
 	.span1 {width:70px;}
+}
+
+@media (min-width:1230px) {
+	.page-template-page-book-php .feature {width:1230px;}
 }
 
 @media (min-width:1600px) {

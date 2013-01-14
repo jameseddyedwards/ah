@@ -36,11 +36,11 @@
 								$tag_list = get_the_tag_list('', __(', ','alastairhumphreys'));
 								if ('' != $tag_list) {
 									/* $utility_text = __( 'This entry was posted in %1$s and tagged %2$s by <a href="%6$s">%5$s</a>. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'alastairhumphreys' ); */
-									$utility_text = __('<span class="meta">Posted in %1$s and tagged %2$s. Want to read later? <a href="%3$s" title="Permalink to %4$s" rel="bookmark">Bookmark it</a>.</span>', 'alastairhumphreys' );
+									$utility_text = __('<span class="meta">Posted in %1$s and tagged %2$s.</span>', 'alastairhumphreys' );
 								} elseif ('' != $categories_list) {
-									$utility_text = __('<span class="meta">Posted in %1$s. Want to read later? <a href="%3$s" title="Permalink to %4$s" rel="bookmark">Bookmark it</a>.</span>', 'alastairhumphreys' );
+									$utility_text = __('<span class="meta">Posted in %1$s.</span>', 'alastairhumphreys' );
 								} else {
-									$utility_text = __('<span class="meta">Posted by <a href="%6$s">%5$s</a>. Want to read later? <a href="%3$s" title="Permalink to %4$s" rel="bookmark">Bookmark it</a>.</span>', 'alastairhumphreys' );
+									$utility_text = __('<span class="meta">Posted by <a href="%6$s">%5$s</a>.</span>', 'alastairhumphreys' );
 								}
 
 								printf(
@@ -82,20 +82,11 @@
 						</footer>
 					</article>
 
-					<!-- AddThis Button BEGIN 
-					<div class="addthis_toolbox addthis_default_style ">
-						<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
-						<a class="addthis_button_tweet"></a>
-						<a class="addthis_button_google_plusone" g:plusone:annotation="bubble" g:plusone:size="medium"></a>
-						<a class="addthis_counter addthis_pill_style"></a>
-					</div>
-					<script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=xa-5055c67455ab2ff5"></script>
-					<!-- AddThis Button END -->
-
-
 					<hr />
+
 					<?php $tags = wp_get_post_tags($post->ID); ?>
 					<?php if ($tags) { ?>
+					
 						<!-- You May Also Like -->
 						<h3>If you liked this post you might enjoy these too:</h3>
 						<ol class="ymal">

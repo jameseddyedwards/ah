@@ -28,7 +28,7 @@ $subNavs = array(
 		'type' => 'adventures',
 		'page_parents' => array(
 			'Adventures',
-			'Micro Adventures'
+			'Microadventures'
 		)
 	),
 	'Books' => array(
@@ -114,7 +114,7 @@ $subNavs = array(
 				}
 			} elseif ($subNavType == 'adventures') {
 				$subNavPages = $subNav['page_parents'];
-				$pageCount = sizeof($subNavPages);
+				$pageParentCount = sizeof($subNavPages);
 				foreach ($subNavPages as $subNavPage) {
 					$pageVars = get_object_vars(get_page_by_title($subNavPage));
 					$pageId = $pageVars[ID];
@@ -159,7 +159,7 @@ $subNavs = array(
 								</ul>
 								<a href="<?php echo $pageURL ?>" class="arrow-link view-all">view all <?php echo $subNavPage ?></a>
 							</div>
-							<?php if ($i != $pageCount) { ?>
+							<?php if ($i != $pageParentCount) { ?>
 								<hr />
 							<?php } ?>
 							<?php $i = $i + 1; ?>

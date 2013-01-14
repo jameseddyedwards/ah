@@ -18,9 +18,9 @@ nav .menu > .current-menu-item > a {background:#3a3a3a; color:#fff; text-decorat
 
 /* Newsletter & Search */
 .newsletter-form input[type="text"],
-.searchform input[type="text"] {border:1px solid #d0d0d0; color:#797979; float:left; font-size:11px; padding:7px 5px 6px; width:230px;}
+.searchform input[type="text"] {border:1px solid #d0d0d0; color:#797979; float:left; font-size:11px; padding:6px 5px 5px; width:230px;}
 .newsletter-form input[type="submit"],
-.searchform input[type="submit"] {background:url("../images/icon/go.png"); border:none; float:left; height:27px; text-indent:-999px; width:29px;}
+.searchform input[type="submit"] {background:url("../images/icon/go.png") no-repeat; border:none; border-radius:none; float:left; height:27px; overflow:hidden; text-indent:-999px; width:29px;}
 
 
 
@@ -59,6 +59,7 @@ nav .menu > .current-menu-item > a {background:#3a3a3a; color:#fff; text-decorat
 	header .newsletter-form {padding-left:28px;}
 	header .newsletter-form .field {width:180px;}
 	.credit {margin-top:20px;}
+	.footer .searchform input[type="text"] {width:160px;}
 }
 
 /* Phone - Horizontal */
@@ -81,7 +82,7 @@ nav .menu > .current-menu-item > a {background:#3a3a3a; color:#fff; text-decorat
 	nav .menu {margin-top:15px;}
 	nav .menu > li > a {display:block; padding:4px 0 0 28px; text-transform:uppercase;}
 
-	.footer .searchform input[type="text"] {width:170px;}
+	.footer .searchform input[type="text"] {width:120px;}
 }
 
 /* Tablet - Vertical */

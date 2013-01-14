@@ -12,7 +12,7 @@ add_action('wp_enqueue_scripts', 'ahumphreys_load_javascript_files');
 
 function ahumphreys_load_javascript_files() {
 
-	wp_register_script('global_js', get_template_directory_uri() . '/js/global.js', array('jquery'), '5.5.0', true);
+	wp_register_script('global_js', get_template_directory_uri() . '/js/global.js', array('jquery'), '1.0.0', true);
 
 
 	/* We add some JavaScript to pages with the comment form
@@ -22,8 +22,12 @@ function ahumphreys_load_javascript_files() {
 		wp_enqueue_script('comment-reply');
 	}
 	if (is_front_page()) {
-		wp_register_script('ah_carousel', get_template_directory_uri() . '/js/jquery.carouFredSel.js', array('jquery'), '5.5.0', true);
+		wp_register_script('ah_carousel', get_template_directory_uri() . '/js/jquery.carouFredSel.js', array('jquery'), '6.1.0', true);
 		wp_enqueue_script('ah_carousel');
+	}
+	if (is_category()) {
+		wp_register_script('ah_category', get_template_directory_uri() . '/js/category.js', array('jquery'), '1.0.0', true);
+		wp_enqueue_script('ah_category');
 	}
 	
 	wp_enqueue_script('global_js');

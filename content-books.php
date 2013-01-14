@@ -7,7 +7,7 @@
  * @since Alastair Humphreys 1.0
  */
 
-$numberOfBooks = 3;
+$numberOfBooks = 5;
 $counter = 1;
 $bookPageArgs = array(
 	'post_type'       => 'page',
@@ -39,7 +39,7 @@ echo $testSite;
 		</div>
 	<?php endif; ?>
 
-	<div class="container white content book-menu">
+	<div class="container white book-menu">
 
 		<?php foreach($bookPages as $bookPage) : setup_postdata($bookPage); ?>
 
@@ -52,13 +52,15 @@ echo $testSite;
 					<div class="info">
 						<h2><a class="title" href="<?php echo esc_url(home_url('/')) . '?page_id=' . $bookPage->ID; ?>"><?php echo $bookPage->post_title; ?></a></h2>
 						<span class="summary"><?php the_field('book_meta', $bookPage->ID) ?></span>
-						<?php
-							if (get_field('book_summary', $bookPage->ID) != '') {
-								the_field('book_summary', $bookPage->ID);
-							} else {
-								the_excerpt();
-							}
-						?>
+						<div class="content">
+							<?php
+								if (get_field('book_summary', $bookPage->ID) != '') {
+									the_field('book_summary', $bookPage->ID);
+								} else {
+									the_excerpt();
+								}
+							?>
+						</div>
 						<a class="box-button" href="<?php echo esc_url(home_url('/')) . '?page_id=' . $bookPage->ID; ?>">More Information &amp; buying options</a>
 					</div>
 				</div>

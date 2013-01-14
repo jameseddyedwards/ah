@@ -1,8 +1,15 @@
 /* Quotes */
 blockquote,
-blockquote p {color:#8d8d8d; display:block; font:25px din-light, Arial, Helvetica, sans-serif; line-height:30px; margin:1px 0 30px;}
+blockquote p,
+blockquote a {font-size:18px; line-height:30px; font-style:italic;}
+
+blockquote,
+blockquote p {color:#8d8d8d; display:block; margin:10px 0 30px;}
+
+blockquote a {color:#005580;}
+
 blockquote span,
-blockquote em {clear:both; display:block; font:16px Arial, Helvetica, sans-serif; line-height:20px; margin-left:30px; color:#999999;}
+blockquote em {clear:both; display:block; font:14px Arial, Helvetica, sans-serif; line-height:30px; margin-left:30px; color:#999999;}
 
 address {display:block; margin-bottom:20px; line-height:20px; font-style:normal;}
 small {font-size:100%;}
@@ -24,15 +31,18 @@ cite {font-style:normal;}
 .video-container object,  
 .video-container embed {height:100%; left:0; position:absolute; top:0; width:100%;}
 
+.content iframe,
+.content object {margin:20px 0;}
+
 /* Utility Blocks */
 .assistive-text {position:absolute !important; clip:rect(1px 1px 1px 1px); /* IE6, IE7 */}
 .access a.assistive-text:active,
 .access a.assistive-text:focus {background:#eee; border-bottom:1px solid #ddd; color:#1982d1; clip:auto !important; font-size:12px; position:absolute; text-decoration:underline; top:0; left:7.6%;}
 
-.clearfix, .container {*zoom:1;}
-.clearfix:before, .container:before,
-.clearfix:after, .container:after {display:table; content:"";}
-.clearfix:after, .container:after {clear:both;}
+.clearfix, .subscribe, .container {*zoom:1;}
+.clearfix:before, .subscribe:before, .container:before,
+.clearfix:after, .subscribe:after, .container:after {display:table; content:"";}
+.clearfix:after, .subscribe:after, .container:after {clear:both;}
 
 .post-date {margin-top:20px;}
 .post-date a:hover {text-decoration:none;}
@@ -55,6 +65,10 @@ cite {font-style:normal;}
 .next-previous em {color:#999999;}
 .next-previous .previous span {margin-right:10px;}
 .next-previous .next span {margin-left:10px;}
+
+/* List of Posts */
+.posts {background-color:#fff;}
+.posts .post-thumb {height:175px; margin-bottom:20px;}
 
 .post-thumb {display:block; overflow:hidden; position:relative;}
 .post-thumb span {background:url("../images/background/dark.png"); bottom:0px; color:#fff; font:18px din-light, sans-serif; left:0px; padding:5px 10px; position:absolute; width:100%;}
@@ -101,6 +115,16 @@ article .meta {display:block; font-style:italic; margin-bottom:30px;}
 	.visible-desktop {display:none;}
 	.visible-phone {display:inherit;}
 	.hidden-phone {display:none;}
+
+	.post-thumb span {font-size:18px; line-height:26px; padding:5px 3%;}
+
+	.posts .post-thumb {height:auto; max-width:500px;}
+	.posts .post-thumb span {width:94%;}
+
+	.recent .post-thumb,
+	.best .post-thumb {height:auto; max-width:500px;}
+	.recent .post-thumb span,
+	.best .post-thumb span {width:94%;}
 }
 
 /* Tablet - Vertical */
@@ -109,16 +133,42 @@ article .meta {display:block; font-style:italic; margin-bottom:30px;}
 	.visible-desktop {display:none;}
 	.visible-tablet {display:inherit;}
 	.hidden-tablet {display:none;}
+
+	.post-thumb span {font-size:14px; line-height:18px; padding:5px 7px;}
+
+	.posts .post-thumb {height:110px;}
+	.posts .post-thumb span {width:152px;}
+
+	.recent .post-thumb,
+	.best .post-thumb {height:152px;}
+	.recent .post-thumb span,
+	.best .post-thumb span {width:214px;}
 }
 
 /* Tablet - Horizontal */
 @media (min-width:979px) {
+	.post-thumb span {font-size:15px; line-height:20px; padding:5px 7px;}
 
+	.posts .post-thumb {height:110px;}
+	.posts .post-thumb span {width:196px;}
+	
+	.recent .post-thumb,
+	.best .post-thumb {height:192px;}
+	.recent .post-thumb span,
+	.best .post-thumb span {width:276px;}
 }
 
 /* Small Browser */
 @media (min-width:1200px) {
+	.post-thumb span {font-size:18px; line-height:26px; padding:5px 10px;}
 
+	.posts .post-thumb {height:175px;}
+	.posts .post-thumb span {width:250px;}
+	
+	.recent .post-thumb,
+	.best .post-thumb {height:245px;}
+	.recent .post-thumb span,
+	.best .post-thumb span {width:350px;}
 }
 
 /* Large Browser */

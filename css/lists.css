@@ -20,14 +20,16 @@ abbr {font-size:90%; text-transform:uppercase; border-bottom:1px dotted #ddd; cu
 .list-nav li:first-child {margin-left:0; padding-left:0;}
 .list-nav li:first-child a {margin-left:0; padding-left:0;}
 
-.post ul {list-style:disc;}
-.post ol {list-style:decimal;}
-.post li {line-height:25px; margin-bottom:5px;}
-
 .bullet {list-style:disc;}
 .bullet li {margin-left:20px;}
 
 .inline,
 .inline li {display:inline-block; float:left; list-style:none;}
-.post ul,
-.post ol {padding:0; margin:0 0 10px 25px;}
+
+.content ul,
+.content ol {margin:10px 0;}
+
+.content ul li,
+.content ol li {margin-left:20px;}
+.content ul {list-style:disc;}
+.content ol {list-style:decimal;}

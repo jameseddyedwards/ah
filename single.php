@@ -9,12 +9,6 @@
 
 get_header();
 
-if (get_field('post_layout') == 'post-menu') {
-	$layout = 'post-menu';
-} else {
-	$layout = 'blog';	
-}
-
 ?>
 
 <?php if ($testSite) { ?>
@@ -22,6 +16,6 @@ if (get_field('post_layout') == 'post-menu') {
 <?php } ?>
 
 <!-- Post -->
-<?php get_template_part('content', $layout); ?>
+<?php get_template_part('content'); ?>
 
 <?php get_footer(); ?>

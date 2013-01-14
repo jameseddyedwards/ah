@@ -8,9 +8,10 @@
  * @since Alastair Humphreys 1.0
  */
 
-get_header();
+wp_register_style('books', get_template_directory_uri() . '/css/books.css', __FILE__);	
+wp_enqueue_style('books');
 
-$featuredClass = "";
+get_header();
 
 ?>
 
@@ -19,7 +20,7 @@ $featuredClass = "";
 	<!-- Feature Image -->
 	<?php echo ah_get_feature_image($pageID = $post->ID); ?>
 
-	<div class="container white content book <?php echo $featuredClass?>">
+	<div class="container white content book">
 		<div class="row">
 			<div class="span1">&nbsp;</div>
 			<div class="span10">
@@ -39,8 +40,8 @@ $featuredClass = "";
 		</div>
 	</div>
 
-	<?php if (get_field('format_1') != '') { ?>
-		<div class="container white content formats">
+	<?php if (get_field('book_formats') != '') { ?>
+		<div class="container white formats">
 			<div class="row">
 				<div class="span1">&nbsp;</div>
 				<div class="span10">
@@ -48,21 +49,16 @@ $featuredClass = "";
 				</div>
 				<div class="span1">&nbsp;</div>
 			</div>
-			<?php for ($i = 1; $i <= 5; $i++) { ?>
-				<?php
-					$fieldId = 'format_' . $i;
-					$fieldDesc = 'format_' . $i . '_description';
-					$fieldImage = 'format_' . $i . '_image';
-				?>
-				<?php if (get_field($fieldId) != '') { ?>
-					<div class="row">
-						<div class="span1">&nbsp;</div>
-						<div class="span2">
-							<h3><?php the_field($fieldId); ?></h3>
-							<img src="<?php the_field($fieldImage); ?>" alt="<?php the_field($fieldId); ?>" />
-						</div>
-						<div class="span8">
-							<?php the_field($fieldDesc); ?>
+			<div class="row">
+				<div class="span1">&nbsp;</div>
+				<div class="span10">
+					<?php the_field('book_formats'); ?>
+					
+					<!-- Template
+					<div class="book">
+						<img src="" alt="" />
+						<div class="book-info">
+							<h3></h3>
 							<p>128 pages plus 16 pages of colour photographs. 30,000 words. 23cm x 19cm.<br>
 							£5 + p&p<br>
 							Signed by the author.</p>
@@ -71,8 +67,47 @@ $featuredClass = "";
 							<p>Click here for the Kindle version</p>
 						</div>
 					</div>
-				<?php } ?>
-			<?php } ?>
+
+					<div class="format">
+						<div class="format-image">
+							<img src="http://farm7.static.flickr.com/6120/6335712854_3c176b2fe1_m.jpg" title="foldedsheet" width="160" height="240" alt="Folded Sheet" />
+						</div>
+						<div class="format-info">
+							<strong>"Mappazine"</strong>
+							<p>Imagine a full size map, with the story depicted on both sides alongside exquisite photography. Hard to explain but fabulous to explore! Preview one side of the sheet <a href="http://www.flickr.com/photos/alastairhumphreys/6334380870/in/photostream/lightbox/">here</a>.</p>
+							<p>More info <a href="http://www.alastairhumphreys.com/2011/11/mappazine/">here</a>.</p>
+							<p>100 photographs. 9400 words. 125cm x 95cm.<br />
+							<strong>£5 + p&amp;p</strong> Signed by the author.<br />
+							Large discounts for multiple copies. Delivered worldwide at no extra cost.</p>
+
+							<form class="buy-book" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="paypal">
+								<fieldset>
+									<input type="hidden" name="cmd" value="_s-xclick" />
+									<input type="hidden" name="hosted_button_id" value="RYX6BV9KG8LLW" />
+									<input type="hidden" name="on0" value="Number of Copies (no change to postage total)" />
+									<input type="hidden" name="currency_code" value="GBP" />
+									<img alt="" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1" border="0" />
+
+									<p>Number of Copies (no change to postage total)</p>
+
+									<select name="os0">
+										<option value="1 Copy">1 Copy £5.00 GBP</option>
+										<option value="2 Copies">2 Copies £8.00 GBP</option>
+										<option value="3 Copies">3 Copies £10.00 GBP</option>
+										<option value="5 Copies">5 Copies £14.00 GBP</option>
+										<option value="10 Copies">10 Copies £20.00 GBP</option>
+										<option value="100 Copies">100 Copies £100.00 GBP</option>
+									</select>
+
+									<input type="image" alt="PayPal — The safer, easier way to pay online." name="submit" src="https://www.paypalobjects.com/en_GB/i/btn/btn_cart_LG.gif" />
+								</fieldset>
+							</form>
+						</div>
+					</div>
+					-->
+
+				</div>
+			</div>
 		</div>
 	<?php } ?>
 <?php endwhile; ?>
