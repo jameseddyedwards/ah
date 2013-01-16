@@ -16,13 +16,12 @@ nav .menu > .current-menu-item > a {background:#3a3a3a; color:#fff; text-decorat
 
 .dropdown {display:none;}
 
+
 /* Newsletter & Search */
 .newsletter-form input[type="text"],
 .searchform input[type="text"] {border:1px solid #d0d0d0; color:#797979; float:left; font-size:11px; padding:6px 5px 5px; width:230px;}
 .newsletter-form input[type="submit"],
 .searchform input[type="submit"] {background:url("../images/icon/go.png") no-repeat; border:none; border-radius:none; float:left; height:27px; overflow:hidden; text-indent:-999px; width:29px;}
-
-
 
 
 /* Footer */
@@ -51,6 +50,9 @@ nav .menu > .current-menu-item > a {background:#3a3a3a; color:#fff; text-decorat
 .credits a,
 .credits span {color:#666; font:12px/22px arial, sans-serif;}
 
+
+/* AddThis */
+.addthis_toolbox iframe {margin:0 !important;}
 
 /* Media Queries */
 /* Phone - Vertical */

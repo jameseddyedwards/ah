@@ -92,7 +92,7 @@ get_header();
 						<!-- Category List -->
 						<ul id="category-links" class="post-categories">
 							<?php
-							$categories = get_categories(array('number'=>12));
+							$categories = get_categories(/*array('number'=>12)*/);
 							foreach($categories as $category) {
 								$obj = get_object_vars($category);
 								$catId = $obj[cat_ID];

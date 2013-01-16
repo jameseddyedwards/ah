@@ -26,7 +26,7 @@
 				</div>
 				<div class="span9">
 					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-						<header>
+						<header class="clearfix">
 							<h1><?php the_title(); ?></h1>
 							<?php
 								/* translators: used between list items, there is a space after the comma */
@@ -53,6 +53,10 @@
 									esc_url(get_author_posts_url(get_the_author_meta('ID')))
 								);
 							?>
+
+							<!-- AddThis Social Buttons -->
+							<?php get_template_part('content', 'add-this'); ?>
+
 						</header>
 
 						<div class="entry-content">
@@ -81,6 +85,9 @@
 							<?php } ?>
 						</footer>
 					</article>
+
+					<!-- AddThis Social Buttons -->
+					<?php get_template_part('content', 'add-this'); ?>
 
 					<hr />
 
