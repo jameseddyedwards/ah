@@ -60,7 +60,8 @@ function carousel($) {
 			scroll: {
 				fx: 'crossfade',
 				duration: 300,
-				timeoutDuration: 5000
+				timeoutDuration: 5000,
+				pauseOnHover: true
 			},
 			width : '100%'
 		});

@@ -69,9 +69,7 @@ get_header();
 					</div>
 
 					<div class="format">
-						<div class="format-image">
-							<img src="http://farm7.static.flickr.com/6120/6335712854_3c176b2fe1_m.jpg" title="foldedsheet" width="160" height="240" alt="Folded Sheet" />
-						</div>
+						<img src="http://farm7.static.flickr.com/6120/6335712854_3c176b2fe1_m.jpg" title="foldedsheet" width="160" height="240" alt="Folded Sheet" />
 						<div class="format-info">
 							<strong>"Mappazine"</strong>
 							<p>Imagine a full size map, with the story depicted on both sides alongside exquisite photography. Hard to explain but fabulous to explore! Preview one side of the sheet <a href="http://www.flickr.com/photos/alastairhumphreys/6334380870/in/photostream/lightbox/">here</a>.</p>

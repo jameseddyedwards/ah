@@ -43,7 +43,7 @@ include TEMPLATEPATH . '/inc/shortcodes.php';
 include TEMPLATEPATH . '/inc/styles.php';
 include TEMPLATEPATH . '/inc/scripts.php';
 
-$testSite = false;
+$testSite = strpos($_SERVER['HTTP_HOST'], 'localhost') !== false ? true : false;
 
 /**
  * Tell WordPress to run alastairhumphreys_setup() when the 'after_setup_theme' hook is run.
@@ -128,7 +128,8 @@ function ah_get_feature_image($pageID = '', $size = 'Feature Normal', $type = 'n
 			if ($type == 'background') {
 				$featureImageHtml = ' style="background:url(' . $featureImageUrl . ') no-repeat center top; padding-top:700px;"';
 			} else {
-				$featureImageHtml = '<div class="feature"><img src="' . $featureImageUrl . '" alt="' . $featureImageTitle . '" /></div>';
+				$featureSize = $size == "Feature Normal" ? "feature-normal" : "feature";
+				$featureImageHtml = '<div class="' . $featureSize . '"><img src="' . $featureImageUrl . '" alt="' . $featureImageTitle . '" /></div>';
 			}
 			return $featureImageHtml;
 		} else {

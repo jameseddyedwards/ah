@@ -2,10 +2,8 @@
 /* Structure */
 .full-section {width:100%;}
 .container {margin:35px auto 0; padding:30px;}
-.feature,
-.feature-normal {margin:0 auto;}
-.feature img,
-.feature-normal img {display:block;}
+.feature {margin:0 auto;}
+.feature img {display:block;}
 .page-template-page-book-php .feature {width:100%;}
 
 .white {background:#fff;}
@@ -114,7 +112,7 @@
 }
 
 @media (min-width:1230px) {
-	.feature-normal {width:1230px;}
+	.page-template-page-book-php .feature {width:1230px;}
 }
 
 @media (min-width:1600px) {

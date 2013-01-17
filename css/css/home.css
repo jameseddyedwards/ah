@@ -1,0 +1,70 @@
+/* Home */
+.head-bar {margin-bottom:20px;}
+.head-bar .view-all {background:url('../images/button/arrow-right.png') no-repeat right 6px; color:#252525; font:18px din-light, sans-serif; float:right; margin-top:7px; padding-right:14px;}
+
+.tabs {float:left; margin-bottom:20px;}
+.tabs li {background:#f4f4f4; border:1px solid #ccc; cursor:pointer; display:inline-block; float:left; font:20px din-light, sans-serif; padding:5px 10px 3px;}
+.tabs li:first-child {border-right:0;}
+.tabs li.active,
+.tabs li:hover {background:#fff;}
+.tabs li.active {cursor:default;}
+
+.tab-row {display:none;}
+.tab-row.active {display:block;}
+
+.post-thumb {margin-bottom:20px;}
+
+.main .nav-tab {top:0px !important;}
+
+
+
+/* Carousel */
+.carousel-wrapper {margin:0 auto; max-width:1600px; overflow:hidden; position:relative; width:100%;}
+.carousel-wrapper .carousel {width:1000000px;}
+.carousel-wrapper .carousel > img,
+.carousel-wrapper .carousel > a {height:auto; width:auto; display:block; float:left;}
+
+.next,
+.previous {height:49px; margin-top:-25px; opacity:0.6; position:absolute; top:50%; width:49px; z-index:10;}
+.next:hover,
+.previous:hover {opacity:1;}
+.next {background:url("../images/icon/right.png") no-repeat; right:20px;}
+.previous {background:url("../images/icon/left.png") no-repeat; left:20px;}
+
+
+/* Media Queries */
+/* Phone - Vertical */
+@media (max-width:480px) {
+	.head-bar .view-all {display:block; margin-top:5px;}
+}
+
+/* Phone - Horizontal */
+@media (max-width:767px) {
+	.post-thumb {height:220px;}
+}
+
+/* Tablet - Vertical */
+@media (min-width:768px) and (max-width:979px) {
+
+}
+
+/* Phone & Tablet */
+@media (max-width:979px) {
+	.tabs li {font-size:18px;}
+}
+
+/* Tablet - Horizontal */
+@media (min-width:979px) and (max-width:1200px) {
+	.post-thumb {height:150px;}
+}
+
+/* Small Browser */
+@media (min-width:1200px) {
+	.post-thumb {height:240px;}
+	.tabs {display:inline-block; float:left;}
+}
+
+/* Large Browser */
+@media (min-width:1600px) {
+
+}

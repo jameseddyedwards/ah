@@ -16,12 +16,12 @@
 get_header();
 
 $currentPageId = get_query_var('page_id');
-$books = get_object_vars(get_page_by_title('Books'));
-$booksId = $books[ID];
-$speaking = get_object_vars(get_page_by_title('Speaking'));
-$speakingId = $speaking[ID];
-$videos = get_object_vars(get_page_by_title('Videos'));
-$videosId = $videos[ID];
+$books = get_page_by_title('Books') != null ? get_object_vars(get_page_by_title('Books')) : null;
+$booksId = $books != null ? $books[ID] : null;
+$speaking = get_page_by_title('Speaking') != null ? get_object_vars(get_page_by_title('Speaking')) : null;
+$speakingId = $speaking != null ? $speaking[ID] : null;
+$videos = get_page_by_title('Videos') != null ? get_object_vars(get_page_by_title('Videos')) : null;
+$videosId = $videos != null ? $videos[ID] : null;
 
 switch ($currentPageId) {
 	case $booksId:

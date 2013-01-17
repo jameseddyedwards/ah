@@ -13,18 +13,16 @@
 
 <?php
 
-$js = strpos($_SERVER['REQUEST_URI'], 'AH');
-
 $subNavs = array(
 	'Blog' => array(
-		'menu_item' => $js ? 7 : 58, // JS or Local
+		'menu_item' => 7,
 		'type' => 'blog',
 		'categories' => array(
 			'Blog'
 		)
 	),
 	'Adventures' => array(
-		'menu_item' => $js ? 8483 : 8380, // Local
+		'menu_item' => 8483,
 		'type' => 'adventures',
 		'page_parents' => array(
 			'Adventures',
@@ -32,14 +30,14 @@ $subNavs = array(
 		)
 	),
 	'Books' => array(
-		'menu_item' => $js ? 8529 : 10204, // Local
+		'menu_item' => 8529, // Local
 		'type' => 'books',
 		'page_parents' => array(
 			'Books'
 		)
 	),
 	'More' => array(
-		'menu_item' => $js ? 9206 : 10221, // Local
+		'menu_item' => 9206, // Local
 		'type' => 'more',
 		'page_parents' => array(
 			'More'
@@ -147,7 +145,7 @@ $subNavs = array(
 									<?php $pageCount = 1; ?>
 									<?php foreach ($pages as $page) { ?>
 										<li>
-											<a href="<?php echo get_page_link($page->ID); ?>"><?php echo $page->post_title ?></a>
+											<a href="<?php echo get_page_link($page->ID); ?>"><?php echo $page->post_title; ?></a>
 										</li>
 										<?php if ($pageCount == 5) { ?>
 											</ul>
@@ -157,7 +155,7 @@ $subNavs = array(
 									<?php } ?>
 
 								</ul>
-								<a href="<?php echo $pageURL ?>" class="arrow-link view-all">view all <?php echo $subNavPage ?></a>
+								<a href="<?php echo $pageURL; ?>" class="arrow-link view-all">view all <?php echo $subNavPage; ?></a>
 							</div>
 							<?php if ($i != $pageParentCount) { ?>
 								<hr />
@@ -178,20 +176,20 @@ $subNavs = array(
 				$booksURL = esc_url(home_url('/')) . '?page_id=803';
 
 				?>
-				<div class="books clearfix <?php echo $categoryClass ?>">
+				<div class="books clearfix <?php echo $categoryClass; ?>">
 					<?php foreach ($bookPages as $bookPage) { ?>
 						<?php $counter = $counter + 1; ?>
 						<a class="feature-image<?php echo $counter == 5 ? ' last' : ''; ?>" href="<?php echo get_page_link($bookPage->ID); ?>">
 							<img src="<?php echo ah_get_custom_thumb($bookPage->ID); ?>" alt="<?php the_title(); ?>" width="120" />
-							<span><?php echo $bookPage->post_title ?></span>
+							<span><?php echo $bookPage->post_title; ?></span>
 						</a>
 					<?php } ?>
 				</div>
 				<hr />
 				<div class="view-all-link">
-					<a href="<?php echo $booksURL ?>" class="arrow-link view-all">view all Books</a>
+					<a href="<?php echo $booksURL; ?>" class="arrow-link view-all">view all Books</a>
 				</div>
-			<? } elseif ($subNavType == 'more') {
+			<?php } elseif ($subNavType == 'more') {
 				$subNavPages = $subNav['page_parents'];
 				foreach ($subNavPages as $subNavPage) {
 					$pageVars = get_object_vars(get_page_by_title($subNavPage));
@@ -204,14 +202,14 @@ $subNavs = array(
 					$moreLinks = get_posts($moreArgs);
 					$counter = 0;
 					?>
-					<div class="more clearfix <?php echo $categoryClass ?>">
+					<div class="more clearfix <?php echo $categoryClass; ?>">
 						<?php foreach ($moreLinks as $moreLink) { ?>
 							<?php $counter = $counter + 1; ?>
-							<a href="<?php echo get_page_link($moreLink->ID); ?>"><?php echo $moreLink->post_title ?></a>
+							<a href="<?php echo get_page_link($moreLink->ID); ?>"><?php echo $moreLink->post_title; ?></a>
 						<?php } ?>
 					</div>
-				<? 	}
-				} ?>
+				<?php }
+			} ?>
 		</div>
 	<?php } ?>
 <?php } ?>

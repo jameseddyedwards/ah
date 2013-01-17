@@ -61,12 +61,10 @@ cite {font-style:normal;}
 .next-previous div {display:inline-block;}
 .next-previous div a {color:#1a1a1a;}
 .next-previous .next {position:absolute; right:0;}
-.next-previous .previous a,
-.next-previous .previous span {float:left;}
-.next-previous .next span,
-.next-previous .next a {float:right; text-align:right;}
 .next-previous span {display:inline-block;}
 .next-previous em {color:#999999;}
+.next-previous .previous span {margin-right:10px;}
+.next-previous .next span {margin-left:10px;}
 
 /* List of Posts */
 .posts {background-color:#fff;}
@@ -118,22 +116,8 @@ article .meta {display:block; font-style:italic; margin-bottom:30px;}
 	.visible-phone {display:inherit;}
 	.hidden-phone {display:none;}
 
-	.post-thumb span {font-size:18px; line-height:26px; padding:5px 3%;}
-
 	.posts .post-thumb {height:auto; max-width:500px;}
-	.posts .post-thumb span {width:94%;}
-
-	.recent .post-thumb,
-	.best .post-thumb {height:auto; max-width:500px;}
-	.recent .post-thumb span,
-	.best .post-thumb span {width:94%;}
-
-	.next-previous div {width:100%;}
-	.next-previous .previous {margin-bottom:20px;}
-	.next-previous .next {position:static;}
-	.next-previous div a,
-	.next-previous div span{display:block; float:none; width:100%;}
-
+	.post-thumb span {font-size:14px; line-height:18px; padding:5px 3%; width:94%;}
 }
 
 /* Tablet - Vertical */
@@ -143,60 +127,18 @@ article .meta {display:block; font-style:italic; margin-bottom:30px;}
 	.visible-tablet {display:inherit;}
 	.hidden-tablet {display:none;}
 
-	.post-thumb span {font-size:14px; line-height:18px; padding:5px 7px;}
-
 	.posts .post-thumb {height:110px;}
-	.posts .post-thumb span {width:152px;}
-
-	.recent .post-thumb,
-	.best .post-thumb {height:152px;}
-	.recent .post-thumb span,
-	.best .post-thumb span {width:214px;}
-
-	.next-previous div {width:250px;}
-	.next-previous .previous a {width:160px;}
-	.next-previous .previous span {width:90px;}
-	.next-previous .next a {width:190px;}
-	.next-previous .next span {width:60px;}
-
+	.post-thumb span {font-size:14px; line-height:18px; padding:5px 7px; width:152px;}
 }
 
-/* Small Browser */
+/* Tablet - Horizontal */
 @media (min-width:979px) {
-	.post-thumb span {font-size:15px; line-height:20px; padding:5px 7px;}
-
 	.posts .post-thumb {height:110px;}
-	.posts .post-thumb span {width:196px;}
-	
-	.recent .post-thumb,
-	.best .post-thumb {height:192px;}
-	.recent .post-thumb span,
-	.best .post-thumb span {width:276px;}
-
-	.next-previous div {width:330px;}
-	.next-previous .previous a {width:240px;}
-	.next-previous .previous span {width:90px;}
-	.next-previous .next a {width:270px;}
-	.next-previous .next span {width:60px;}
+	.post-thumb span {font-size:15px; line-height:20px; padding:5px 7px; width:196px;}
 }
 
 /* Small Browser */
 @media (min-width:1200px) {
-	.post-thumb span {font-size:18px; line-height:26px; padding:5px 10px;}
-
-	.posts .post-thumb {height:175px;}
-	.posts .post-thumb span {width:250px;}
-	
-	.recent .post-thumb,
-	.best .post-thumb {height:245px;}
-	.recent .post-thumb span,
-	.best .post-thumb span {width:350px;}
-
-	.next-previous div {width:400px;}
-	.next-previous .previous a {width:310px;}
-	.next-previous .previous span {width:90px;}
-	.next-previous .next a {width:340px;}
-	.next-previous .next span {width:60px;}
 
 }
 
