@@ -6,6 +6,7 @@ body {background-color:#f1f1f1; color:#1c1c1c; font-family:Georgia, Times-new-ro
 
 /* Header */
 header {background:#fff; width:100%;}
+header .logo {max-width:377px;}
 header .container {padding-bottom:0;}
 
 nav .menu {margin-top:15px;}
