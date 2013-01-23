@@ -13,7 +13,8 @@
 
 /* Phone - Horizontal */
 @media (max-width:767px) {
-	.gallery-thumbs .post-thumb {display:block !important; float:none !important; max-width:310px;}
+	.gallery-thumbs {width:100% !important;}
+	.gallery-thumbs .post-thumb {display:block !important; float:none !important; max-width:320px; margin:0 0 5px !important; overflow:hidden; width:100%;}
 }
 
 /* Tablet - Vertical */

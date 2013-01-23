@@ -38,6 +38,10 @@
 						</li>
 					<?php endforeach; ?>
 				</ul>
+
+				<h4>Support</h4>
+				<p>Thank you to the many people who have kindly "bought me a coffee" for just £2.50 as encouragement to keep this blog going.</p>
+				<?php echo do_shortcode('[donate]'); ?>
 				
 			</div>
 			<div class="span3">

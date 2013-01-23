@@ -23,7 +23,7 @@ get_header();
 	?>
 
 	<!-- Feature Image -->
-	<?php echo ah_get_feature_image($pageID = $post->ID, $size = 'Feature Wide'); ?>
+	<?php echo ah_get_feature_image($pageID = $post->ID, $size = 'feature-wide'); ?>
 
 	<!-- Gallery Images -->
 	<div class="gallery-thumbs clearfix">
@@ -78,7 +78,7 @@ get_header();
 					case 1;
 					case 6;
 					case 11;
-						$imageSize = 'Gallery Large';
+						$imageSize = 'gallery-large';
 						break;
 					// Medium
 					case 3;
@@ -87,7 +87,7 @@ get_header();
 					case 10;
 					case 13;
 					case 14;
-						$imageSize = 'Gallery Medium';
+						$imageSize = 'gallery-medium';
 						break;
 					// Small
 					case 2;
@@ -96,10 +96,11 @@ get_header();
 					case 9;
 					case 12;
 					case 15;
-						$imageSize = 'Gallery Small';
+						$imageSize = 'gallery-small';
 						break;
 				}
 				$galleryImageURL = get_field($galleryImageField);
+				//print_r($galleryImageURL);
 				$galleryImageURL = $galleryImageURL[sizes][$imageSize];
 			?>
 			<?php if ($galleryImageURL != '') { ?>

@@ -1,13 +1,8 @@
 /* Books */
-p a {color:#1A1A1A; text-decoration:underline;}
-h3 {margin:20px 0 15px;}
-h3,
+.further-reading h2,
 .book-menu h2 a {color:#333; font-size:37px; line-height:37px;}
 
 .main .nav-tab {top:0 !important;}
-
-.books .container {padding:50px 30px;}
-.books h1 {margin:0 0 40px;}
 
 .book-menu hr {margin-bottom:50px;}
 .book-menu .info h2 {margin-bottom:0;}
@@ -31,6 +26,9 @@ h3,
 .further-reading ul {margin-bottom:20px;}
 .further-reading ul li a {color:#333;}
 .further-reading ul li a:after {content:" \BB \ ";}
+
+.book-thumb img {margin-top:22px;}
+.book-thumb .paypal-add-to-cart {margin-top:10px;}
 
 /* Media Queries */
 @media (max-width:480px) {

@@ -51,58 +51,62 @@ $testSite = strpos($_SERVER['HTTP_HOST'], 'localhost') !== false ? true : false;
 add_action('after_setup_theme', 'alastairhumphreys_setup');
 
 if (!function_exists('alastairhumphreys_setup')):
-/**
- * Sets up theme defaults and registers support for various WordPress features.
- *
- * Note that this function is hooked into the after_setup_theme hook, which runs
- * before the init hook. The init hook is too late for some features, such as indicating
- * support post thumbnails.
- *
- * To override alastairhumphreys_setup() in a child theme, add your own alastairhumphreys_setup to your child theme's
- * functions.php file.
- *
- * @uses load_theme_textdomain() For translation/localization support.
- * @uses add_editor_style() To style the visual editor.
- * @uses add_theme_support() To add support for post thumbnails, automatic feed links, and Post Formats.
- * @uses register_nav_menus() To add support for navigation menus.
- * @uses add_custom_background() To add support for a custom background.
- * @uses add_custom_image_header() To add support for a custom header.
- * @uses register_default_headers() To register the default custom header images provided with the theme.
- * @uses set_post_thumbnail_size() To set a custom post thumbnail size.
- *
- * @since Alastair Humphreys 1.0
- */
-function alastairhumphreys_setup() {
-
-	/* Make Alastair Humphreys available for translation.
-	 * Translations can be added to the /languages/ directory.
-	 * If you're building a theme based on Alastair Humphreys, use a find and replace
-	 * to change 'alastairhumphreys' to the name of your theme in all the template files.
+	/**
+	 * Sets up theme defaults and registers support for various WordPress features.
+	 *
+	 * Note that this function is hooked into the after_setup_theme hook, which runs
+	 * before the init hook. The init hook is too late for some features, such as indicating
+	 * support post thumbnails.
+	 *
+	 * To override alastairhumphreys_setup() in a child theme, add your own alastairhumphreys_setup to your child theme's
+	 * functions.php file.
+	 *
+	 * @uses load_theme_textdomain() For translation/localization support.
+	 * @uses add_editor_style() To style the visual editor.
+	 * @uses add_theme_support() To add support for post thumbnails, automatic feed links, and Post Formats.
+	 * @uses register_nav_menus() To add support for navigation menus.
+	 * @uses add_custom_background() To add support for a custom background.
+	 * @uses add_custom_image_header() To add support for a custom header.
+	 * @uses register_default_headers() To register the default custom header images provided with the theme.
+	 * @uses set_post_thumbnail_size() To set a custom post thumbnail size.
+	 *
+	 * @since Alastair Humphreys 1.0
 	 */
-	load_theme_textdomain('alastairhumphreys', TEMPLATEPATH . '/languages');
+	function alastairhumphreys_setup() {
 
-	$locale = get_locale();
-	$locale_file = TEMPLATEPATH . "/languages/$locale.php";
-	if (is_readable($locale_file))
-		require_once($locale_file);
+		/* Make Alastair Humphreys available for translation.
+		 * Translations can be added to the /languages/ directory.
+		 * If you're building a theme based on Alastair Humphreys, use a find and replace
+		 * to change 'alastairhumphreys' to the name of your theme in all the template files.
+		 */
+		load_theme_textdomain('alastairhumphreys', TEMPLATEPATH . '/languages');
 
-	// Add default posts and comments RSS feed links to <head>.
-	add_theme_support('automatic-feed-links');
+		$locale = get_locale();
+		$locale_file = TEMPLATEPATH . "/languages/$locale.php";
+		if (is_readable($locale_file)) {
+			require_once($locale_file);
 
-	// This theme uses wp_nav_menu() in one location.
-	register_nav_menu('primary', __('Primary Menu', 'alastairhumphreys'));
+			// Add default posts and comments RSS feed links to <head>.
+			add_theme_support('automatic-feed-links');
 
-	// Add Alastair Humphreys's custom image sizes
-	add_image_size('Feature Wide', 1600, 9999); // Used for Wide feature images
-	add_image_size('Feature Normal', 1230, 9999); // Feature image that is only the width of the page container
-	add_image_size('Thumbnail', 370, 240); // Used for post thumbnail images
-	add_image_size('Gallery Small', 310, 280, true); // Used for small gallery images
-	add_image_size('Gallery Medium', 475, 280, true); // Used for large feature (header) images
-	add_image_size('Gallery Large', 795, 570, true); // Used for post thumbnail images
-	add_image_size('Full Post Width', 970, 9999); // Used for inline post images to span the full width
-}
+			// This theme uses wp_nav_menu() in one location.
+			register_nav_menu('primary', __('Primary Menu', 'alastairhumphreys'));
+
+			// Add Alastair Humphreys's custom image sizes
+			add_image_size('Feature Wide', 1600, 9999); // Used for Wide feature images
+			add_image_size('Feature Normal', 1230, 9999); // Feature image that is only the width of the page container
+			add_image_size('Thumbnail', 370, 240); // Used for post thumbnail images
+			add_image_size('Gallery Small', 310, 280, true); // Used for small gallery images
+			add_image_size('Gallery Medium', 475, 280, true); // Used for large feature (header) images
+			add_image_size('Gallery Large', 795, 570, true); // Used for post thumbnail images
+			add_image_size('Full Post Width', 970, 9999); // Used for inline post images to span the full width
+		}
+	}
 endif; // alastairhumphreys_setup
 
+/**
+ * Creates the thumbnails for the whole site. If no thumbnail is found then a default one is used.
+ */
 function ah_get_custom_thumb($pageID = '') {
 	if (isset($pageID)) {
 		$defaultThumbnail = get_field('thumbnail', $pageID) == '' ? get_bloginfo('template_url') . '/images/posts/Thumbs/default.jpg' : get_field('thumbnail', $pageID);
@@ -113,14 +117,14 @@ function ah_get_custom_thumb($pageID = '') {
 }
 
 /*
+ * Creates the HTML for featured images across the whole site. They can either be a background image or a standard image.
  * $type = 'background' or 'normal'
  * $size = Any image size shown above
 */
-function ah_get_feature_image($pageID = '', $size = 'Feature Normal', $type = 'normal') {
+function ah_get_feature_image($pageID = '', $size = 'feature-normal', $type = 'normal') {
 	if (isset($pageID)) {
 		$featureImageHtml = "";
 		$featureImageObj = get_field('feature_image', $pageID);
-		
 		if ($featureImageObj != '') {
 			$featureImageUrl = $featureImageObj[sizes][$size];
 			$featureImageTitle = $featureImageObj[title];
@@ -128,7 +132,7 @@ function ah_get_feature_image($pageID = '', $size = 'Feature Normal', $type = 'n
 			if ($type == 'background') {
 				$featureImageHtml = ' style="background:url(' . $featureImageUrl . ') no-repeat center top; padding-top:700px;"';
 			} else {
-				$featureSize = $size == "Feature Normal" ? "feature-normal" : "feature";
+				$featureSize = $size == "feature-normal" ? "feature-normal" : "feature";
 				$featureImageHtml = '<div class="' . $featureSize . '"><img src="' . $featureImageUrl . '" alt="' . $featureImageTitle . '" /></div>';
 			}
 			return $featureImageHtml;

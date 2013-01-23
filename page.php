@@ -37,7 +37,7 @@ switch ($currentPageId) {
 		$layout = "";
 		break;
 }
-
+echo $layout;
 ?>
 
 <?php if ($testSite) { ?>

@@ -30,6 +30,6 @@ abbr {font-size:90%; text-transform:uppercase; border-bottom:1px dotted #ddd; cu
 .content ol {margin:10px 0;}
 
 .content ul li,
-.content ol li {margin-left:20px;}
+.content ol li {margin-bottom:20px; margin-left:20px;}
 .content ul {list-style:disc;}
 .content ol {list-style:decimal;}
