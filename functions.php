@@ -121,26 +121,16 @@ function ah_get_custom_thumb($pageID = '') {
  * $type = 'background' or 'normal'
  * $size = Any image size shown above
 */
-function ah_get_feature_image($pageID = '', $size = 'feature-normal', $type = 'normal') {
-	if (isset($pageID)) {
-		$featureImageHtml = "";
-		$featureImageObj = get_field('feature_image', $pageID);
-		if ($featureImageObj != '') {
-			$featureImageUrl = $featureImageObj[sizes][$size];
-			$featureImageTitle = $featureImageObj[title];
+function ah_get_feature_image($size = 'feature-normal') {
+	$featureImageObj = get_field('feature_image', get_the_id());
 
-			if ($type == 'background') {
-				$featureImageHtml = ' style="background:url(' . $featureImageUrl . ') no-repeat center top; padding-top:700px;"';
-			} else {
-				$featureSize = $size == "feature-normal" ? "feature-normal" : "feature";
-				$featureImageHtml = '<div class="' . $featureSize . '"><img src="' . $featureImageUrl . '" alt="' . $featureImageTitle . '" /></div>';
-			}
-			return $featureImageHtml;
-		} else {
-			return;
-		}
+	if ($featureImageObj != '') {
+		$featureImageUrl = $featureImageObj[sizes][$size];
+		$featureImageTitle = $featureImageObj[title];
+		$featureImageHtml = '<div class="' . $size . '"><img src="' . $featureImageUrl . '" alt="' . $featureImageTitle . '" /></div>';
+		return $featureImageHtml;
 	} else {
-		echo "No Page ID set";
+		return;
 	}
 }
 

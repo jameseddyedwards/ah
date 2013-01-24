@@ -10,16 +10,17 @@
 $featureImageSize = get_field('feature_image_size');
 
 ?>
-<h1>content.php</h1>
+
 <?php if ($testSite) { ?>
 	<h1>content.php</h1>
 <?php } ?>
 
 <?php while (have_posts()) : the_post(); ?>
 	
-	<?php echo $featureImageSize == 'Feature Normal' ? ah_get_feature_image($pageID = $post->ID) : ''; ?>
+	<!-- Feature Image -->
+	<?php echo ah_get_feature_image($size = $featureImageSize); ?>
 
-	<div class="container white content<?php echo $featureImageSize == 'Feature Normal' ? ' top' : ''; ?>"<?php echo $featureImageSize == 'Feature Wide' ? ah_get_feature_image($pageID = $post->ID, $size = 'Feature Wide', $type = 'background') : ''; ?>>
+	<div class="container white content<?php echo $featureImageSize == 'normal' ? ' top' : ''; ?>">
 		<div class="row">
 			<div class="span2">
 				<?php if (get_field('post_layout') == 'post' || get_field('post_layout') == '') : ?>

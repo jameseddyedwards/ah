@@ -14,7 +14,6 @@ wp_enqueue_style('books');
 get_header();
 
 $featureImageSize = get_field('feature_image_size');
-$isNormalFeature = $featureImageSize == 'Feature Normal' || $featureImageSize == '';
 
 $paypalId = get_field('paypal_add_to_cart_id');
 $bookPageId = get_the_ID();
@@ -24,10 +23,10 @@ $bookPageId = get_the_ID();
 <?php while (have_posts()) : the_post(); ?>
 
 	<!-- Feature Image -->
-	<?php echo $isNormalFeature ? ah_get_feature_image($pageID = $bookPageId) : ''; ?>
+	<?php echo ah_get_feature_image($size = $featureImageSize); ?>
 
-	<div class="book"<?php echo !$isNormalFeature ? ah_get_feature_image($pageID = $bookPageId, $size = 'feature-wide', $type = 'background') : ''; ?>>
-		<div class="container white content<?php echo $isNormalFeature ? ' top' : ''; ?>">
+	<div class="book">
+		<div class="container white content<?php echo $featureImageSize == 'normal' ? ' top' : ''; ?>">
 			<div class="row">
 				<div class="span1">&nbsp;</div>
 				<div class="span3 book-thumb">

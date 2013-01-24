@@ -23,7 +23,16 @@ get_header();
 	?>
 
 	<!-- Feature Image -->
-	<?php echo ah_get_feature_image($pageID = $post->ID, $size = 'feature-wide'); ?>
+	<?php
+	$featureImageObj = get_field('feature_image');
+
+	if ($featureImageObj != '') {
+		$featureImageUrl = $featureImageObj[sizes]['feature-wide'];
+		$featureImageTitle = $featureImageObj[title];
+		$featureImageHtml = '<div class="feature-normal"><img src="' . $featureImageUrl . '" alt="' . $featureImageTitle . '" /></div>';
+		echo $featureImageHtml;
+	}
+	?>
 
 	<!-- Gallery Images -->
 	<div class="gallery-thumbs clearfix">

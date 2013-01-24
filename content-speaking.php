@@ -7,7 +7,6 @@
  * @since Alastair Humphreys 1.0
  */
 ?>
-	<h1>content-speaking.php</h1>
 
 <?php if ($testSite) { ?>
 	<h1>content-speaking.php</h1>

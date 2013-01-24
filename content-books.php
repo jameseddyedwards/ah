@@ -19,15 +19,16 @@ $bookPages = get_posts($bookPageArgs);
 $featureImageSize = get_field('feature_image_size');
 
 ?>
-<h1>content-books.php</h1>
+
 <?php if ($testSite) { ?>
 	<h1>content-books.php</h1>
 <?php } ?>
 
-<?php echo $featureImageSize == 'Feature Normal' ? ah_get_feature_image($pageID = $post->ID) : ''; ?>
+<!-- Feature Image -->
+<?php echo ah_get_feature_image($size = $featureImageSize); ?>
 
 <?php if (have_posts()) : the_post(); ?>
-	<div class="container white content<?php echo $featureImageSize == 'Feature Normal' ? ' top' : ''; ?>"<?php echo $featureImageSize == 'Feature Wide' ? ah_get_feature_image($pageID = $post->ID, $size = $featureImageSize, $type = 'background') : ''; ?>>
+	<div class="container white content<?php echo $featureImageSize == 'normal' ? ' top' : ''; ?>">
 		<div class="row">
 			<div class="span1">&nbsp;</div>
 			<div class="span9">

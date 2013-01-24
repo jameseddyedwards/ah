@@ -18,10 +18,10 @@ $featureImageSize = get_field('feature_image_size');
 	<h1>page-basic.php</h1>
 <?php } ?>
 
-<?php echo $featureImageSize == 'feature-normal' || $featureImageSize == '' ? ah_get_feature_image($pageID = $post->ID) : ''; ?>
+<!-- Feature Image -->
+<?php echo ah_get_feature_image($size = $featureImageSize); ?>
 
-<!-- Basic Content -->
-<div class="container white content<?php echo $featureImageSize == 'feature-normal' ? ' top' : ''; ?>"<?php echo $featureImageSize == 'feature-wide' ? ah_get_feature_image($pageID = $post->ID, $size = $featureImageSize, $type = 'background') : ''; ?>>
+<div class="container white content<?php echo $featureImageSize == 'normal' ? ' top' : ''; ?>">
 	<div class="row">
 		<div class="span1">&nbsp;</div>
 		<div class="span10">
