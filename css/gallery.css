@@ -65,5 +65,5 @@
 	.gallery-thumbs .small {width:310px;}
 	.gallery-thumbs .medium {width:475px;}
 	.gallery-thumbs .large {height:570px; width:795px;}
-	.feature-normal {width:1600px;}
+	.page-template-page-gallery-php .feature-normal {width:1600px;}
 }

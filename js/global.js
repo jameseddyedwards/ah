@@ -85,5 +85,5 @@ jQuery(document).ready(function($) {
 		carousel($);
 	}
 
-	 $(".content").fitVids();
+	//$(".content").fitVids();
 });

@@ -21,7 +21,7 @@ $featureImageSize = get_field('feature_image_size');
 <!-- Feature Image -->
 <?php echo ah_get_feature_image($size = $featureImageSize); ?>
 
-<div class="container white content<?php echo $featureImageSize == 'normal' ? ' top' : ''; ?>">
+<div class="container white content<?php echo $featureImageSize == 'feature-normal' ? ' top' : ''; ?>">
 	<div class="row">
 		<div class="span1">&nbsp;</div>
 		<div class="span10">
