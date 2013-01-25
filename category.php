@@ -19,11 +19,6 @@ get_header();
 	$myposts = get_posts($args);
 	?>
 	<?php foreach($myposts as $post) : setup_postdata($post); ?>
-		<?php if (get_field('feature_image') != '') { ?>
-			<div class="gallery">
-				<img src="<?php the_field('feature_image') ?>" alt="<?php echo single_cat_title(); ?>" />
-			</div>
-		<?php } ?>
 		<div class="container white content">
 			<div class="row">
 				<div class="span2">
@@ -53,7 +48,7 @@ get_header();
 	<?php endforeach; ?>
 <?php endif; ?>
 
-<div class="container white">
+<div id="category-children" class="container white">
 	<div class="row">
 		<div class="span12">
 			<?php if (have_posts()) : ?>

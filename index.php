@@ -15,8 +15,9 @@
 
 get_header();
 
-$category_best = get_cat_ID('Best bits');
-$category_blog = get_cat_ID('Blog');
+$category_best_bits_url = get_site_url() . "/?cat=" . get_cat_ID('Best bits') . "#category-children";
+$category_latest_url = get_site_url() . "/?cat=" . get_cat_ID('Blog') . "#category-children";
+
 $bestArgs = array(
 	'numberposts'	=> 3,
 	'cat'			=> $category_best
@@ -67,10 +68,10 @@ $bannerCount = 10;
 	<div class="row">
 		<div class="span12 head-bar">
 			<ul id="post-view" class="tabs clearfix">
-				<li id="recent" class="active">Latest posts</li>
-				<li id="best">Best bits</li>
+				<li id="recent" class="active" data-url="<?php echo $category_latest_url; ?>">Latest posts</li>
+				<li id="best" data-url="<?php echo $category_best_bits_url; ?>">Best bits</li>
 			</ul>
-			<a class="view-all" href="<?php echo get_site_url(); ?>/?cat=5">view all</a>
+			<a id="view-all" class="view-all" href="<?php echo $category_latest_url; ?>">view all</a>
 		</div>
 	</div>
 

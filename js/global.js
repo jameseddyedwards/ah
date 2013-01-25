@@ -23,14 +23,21 @@ function menu($) {
 }
 
 function tabbed($, element) {
-	var tabs = $("li", element);
+	var tabs = $("li", element),
+		viewAll = $("#view-all"),
+		tab,
+		tabUrl;
 	tabs.click(function(){
+		tab = $(this);
+		tabUrl = tab.attr("data-url");
 		tabs.removeClass("active");
-		that = $(this);
-		if (!that.hasClass("active")){
+		if (!tab.hasClass("active")){
 			$(".tab-row").hide();
-			$('.' + that.attr("id")).show();
-			that.addClass("active");
+			$('.' + tab.attr("id")).show();
+			tab.addClass("active");
+		}
+		if (tabUrl !== "") {
+			viewAll.attr("href", tabUrl);
 		}
 	});
 }
