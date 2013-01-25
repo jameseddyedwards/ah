@@ -4,16 +4,16 @@ YARPP Template: Thumbnails
 Description: Requires a theme which supports post thumbnails
 Author: mitcho (Michael Yoshitaka Erlewine)
 */ ?>
-<h3>Related Photos</h3>
-<?php if (have_posts()):?>
-<ol>
-	<?php while (have_posts()) : the_post(); ?>
-		<?php if (has_post_thumbnail()):?>
-		<li><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail(); ?></a></li>
-		<?php endif; ?>
-	<?php endwhile; ?>
-</ol>
-
-<?php else: ?>
-<p>No related photos.</p>
-<?php endif; ?>
+<?php if (have_posts()) { ?>
+	<div class="row">
+		<?php while (have_posts()) : the_post(); ?>
+			<div class="span4">
+				<a class="post-thumb" href="<?php the_permalink(); ?>">
+					<img src="<?php echo ah_get_custom_thumb(); ?>" alt="<?php the_title(); ?>" />
+					<span class="title"><?php the_title(); ?></span>
+				</a>
+				<span class="excerpt"><?php echo strip_tags(get_the_excerpt()) ?>...</span>
+			</div>
+		<?php endwhile; ?>
+	</div>
+<?php } ?>

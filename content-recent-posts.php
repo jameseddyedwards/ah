@@ -12,7 +12,7 @@
 	$category_blog = get_cat_ID('Blog');
 	$category_adventures = get_cat_ID('Adventures');
 	$recentPostsQuery = array(
-		'posts_per_page' => 6,
+		'posts_per_page' => 3,
 		'cat' => $category_blog . ',' . $category_adventures
 	);
 	$queryObject = new WP_Query($recentPostsQuery);
@@ -22,9 +22,13 @@
 	<div class="container recent white">
 		<div class="row">
 			<div class="span12">
-				<h2>Recent Posts</h2>
+				<h2>You May Also Like</h2>
 			</div>
 		</div>
+
+		<!-- YARPP Related Posts -->
+		<?php related_posts(); ?>
+
 		<div class="row tab-row active">		
 			<?php while ($queryObject -> have_posts()) { ?>
 				<?php
