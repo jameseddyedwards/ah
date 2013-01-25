@@ -26,8 +26,15 @@ cite {font-style:normal;}
 .lead {margin-bottom:20px; font-size:20px; font-weight:200; line-height:30px;}
 .top {margin-top:0;}
 
+
 /* Elastic Videos */
-.fluid-width-video-wrapper {margin:20px 0;}
+.video-container {height:0; margin:20px 0; overflow:hidden; padding-bottom:56.25%; padding-top:30px; position:relative;}
+.video-container iframe,  
+.video-container object,  
+.video-container embed {height:100%; left:0; margin:0 !important; position:absolute; top:0; width:100%;}
+
+.content iframe,
+.content object {margin:20px 0;}
 
 /* Utility Blocks */
 .assistive-text {position:absolute !important; clip:rect(1px 1px 1px 1px); /* IE6, IE7 */}

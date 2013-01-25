@@ -12,7 +12,7 @@ add_action('wp_enqueue_scripts', 'ahumphreys_load_javascript_files');
 
 function ahumphreys_load_javascript_files() {
 
-	wp_register_script('fitvids_js', get_template_directory_uri() . '/js/fitvids.js', array('jquery'), '1.0.0', true);
+	//wp_register_script('fitvids_js', get_template_directory_uri() . '/js/fitvids.js', array('jquery'), '1.0.0', true);
 	wp_register_script('global_js', get_template_directory_uri() . '/js/global.js', array('jquery'), '1.0.0', true);
 
 
@@ -31,7 +31,7 @@ function ahumphreys_load_javascript_files() {
 		wp_enqueue_script('ah_category');
 	}
 	
-	wp_enqueue_script('fitvids_js');
+	//wp_enqueue_script('fitvids_js');
 	wp_enqueue_script('global_js');
 
 }
