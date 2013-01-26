@@ -5,6 +5,7 @@
 .main .nav-tab {top:0 !important;}
 
 .book-menu hr {margin-bottom:50px;}
+.book-menu .span3 img {width:100%;}
 .book-menu .info h2 {margin-bottom:0;}
 .book-menu .info h2 a:hover {text-decoration:none;}
 .book-menu .info p {margin-bottom:20px;}
@@ -15,6 +16,7 @@
 .category-books h3 {color:#333333; font:38px/46px din-light, helvetica, arial; margin-bottom:10px; text-transform:uppercase;}
 .formats h2 {color:#333333; font:26px/32px din-light, helvetica, arial; margin-bottom:10px; text-transform:uppercase;}
 .formats .format {border-bottom: 1px dotted #999; display:block; margin-bottom:20px; padding-bottom:40px;}
+.formats .format:last-child {border-bottom:0;}
 .formats .format-image {float:left; width:200px;}
 .formats .format-info {float:left; width:750px;}
 .formats h3 {margin:10px 0 10px;}

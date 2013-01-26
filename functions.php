@@ -43,12 +43,13 @@ include TEMPLATEPATH . '/inc/shortcodes.php';
 include TEMPLATEPATH . '/inc/styles.php';
 include TEMPLATEPATH . '/inc/scripts.php';
 
-$testSite = strpos($_SERVER['HTTP_HOST'], 'localhost') !== false ? true : false;
+$testSite = false; //strpos($_SERVER['HTTP_HOST'], 'localhost') !== false ? true : false;
 
 /**
  * Tell WordPress to run alastairhumphreys_setup() when the 'after_setup_theme' hook is run.
  */
 add_action('after_setup_theme', 'alastairhumphreys_setup');
+add_theme_support('menus');
 
 if (!function_exists('alastairhumphreys_setup')):
 	/**

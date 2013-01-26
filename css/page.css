@@ -10,6 +10,7 @@
 
 /* Information & Resources */
 .information-resources {margin-top:30px;}
+.information-resources li {margin-left:0;}
 
 /* Testimonials */
 .testimonials h2 {margin-bottom:30px;}
@@ -33,7 +34,15 @@
 
 /* Phone - Vertical */
 @media (max-width:480px) {
-	
+	.booking-form .wpcf7 form,
+	.booking-form form input[type="text"],
+	.booking-form form .large input[type="text"],
+	.booking-form form select,
+	.booking-form form textarea {width:100%;}
+	.booking-form form .left {float:none; margin-right:0; width:100%;}
+	.booking-form form .right {float:none; width:100%;}
+	.booking-form form .button-field {margin-right:0; text-align:left;}
+
 }
 
 /* Phone - Horizontal */

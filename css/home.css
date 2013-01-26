@@ -1,9 +1,9 @@
 /* Home */
 .head-bar {margin-bottom:20px;}
-.head-bar .view-all {background:url('../images/button/arrow-right.png') no-repeat right 6px; color:#252525; font:18px din-light, sans-serif; float:right; margin-top:7px; padding-right:14px;}
+.head-bar .view-all {background:url('../images/button/arrow-right.png') no-repeat right 6px; color:#252525; font:18px din-light, sans-serif; float:right; margin-top:12px; padding-right:14px;}
 
 .tabs {float:left; margin-bottom:20px;}
-.tabs li {background:#f4f4f4; border:1px solid #ccc; cursor:pointer; display:inline-block; float:left; font:20px din-light, sans-serif; padding:5px 10px 3px;}
+.tabs li {background:#f4f4f4; border:1px solid #ccc; cursor:pointer; display:inline-block; float:left; font:20px din-light, sans-serif; margin-left:0; padding:5px 10px 3px;}
 .tabs li:first-child {border-right:0;}
 .tabs li.active,
 .tabs li:hover {background:#fff;}
@@ -35,7 +35,7 @@
 /* Media Queries */
 /* Phone - Vertical */
 @media (max-width:480px) {
-	.head-bar .view-all {display:block; margin-top:5px;}
+	.head-bar .view-all {clear:both; display:block; float:left; margin:5px 0 15px;}
 }
 
 /* Phone - Horizontal */

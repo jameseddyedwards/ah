@@ -71,7 +71,7 @@
 	.comment-form textarea {width:400px;}
 
 	.commentlist .comment-author {border-right:1px dotted #999; margin-right:20px; padding-right:10px;}
-	.commentlist .comment-author .author-meta {display:block; float:left; margin-top:10px; width:170px;}
+	.commentlist .comment-author .author-meta {display:block; float:left; width:170px;}
 	.commentlist .comment-author {float:left; width:30%;}
 	.commentlist .comment-content {float:left; width:440px;}
 }

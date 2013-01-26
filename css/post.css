@@ -1,5 +1,8 @@
 
 /* Single Post */
+
+.main .nav-tab {top:0 !important;}
+
 .single-post .gallery {z-index:1;}
 .single-post .gallery img {display:block; width:100%; z-index:1;}
 
@@ -15,7 +18,7 @@
 .addthis_toolbox {margin:30px 0 20px;}
 
 header .meta {float:left; margin-bottom:20px; width:auto;}
-header .addthis_toolbox {margin:-3px 0 0;}
+header .addthis_toolbox {margin:-3px 0 20px;}
 
 /* Phone - Vertical */
 @media (max-width:480px) {

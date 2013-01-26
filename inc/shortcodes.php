@@ -50,12 +50,17 @@ function video_shortcode($atts, $content = null) {
 	return '<div class="video-container">' . do_shortcode($content) . '</div>';
 }
 
+function ignore_shortcode($atts, $content = null) {
+	return '<div class="ignore">' . do_shortcode($content) . '</div>';
+}
+
 add_shortcode('button', 'button_shortcode');
 add_shortcode('format', 'format_shortcode');
 add_shortcode('format-image', 'format_image_shortcode');
 add_shortcode('format-info', 'format_info_shortcode');
 add_shortcode('add-to-cart', 'paypal_add_to_cart');
 add_shortcode('donate', 'paypal_donate');
+add_shortcode('ignore', 'ignore_shortcode');
 add_shortcode('video', 'video_shortcode');
 
 ?>

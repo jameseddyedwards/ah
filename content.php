@@ -140,7 +140,7 @@ $featureImageSize = get_field('feature_image_size');
 	</div>
 
 	<div class="background">
-		<div class="container white content">
+		<div class="container white">
 			<!-- Comments -->
 			<?php comments_template('', true); ?>
 

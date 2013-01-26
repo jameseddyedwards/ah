@@ -26,7 +26,7 @@ $bookPageId = get_the_ID();
 	<?php echo ah_get_feature_image($size = $featureImageSize); ?>
 
 	<div class="book">
-		<div class="container white content<?php echo $featureImageSize == 'normal' ? ' top' : ''; ?>">
+		<div class="container white content<?php echo $featureImageSize == 'feature-normal' ? ' top' : ''; ?>">
 			<div class="row">
 				<div class="span1">&nbsp;</div>
 				<div class="span3 book-thumb">

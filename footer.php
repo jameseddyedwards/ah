@@ -47,13 +47,9 @@
 			<div class="span3">
 				<h4>Upcoming Events</h4>
 				<ul class="unstyled">
-					<li><strong>June 9th:</strong>TEDx Oxbridge</li>
-					<li><strong>June 21st Bristol:</strong>Round the World by Bike</li>
-					<li><strong>July 6th:</strong>Dorking</li>
-					<li><strong>August 20th:</strong>RGS London</li>
-					<li><strong>September 17th:</strong>Round the World by Bike</li>
+					<li><strong>April 11th:</strong>Explorers Connect. London</li>
 				</ul>
-				<quote>“With the possible exception of Sir David Attenborough, that was the best lecture, and the longest applause that I have heard in the past 15 years.”</quote>
+				<blockquote>“With the possible exception of Sir David Attenborough, that was the best lecture, and the longest applause that I have heard in the past 15 years.”</blockquote>
 				<p>– President of the Royal Geographical Society</p>
 			</div>
 			<div class="span3 clearfix">
