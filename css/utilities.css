@@ -36,6 +36,7 @@ cite {font-style:normal;}
 .content iframe,
 .content object {margin:20px 0;}
 .content img {width:100%;}
+.content .ajax-loader {width:auto;}
 
 /* Utility Blocks */
 .assistive-text {position:absolute !important; clip:rect(1px 1px 1px 1px); /* IE6, IE7 */}

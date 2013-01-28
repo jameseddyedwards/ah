@@ -84,6 +84,4 @@ jQuery(document).ready(function($) {
 	if ($("#carousel").length > 0) {
 		carousel($);
 	}
-
-	//$(".content").fitVids();
 });
