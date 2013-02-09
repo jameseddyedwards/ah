@@ -37,7 +37,7 @@
 				?>
 				<div class="span4">
 					<a class="post-thumb" href="<?php the_permalink(); ?>">
-						<img src="<?php echo ah_get_custom_thumb(); ?>" alt="<?php the_title(); ?>" />
+						<?php echo ah_get_custom_thumb(); ?>
 						<span class="title"><?php the_title(); ?></span>
 					</a>
 					<span class="excerpt"><?php echo strip_tags(get_the_excerpt()) ?>...</span>

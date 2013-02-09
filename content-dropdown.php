@@ -73,7 +73,7 @@ $subNavs = array(
 
 							<?php foreach($categoryPosts as $categoryPost) : setup_postdata($categoryPost); ?>
 								<a class="feature-image" href="<?php echo get_permalink($categoryPost->ID); ?>">
-									<img src="<?php echo ah_get_custom_thumb($categoryPost->ID); ?>" alt="<?php echo $categoryPost->post_title ?>" width="215" />
+									<?php echo ah_get_custom_thumb($categoryPost->ID); ?>
 								</a>
 								<div class="post-text">
 									<a href="<?php echo get_permalink($categoryPost->ID); ?>" class="sub-title"><?php echo $categoryPost->post_title ?></a>
@@ -138,7 +138,7 @@ $subNavs = array(
 								<a href="<?php echo $pageURL ?>" class="sub-title"><?php echo $subNavPage ?></a>
 								<?php foreach($featureImagePage as $featurePage) : setup_postdata($featurePage); ?>
 									<a class="feature-image" href="<?php echo get_page_link($featurePage->ID); ?>">
-										<img src="<?php echo ah_get_custom_thumb($featurePage->ID); ?>" alt="<?php echo $featurePage->post_title ?>" width="215" />
+										<?php echo ah_get_custom_thumb($featurePage->ID); ?>
 									</a>
 								<?php endforeach; ?>
 								<ul class="clearfix">
@@ -180,7 +180,7 @@ $subNavs = array(
 					<?php foreach ($bookPages as $bookPage) { ?>
 						<?php $counter = $counter + 1; ?>
 						<a class="feature-image<?php echo $counter == 5 ? ' last' : ''; ?>" href="<?php echo get_page_link($bookPage->ID); ?>">
-							<img src="<?php echo ah_get_custom_thumb($bookPage->ID); ?>" alt="<?php the_title(); ?>" width="120" />
+							<?php echo ah_get_custom_thumb($bookPage->ID); ?>
 							<span><?php echo $bookPage->post_title; ?></span>
 						</a>
 					<?php } ?>

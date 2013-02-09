@@ -96,7 +96,7 @@ if (!function_exists('alastairhumphreys_setup')):
 			// Add Alastair Humphreys's custom image sizes
 			add_image_size('Feature Wide', 1600, 9999); // Used for Wide feature images
 			add_image_size('Feature Normal', 1230, 9999); // Feature image that is only the width of the page container
-			add_image_size('Thumbnail', 370, 240); // Used for post thumbnail images
+			add_image_size('Thumbnail', 370, 240, true); // Used for post thumbnail images
 			add_image_size('Gallery Small', 310, 280, true); // Used for small gallery images
 			add_image_size('Gallery Medium', 475, 280, true); // Used for large feature (header) images
 			add_image_size('Gallery Large', 795, 570, true); // Used for post thumbnail images
@@ -108,18 +108,41 @@ endif; // alastairhumphreys_setup
 /**
  * Creates the thumbnails for the whole site. If no thumbnail is found then a default one is used.
  */
-function ah_get_custom_thumb($pageID = '') {
-	if (isset($pageID)) {
-		$defaultThumbnail = get_field('thumbnail', $pageID) == '' ? get_bloginfo('template_url') . '/images/posts/Thumbs/default.jpg' : get_field('thumbnail', $pageID);
+function ah_get_custom_thumb($pageID = '', $size = 'thumbnail') {
+
+	$imageObj = get_field('thumbnail', $pageID);
+	$imageUrl = $imageObj[sizes][$size];
+	$imageTitle = $imageObj[title];
+
+	$image = ($imageObj != '' && $imageUrl != '');
+
+	if ($image) {
+		$image = '<img src="' . $imageUrl . '" alt="' . $imageTitle . '" />';
 	} else {
-		$defaultThumbnail = get_field('thumbnail') == '' ? get_bloginfo('template_url') . '/images/posts/Thumbs/default.jpg' : get_field('thumbnail');
+		$image = '<img src="' . get_bloginfo('template_url') . '/images/posts/Thumbs/default.jpg' . '" alt="Default Thumbnail" />';
 	}
-	return $defaultThumbnail;
+	return $image;
+}
+
+/*
+ * Creates a size specifc image 
+ * $size = Any image size shown above
+*/
+function ah_get_image($size = 'thumbnail') {
+	$imageObj = get_field('feature_image', get_the_id());
+
+	if ($imageObj != '') {
+		$imageUrl = $imageObj[sizes][$size];
+		$imageTitle = $imageObj[title];
+		$imageHtml = '<img src="' . $imageUrl . '" alt="' . $imageTitle . '" />';
+		return $imageHtml;
+	} else {
+		return;
+	}
 }
 
 /*
  * Creates the HTML for featured images across the whole site. They can either be a background image or a standard image.
- * $type = 'background' or 'normal'
  * $size = Any image size shown above
 */
 function ah_get_feature_image($size = 'feature-normal') {
@@ -154,7 +177,7 @@ function ah_get_dropdown($categories, $menuId) {
 				<a href="<?php echo $categoryURL ?>" class="cat-title"><?php echo $category ?></a>
 				<?php foreach($featureImagePost as $post) : setup_postdata($post); ?>
 					<a class="feature-image" href="<?php the_permalink(); ?>">
-						<img src="<?php echo ah_get_custom_thumb(); ?>" alt="<?php the_title(); ?>" width="215" />
+						<?php echo ah_get_custom_thumb(); ?>
 					</a>
 				<?php endforeach; ?>
 				<ul>
