@@ -4,7 +4,8 @@
 .container {margin:35px auto 0; padding:30px;}
 .feature-wide,
 .feature-normal {margin:0 auto;}
-.feature-wide {position:relative; z-index:-1;}
+.feature-wide {height:650px; position:relative; z-index:-1;}
+.ltie9 .feature-wide {width:auto;}
 .feature-wide img {position:absolute; width:100%;}
 .feature-normal img {display:block; width:100%;}
 .page-template-page-book-php .feature {width:100%;}
@@ -125,5 +126,5 @@
 }
 
 @media (min-width:1600px) {
-	.feature-wide {height:680px; width:1600px;}
+	.feature-wide {height:680px; max-width:1600px;}
 }
