@@ -16,6 +16,8 @@
 <div class="footer full-section white">
 	<div class="container">
 		<div class="row">
+
+			<!-- Search & Support -->
 			<div class="span3">
 				<h4>Search the site</h4>
 				<?php get_search_form(); ?>
@@ -40,18 +42,17 @@
 				</ul>
 
 				<h4>Support</h4>
-				<p>Thank you to the many people who have kindly "bought me a coffee" for just £2.50 as encouragement to keep this blog going.</p>
+				<p><?php the_field('support', 'option'); ?></p>
 				<?php echo do_shortcode('[donate]'); ?>
-				
 			</div>
+
+			<!-- Upcoming Events -->
 			<div class="span3">
 				<h4>Upcoming Events</h4>
-				<ul class="unstyled">
-					<li><strong>April 11th:</strong>Explorers Connect. London</li>
-				</ul>
-				<blockquote>“With the possible exception of Sir David Attenborough, that was the best lecture, and the longest applause that I have heard in the past 15 years.”</blockquote>
-				<p>– President of the Royal Geographical Society</p>
+				<?php the_field('upcoming_events', 'option'); ?>
 			</div>
+
+			<!-- Blog Topics -->
 			<div class="span3 clearfix">
 				<h4>Blog Topics</h4>
 				<?php 
@@ -77,10 +78,9 @@
 						} 
 					?>
 				</span>
-
-				<p>
-				</p>
 			</div>
+
+			<!-- Social -->
 			<div class="span3 social">
 				<h4>Twitter</h4>
 				<div class="twitter-feed">
