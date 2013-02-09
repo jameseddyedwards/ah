@@ -46,10 +46,10 @@ $featureImageSize = get_field('feature_image_size');
 
 		<div class="row">
 			<div class="span1">&nbsp;</div>
-			<div class="span3">
-				<a href="<?php echo esc_url(home_url('/')) . '?page_id=' . $bookPage->ID; ?>"><img src="<?php echo ah_get_custom_thumb($bookPage->ID); ?>" alt="<?php echo $bookPage->post_title; ?>" /></a>
+			<div class="span2">
+				<a href="<?php echo esc_url(home_url('/')) . '?page_id=' . $bookPage->ID; ?>"><?php echo ah_get_custom_thumb($bookPage->ID); ?></a>
 			</div>
-			<div class="span6 book-menu">
+			<div class="span7 book-menu">
 				<div class="info">
 					<h2><a class="title" href="<?php echo esc_url(home_url('/')) . '?page_id=' . $bookPage->ID; ?>"><?php echo $bookPage->post_title; ?></a></h2>
 					<span class="summary"><?php the_field('book_meta', $bookPage->ID) ?></span>
