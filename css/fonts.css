@@ -73,3 +73,8 @@ p small {font-size:9px; color:#cccccc;}
 .content p {margin:10px 0;}
 .content h2 {margin:30px 0 20px;}
 .content h3 {margin:20px 0 10px;}
+
+@media (max-width:767px) {
+    h1,
+    .content p a {word-wrap:break-word;}
+}
