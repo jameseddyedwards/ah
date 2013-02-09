@@ -36,6 +36,10 @@ nav .dropdown .sub-title {clear:both; color:#272727; display:block; font:18px/24
 nav .dropdown .feature-image {display:inline-block; float:left; margin-right:20px;}
 nav .dropdown ul {display:inline-block; float:left; margin:0 7px 40px 0; width:152px;}
 nav .blog ul {border-right:1px dotted #999; margin:0 40px 40px 0; width:162px;}
+nav .blog .feature-image img,
+nav .adventures .feature-image img,
+nav .microadventures .feature-image img {width:215px;}
+nav .books .feature-image img {width:120px;}
 nav .dropdown ul.last {border-right:0; margin-right:0;}
 nav .dropdown ul li {display:block;}
 nav .dropdown ul li a {color:#272727; display:block; font:14px/18px din-light, sans-serif;}
