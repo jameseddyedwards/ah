@@ -33,10 +33,18 @@ cite {font-style:normal;}
 .video-container object,  
 .video-container embed {height:100%; left:0; margin:0 !important; position:absolute; top:0; width:100%;}
 
+
+/* Content */
 .content iframe,
 .content object {margin:20px 0;}
-.content img {width:100%;}
+.content img {max-width:100%;}
+.ltie9 .content img {width:auto;}
+.content .searchform {margin-top:30px;}
 .content .ajax-loader {width:auto;}
+
+.main .excerpt {height:105px; margin:15px 0; overflow:hidden;}
+article .meta {display:block; font-style:italic; margin-bottom:30px;}
+
 
 /* Utility Blocks */
 .assistive-text {position:absolute !important; clip:rect(1px 1px 1px 1px); /* IE6, IE7 */}
@@ -96,14 +104,7 @@ cite {font-style:normal;}
 .wp-paginate .current {background:#333 !important; border:1px solid black !important;}
 
 
-.main .excerpt {height:105px; margin:15px 0; overflow:hidden;}
-
-article .meta {display:block; font-style:italic; margin-bottom:30px;}
-
-.content .searchform {margin-top:30px;}
-
-.content .ignore img {width:auto;}
-
+/* Subscribe Button */
 .subscribe {display:block;}
 .subscribe input[type="text"] {border:1px solid #d0d0d0; color:#797979; float:left; font-size:11px; padding:6px 5px 5px;}
 .subscribe input[type="submit"] {background:#1a1a1a; border:none; color:#fff; float:left; font-family:din-light, helvetica, arial; height:27px; line-height:27px;}
