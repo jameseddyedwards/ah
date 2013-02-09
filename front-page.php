@@ -15,8 +15,10 @@
 
 get_header();
 
-$category_best_bits_url = get_site_url() . "/?cat=" . get_cat_ID('Best bits') . "#category-children";
-$category_latest_url = get_site_url() . "/?cat=" . get_cat_ID('Blog') . "#category-children";
+$category_best = get_cat_ID('Best bits');
+$category_blog = get_cat_ID('Blog');
+$category_best_bits_url = get_category_link($category_best) . "#category-children";
+$category_latest_url = get_category_link($category_blog) . "#category-children";
 
 $bestArgs = array(
 	'numberposts'	=> 3,
@@ -80,7 +82,7 @@ $bannerCount = 10;
 		<?php foreach($bestBits as $post) :	setup_postdata($post); ?>
 			<div class="span4">
 				<a class="post-thumb" href="<?php the_permalink(); ?>">
-					<img src="<?php echo ah_get_custom_thumb(); ?>" alt="<?php the_title(); ?>" />
+					<?php echo ah_get_custom_thumb(); ?>
 					<span class="title"><?php the_title(); ?></span>
 				</a>
 				<span class="excerpt"><?php echo strip_tags(get_the_excerpt()) ?>...</span>
@@ -93,7 +95,7 @@ $bannerCount = 10;
 		<?php foreach($recentPosts as $post) : setup_postdata($post); ?>
 			<div class="span4">
 				<a class="post-thumb" href="<?php the_permalink(); ?>">
-					<img src="<?php echo ah_get_custom_thumb(); ?>" alt="<?php the_title(); ?>" />
+					<?php echo ah_get_custom_thumb(); ?>
 					<span class="title"><?php the_title(); ?></span>
 				</a>
 				<span class="excerpt"><?php echo strip_tags(get_the_excerpt()) ?>...</span>
