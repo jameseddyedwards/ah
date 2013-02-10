@@ -57,7 +57,7 @@ $bannerCount = 10;
 		<?php while (have_posts()) : the_post(); ?>
 			<div class="row">
 				<div class="span4">
-					<?php the_post_thumbnail(); ?>
+					<?php echo ah_get_custom_thumb(); ?>
 				</div>
 				<div class="span8">
 					<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'alastairhumphreys' ) ); ?>
