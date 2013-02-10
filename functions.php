@@ -109,7 +109,6 @@ endif; // alastairhumphreys_setup
  * Creates the thumbnails for the whole site. If no thumbnail is found then a default one is used.
  */
 function ah_get_custom_thumb($pageID = '', $size = 'thumbnail') {
-
 	$imageObj = get_field('thumbnail', $pageID);
 	$imageUrl = $imageObj[sizes][$size];
 	$imageTitle = $imageObj[title];
