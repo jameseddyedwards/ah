@@ -31,6 +31,8 @@
 .next {background:url("../images/icon/right.png") no-repeat; right:20px;}
 .previous {background:url("../images/icon/left.png") no-repeat; left:20px;}
 
+.content .span8 p:first-child {margin-top:0;}
+
 
 /* Media Queries */
 /* Phone - Vertical */
