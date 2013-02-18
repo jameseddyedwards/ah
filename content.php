@@ -20,7 +20,7 @@ $featureImageSize = get_field('feature_image_size');
 	<!-- Feature Image -->
 	<?php echo ah_get_feature_image($size = $featureImageSize); ?>
 
-	<div class="container white content<?php echo $featureImageSize == 'normal' ? ' top' : ''; ?>">
+	<div class="container white content<?php echo $featureImageSize == 'feature-normal' ? ' top' : ''; ?>">
 		<div class="row">
 			<div class="span2">
 				<?php if (get_field('post_layout') == 'post' || get_field('post_layout') == '') : ?>
@@ -126,10 +126,10 @@ $featureImageSize = get_field('feature_image_size');
 
 				<div class="next-previous clearfix">
 					<div class="previous">
-						<?php previous_post('<span>&laquo; <em>Previous</em></span>%', '', 'yes'); ?>
+						<?php previous_post('%', '', 'yes'); ?>
 					</div>
 					<div class="next">
-						<?php next_post('<span><em>Next</em> &raquo;</span>%', '', 'yes'); ?>
+						<?php next_post('%', '', 'yes'); ?>
 					</div>
 				</div>
 				

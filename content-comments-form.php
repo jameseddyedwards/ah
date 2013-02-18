@@ -65,11 +65,30 @@ comment_form($fields);
 						<?php do_action('comment_form', $post->ID); ?>
 					</fieldset>
 				</form>
-
-
 			<?php endif; ?>
+
 		</div>
 		<div class="span1">&nbsp;</div>
 	</div>
+
+	<div class="row">
+		<div class="span2">&nbsp;</div>
+		<div class="span9">
+			<hr />
+
+			<div class="next-previous clearfix">
+				<div class="previous" title="Previous Post">
+					<?php previous_post('%', '', 'yes'); ?>
+				</div>
+				<div class="next" title="Next Post">
+					<?php next_post('%', '', 'yes'); ?>
+				</div>
+			</div>
+			
+			<hr class="bottom" />
+		</div>
+		<div class="span1">&nbsp;</div>
+	</div>
+
 <?php endif; ?>
 

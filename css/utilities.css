@@ -18,7 +18,7 @@ cite {font-style:normal;}
 
 /* Utility Classes */
 .arrow-link {background:url('../images/button/arrow-right.png') no-repeat right center; color:#272727; font-size:14px; font-style:italic; padding-right:12px;}
-.bottom {border-bottom:0 !important;}
+.bottom {border-bottom:0 !important; margin-bottom:0;}
 .clear {clear:both;}
 .excerpt {color:#191919; display:block; font-size:15px; font-style:italic; line-height:22px;}
 .hidden {display:none; visibility:hidden;}
@@ -69,16 +69,14 @@ article .meta {display:block; font-style:italic; margin-bottom:30px;}
 .post-categories li a.current {cursor:default;}
 
 /* Next Previous Links */
-.next-previous {margin:30px 0; position:relative;}
+.next-previous {margin:20px 0; position:relative;}
 .next-previous div {display:inline-block;}
-.next-previous div a {color:#1a1a1a;}
+.next-previous div a {color:#1a1a1a; height:29px; line-height:29px; z-index:10;}
+.next-previous div a:hover {opacity:0.8;}
+.next-previous .previous a {background:url("../images/icon/arrow-previous.png") no-repeat; padding-left:40px;}
 .next-previous .next {position:absolute; right:0;}
-.next-previous .previous a,
-.next-previous .previous span {float:left;}
-.next-previous .next span,
-.next-previous .next a {float:right; text-align:right;}
-.next-previous span {display:inline-block;}
-.next-previous em {color:#999999;}
+.next-previous .next a {background:url("../images/icon/arrow-next.png") no-repeat right; float:right; padding-right:40px; text-align:right;}
+
 
 /* List of Posts */
 .posts {background-color:#fff;}
