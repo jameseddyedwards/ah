@@ -1,7 +1,8 @@
 /* Categories */
 
 /* Blog */
-.category-blog .entry-content {height:590px; overflow:hidden; position:relative;}
+.category-blog .entry-content {max-height:590px; overflow:hidden; position:relative;}
+.ie .category-blog .entry-content {height:590px;}
 
 .main .continue-reading {border-top:1px dotted #ccc; display:block; margin-top:40px;}
 .main .continue-reading span {background:url('../images/button/continue-reading.png') no-repeat; display:block; height:64px; margin:-20px auto 0; text-indent:-9999px; width:136px;}
