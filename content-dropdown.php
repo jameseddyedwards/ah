@@ -180,7 +180,7 @@ $subNavs = array(
 					<?php foreach ($bookPages as $bookPage) { ?>
 						<?php $counter = $counter + 1; ?>
 						<a class="feature-image<?php echo $counter == 5 ? ' last' : ''; ?>" href="<?php echo get_page_link($bookPage->ID); ?>">
-							<?php echo ah_get_custom_thumb($bookPage->ID); ?>
+							<?php echo ah_get_custom_thumb($bookPage->ID, $size='original'); ?>
 							<span><?php echo $bookPage->post_title; ?></span>
 						</a>
 					<?php } ?>

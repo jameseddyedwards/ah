@@ -30,7 +30,7 @@ $bookPageId = get_the_ID();
 			<div class="row">
 				<div class="span1">&nbsp;</div>
 				<div class="span3 book-thumb">
-					<img src="<?php the_field('thumbnail') ?>" alt="<?php the_title(); ?>" />
+					<?php echo ah_get_custom_thumb($bookPage->ID, $size='original'); ?>
 
 					<?php echo do_shortcode('[add-to-cart]' . $paypalId . '[/add-to-cart]'); ?>
 

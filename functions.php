@@ -110,7 +110,7 @@ endif; // alastairhumphreys_setup
  */
 function ah_get_custom_thumb($pageID = '', $size = 'thumbnail') {
 	$imageObj = get_field('thumbnail', $pageID);
-	$imageUrl = $imageObj[sizes][$size];
+	$imageUrl = $size == 'original' ? $imageObj[url] : $imageObj[sizes][$size];
 	$imageTitle = $imageObj[title];
 
 	$image = ($imageObj != '' && $imageUrl != '');
@@ -305,7 +305,7 @@ function alastairhumphreys_comment($comment, $args, $depth) {
 				<?php
 					/* translators: 1: comment author, 2: date and time */
 					printf(__('<span class="author">%1$s</span> <span class="posted">Posted %2$s</span>', get_comment_author_link()),
-						sprintf('%s', get_comment_author_link()),
+						sprintf(get_comment_author_url() != '' ? '<a href="%1$s" target="_new">%2$s</a>' : '%2$s', get_comment_author_url(), get_comment_author()),
 						sprintf('<a class="date" href="%1$s"><time pubdate datetime="%2$s">%3$s</time></a>',
 							esc_url(get_comment_link($comment->comment_ID)),
 							get_comment_time('c'),
