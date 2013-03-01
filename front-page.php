@@ -31,7 +31,7 @@ $recentArgs = array(
 $bestBits = get_posts($bestArgs);
 $recentPosts = get_posts($recentArgs);
 
-$bannerCount = 10;
+$bannerImages = get_field('gallery');
 
 ?>
 
@@ -40,16 +40,19 @@ $bannerCount = 10;
 <?php } ?>
 
 
-<div class="carousel-wrapper clearfix">
-	<div id="carousel" class="carousel clearfix">
-		<?php for ($i = 1; $i <= $bannerCount; $i++) { ?>
-			<?php $i = sprintf('%02s', $i); ?>
-			<img src="<?php bloginfo('template_url'); ?>/images/gallery/home/<?php echo $i; ?>.jpg" alt="Gallery Image <?php echo $i; ?>" width="1600" height="800" />
-		<?php } ?>
+<?php if ($bannerImages) { ?>
+
+	<div class="carousel-wrapper clearfix">
+		<div id="carousel" class="carousel clearfix">
+			<?php foreach($bannerImages as $image) { ?>
+				<img src="<?php echo $image['sizes']['feature-wide']; ?>" alt="<?php echo $image['alt']; ?>" width="1600" />
+			<?php } ?>
+		</div>
+		<a id="next" class="next" href="#"></a>
+		<a id="previous" class="previous" href="#"></a>
 	</div>
-	<a id="next" class="next" href="#"></a>
-	<a id="previous" class="previous" href="#"></a>
-</div>
+
+<?php } ?>
 
 
 <div class="container content white">

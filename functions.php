@@ -111,14 +111,15 @@ endif; // alastairhumphreys_setup
 function ah_get_custom_thumb($pageID = '', $size = 'thumbnail') {
 	$imageObj = get_field('thumbnail', $pageID);
 	$imageUrl = $size == 'original' ? $imageObj[url] : $imageObj[sizes][$size];
-	$imageTitle = $imageObj[title];
+	$imageAlt = $imageObj[alt];
 
 	$image = ($imageObj != '' && $imageUrl != '');
 
 	if ($image) {
-		$image = '<img src="' . $imageUrl . '" alt="' . $imageTitle . '" />';
+		$image = '<img src="' . $imageUrl . '" alt="' . $imageAlt . '" />';
 	} else {
-		$image = '<img src="' . get_bloginfo('template_url') . '/images/posts/Thumbs/default.jpg' . '" alt="Default Thumbnail" />';
+		$image = get_field("default_thumbnail", 'option');
+		$image = '<img src="' . $image[sizes]["thumbnail"] . '" alt="' . $image[alt] . '" />';
 	}
 	return $image;
 }
